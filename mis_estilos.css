@@ -1,19 +1,46 @@
 html {
-    background-color: rgb(221, 204, 197);
+    background-color: rgb(29, 16, 148);
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
 }
 
 body {
-    background-color:antiquewhite;
-    padding: 20px;
-    border: 2px solid rgb(245, 235, 235);
+    background-color:rgb(141, 245, 6);
+    padding: 15px 20px 25px 15px;
+    border: 2px solid rgb(10, 3, 117);
+    border-radius: 0px 15px 15px 0px;
     margin: 20px;
+    box-shadow: 7px 7px 15px 0px black;
+    text-decoration: none;
 }
 
 .misDivs{
-    padding: 3px;
-    border: 1px dotted black;
-    border-radius: 10px;
+    padding: 7px;
+    /* border: 1px solid rgb(188, 250, 72);*/
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 7px 7px 12px 0px rgb(14, 102, 2);
+    background-color: rgb(173, 252, 54);
+    
+}
+
+   #miTabla table{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width:auto;
+    }
+
+    #misCeldas td {
+        width: 5%;
+    }
+    
+
+.misLogos{
+    padding: 7px;
+    /* border: 1px solid rgb(188, 250, 72);*/
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 7px 7px 12px 0px rgb(14, 102, 2);
+    background-color: rgb(29, 16, 148);
+
 }
 
