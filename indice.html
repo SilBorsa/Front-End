@@ -13,21 +13,45 @@
         <link href="mis_estilos.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="style.css">
 
-        <!-- <script> aca mi link a JS </script>-->
+        <script src="mis_funciones.js"></script>
     </head>
 <body>
 <div id="miEncabezado" class="misDivs">
    <header>
     <table border="0" id="miTabla" width="101%">
         <tr>
-            <td width="5%"><a href="http://www.facebook.com"><img src="fb.png" width="50px" height="50px" alt="Facebook"></a></td>
-            <td width="5%"><a href="http://www.pinterest.com"><img src="pin.png" width="50px" height="50px" alt="Pinterest"></a></td>
-            <td width="5%"><a href="http://www.linkedin.com"><img src="li.png" width="50px" height="50px" alt="LinkedIn"></a></td>
-            <td width="5%"><a href="http://t.me/51lv4n4_ok"><img src="tg.png" width="50px" height="50px" alt="Telegram"></a></td>
-            <td width="5%"><a href="mailto:licSilBorsa@yahoo.com.ar"><img src="correo.png" width="50px" height="50px" alt="Telegram"></a></td>
+            <td width="4%">
+                <a href="http://www.facebook.com">
+                    <img id="miFB" src="fb.png" width="50px" height="50px" alt="Facebook" onmouseover="cambiarFB2()" onmouseout="cambiarFB()">
+                </a>
+            </td>
+            <td width="4%">
+                <a href="http://www.pinterest.com">
+                    <img id="miPin" src="pin.png" width="50px" height="50px" alt="Pinterest" onmouseover="cambiarPin2()" onmouseout="cambiarPin()">
+                </a>
+            </td>
+            <td width="4%">
+                <a href="http://www.linkedin.com">
+                    <img id="miLi" src="li.png" width="50px" height="50px" alt="LinkedIn" onmouseover="cambiarLi2()" onmouseout="cambiarLi()">
+                </a>
+            </td>
+            <td width="4%">
+                <a href="http://t.me/51lv4n4_ok">
+                    <img id="miTg" src="tg.png" width="50px" height="50px" alt="Telegram" onmouseover="cambiarTg2()" onmouseout="cambiarTg()">
+                </a>
+            </td>
+            <td width="4%">
+                <a href="mailto:licSilBorsa@yahoo.com.ar">
+                    <img id="miMail" src="correo.png" width="50px" height="50px" alt="eMail" onmouseover="cambiarMail2()" onmouseout="cambiarMail()">
+                </a>
+            </td>
             <td> </td>
-            <td width="5%"><img src="edit.png" width="50px" height="50px"></td>
-            <td width="5%"><img src="cancel.png" width="50px" height="50px"></td>
+            <td width="4%">
+                <img id="miEdit" src="edit.png" width="50px" height="50px" onmouseover="cambiarEdit2()" onmouseout="cambiarEdit()">
+            </td>
+            <td width="4%">
+                <img id="miX" src="cancel.png" width="50px" height="50px" onmouseover="cambiarX2()" onmouseout="cambiarX()">
+            </td>
         </tr>
     </table>
    </header>
