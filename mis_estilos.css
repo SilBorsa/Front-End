@@ -23,18 +23,6 @@ body {
     
 }
 
-   #miTabla table{
-        margin: 0;
-        padding: 0;
-        border: 0;
-        width:auto;
-    }
-
-    #misCeldas td {
-        width: 5%;
-    }
-    
-
 .misLogos{
     padding: 7px;
     /* border: 1px solid rgb(188, 250, 72);*/
