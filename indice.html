@@ -10,14 +10,12 @@
         <title>Portfolio de Silvana Borsani</title>
 
         <link href="img/sb.png" rel="shortcut icon">
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/mis_estilos.css" rel="stylesheet" type="text/css">
 
         <script src="js/mis_funciones.js"></script>
     </head>
 <body>
-<!--<script src="js/jquery.min.js"></script>-->
-<!--<script src="js/bootstrap.min.css"></script>-->
 <div id="miEncabezado" class="misDivs">
    <header>
     <table border="0" id="miTabla" width="100%">
@@ -72,37 +70,232 @@
 <br>
 <div id="misDatos" class="misDivs">
     <table border="0" id="miInfo">
-        <tr>
-            <td>
-                <img src="img/yo.jpg" alt="Silvana Borsani" height="512px">
+        <tr height="40%">
+            <td id="miFoto" width="15%" rowspan="2">
+                <img src="img/yo.jpg" id="yo" alt="Silvana Borsani" width="70%" onmouseover="cambiarFoto2()" onmouseout="cambiarFoto()">
             </td>
-            <td valign="top">
-                <h2>Silvana Paula Borsani</h2>
-                <h4>Lic. en Criminalistica</h4>
-                <p>info resumida</p>
+            <td id="misDatos" valign="top">
+                <h1 id="miNombre">Silvana Paula Borsani</h1>
+                <h3 id="miTitulo">Licenciada en Criminalistica</h3>
+            </td>
+            <td id="editInfo" width="4%" valign="top">
+                <img id="miEditInfo" src="img/edit.png" width="100%" height="100%" onmouseover="cambiarEditInfo2()" onmouseout="cambiarEditInfo()">
+            </td>
+            <td id="cancelInfo" width="4%" valign="top">
+                <img id="miXInfo" src="img/cancel.png" width="100%" height="100%" onmouseover="cambiarXInfo2()" onmouseout="cambiarXInfo()">
+            </td>
+        </tr>
+        <tr>
+            <td id="miInfo" colspan="3">
+                <p><u>Fecha de Nacimiento:</u> 23/09/1972</p>
+                <p><u>Lugar de Nacimiento:</u> Capital Federal (actual CABA).</p>
+                <p><u>Lugar de Residencia:</u> Moreno, Buenos Aires.</p>
+                <p><u>Celular de contacto:</u> +5491155557777</p>
+                <p><u>eMail Particular:</u> silvanaborsani&#64;gmail.com</p>
             </td>
         </tr>
     </table>  
 </div>
 <br>
 <div id="laboral" class="misDivs">
-    Experiencia Laboral.
+    <table border="0">
+        <tr>
+            <td>
+                <h3>Experiencia Laboral</h3>
+            </td>
+            <td width="20%">
+            </td>
+            <td id="editLab" width="4%" valign="top">
+                <img id="miEditLab" src="img/edit.png" width="100%" height="100%" onmouseover="cambiarEditLab2()" onmouseout="cambiarEditLab()">
+            </td>
+            <td id="cancelLab" width="4%" valign="top">
+                <img id="miXLab" src="img/cancel.png" width="100%" height="100%" onmouseover="cambiarXLab2()" onmouseout="cambiarXLab()">
+            </td>
+        </tr>
+    </table>
+
+    <table border="0" class="misTablas">
+        <tr>
+            <th>
+                Ministerio de Economia
+            </th>
+        </tr>
+        <tr colspan="3">
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Direcci&oacute;n Nacional de Migraciones (Moreno)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Ministerio de Economia
+            </th>
+        </tr>
+        <tr>
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+    </table>
+    
 </div>
 <br>
 <div id="estudios" class="misDivs">
-    Educacion
+    <table border="0">
+        <tr>
+            <td>
+                <h3>Educaci&oacute;n</h3>
+            </td>
+            <td width="20%">
+            </td>
+            <td id="editEdu" width="4%" valign="top">
+                <img id="miEditEdu" src="img/edit.png" width="100%" height="100%" onmouseover="cambiarEditEdu2()" onmouseout="cambiarEditEdu()">
+            </td>
+            <td id="cancelEdu" width="4%" valign="top">
+                <img id="miXEdu" src="img/cancel.png" width="100%" height="100%" onmouseover="cambiarXEdu2()" onmouseout="cambiarXEdu()">
+            </td>
+        </tr>
+    </table>
+
+    <table border="0" class="misTablas">
+        <tr>
+            <th>
+                Universidad Aconcagua
+            </th>
+        </tr>
+        <tr colspan="3">
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Universidad Abierta Interamericana (UAI)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Instituto de Ciencias Forenses (ICF)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Instituto Universitario de la Polic&iacute;a Federal (IUPFA)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+    </table>
+
 </div>
 <br>
 <div id="habilidades" class="misDivs">
-    Hard & Soft Skills: habilidades duras y blandas en modo porcentaje, por ej. idiomas
+    <table border="0">
+        <tr>
+            <td>
+                <h3>Hard & Soft Skills</h3>
+            </td>
+            <td width="20%">
+            </td>
+            <td id="editHab" width="4%" valign="top">
+                <img id="miEditHab" src="img/edit.png" width="100%" height="100%" onmouseover="cambiarEditHab2()" onmouseout="cambiarEditHab()">
+            </td>
+            <td id="cancelHab" width="4%" valign="top">
+                <img id="miXHab" src="img/cancel.png" width="100%" height="100%" onmouseover="cambiarXHab2()" onmouseout="cambiarXHab()">
+            </td>
+        </tr>
+    </table>
+
+    <table border="0" class="misTablas">
+        <tr>
+            <th>
+                habilidades duras y blandas en modo porcentaje, por ej. idiomas
+            </th>
+        </tr>
+        <tr colspan="3">
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+    </table>
+     
 </div>
 <br>
 <div id="proyectos" class="misDivs">
-    Proyectos: incluyendo este portfolio
+    <table border="0">
+        <tr>
+            <td>
+                <h3>Proyectos</h3>
+            </td>
+            <td width="20%">
+            </td>
+            <td id="editPy" width="4%" valign="top">
+                <img id="miEditPy" src="img/edit.png" width="100%" height="100%" onmouseover="cambiarEditPy2()" onmouseout="cambiarEditPy()">
+            </td>
+            <td id="cancelPy" width="4%" valign="top">
+                <img id="miXPy" src="img/cancel.png" width="100%" height="100%" onmouseover="cambiarXPy2()" onmouseout="cambiarXPy()">
+            </td>
+        </tr>
+    </table>
+
+    <table border="0" class="misTablas">
+        <tr>
+            <th>
+                Proyecto
+            </th>
+        </tr>
+        <tr colspan="3">
+            <td>
+                bla bla bla
+            </td>
+        </tr>
+    </table>
+     
 </div>
 <br>
  <div id="pie" class="misDivs">
-    aca el pie de la pagina
- </div>
+    <footer>
+         <table border="0" id="miTabla" width="100%">
+             <tr>
+                <td width="70%">
+                    este es mi pie de pagina
+                </td>
+                 </td>
+                 <td> </td>
+                 <td width="4%">
+                     <img id="miEditPie" src="img/edit.png" width="100%" height="100%" onmouseover="cambiarEditPie2()" onmouseout="cambiarEditPie()">
+                 </td>
+                 <td width="4%">
+                     <img id="miXPie" src="img/cancel.png" width="100%" height="100%" onmouseover="cambiarXPie2()" onmouseout="cambiarXPie()">
+                 </td>
+             </tr>
+         </table>
+        </footer>
+  </div>
+
+<script src="js/bootstrap.min.css"></script>
+<script src="js/bootstrap.bundle.min.css"></script>
 </body>
 </html>

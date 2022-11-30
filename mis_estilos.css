@@ -20,7 +20,8 @@ body {
     border-radius: 0px 10px 10px 0px;
     box-shadow: 7px 7px 12px 0px rgb(14, 102, 2);
     background-color: rgb(173, 252, 54);
-    
+    color: rgb(5, 90, 9);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;    
 }
 
 .misLogos{
@@ -32,3 +33,31 @@ body {
 
 }
 
+#yo{
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 12px 0px rgb(14, 102, 2);
+}
+
+#miNombre{
+    font-weight: 600;
+    text-shadow: 1px 0px 1px rgb(164, 224, 44), 0px 1px 1px yellowgreen, 
+                 2px 1px 1px rgb(164, 224, 44), 1px 2px 1px yellowgreen, 
+                 3px 2px 1px rgb(164, 224, 44), 2px 3px 1px yellowgreen, 
+                 4px 3px 1px rgb(164, 224, 44), 3px 4px 1px yellowgreen, 
+                 5px 4px 1px rgb(164, 224, 44), 4px 5px 1px yellowgreen, 
+                 6px 5px 1px rgb(164, 224, 44), 5px 6px 1px yellowgreen, 
+                 7px 6px 1px rgb(164, 224, 44);
+}
+
+#miTitulo{
+    /* line-height: 50px; */
+}
+
+#miInfo{
+    line-height: 10pt;
+}
+
+.misTablas{
+    margin-left: 30px;
+}
