@@ -151,9 +151,9 @@ function cambiarXPie(){
 }
 
 function cambiarFoto2(){
-    document.getElementById("miFoto").src="img/yo-likes.gif";
+    document.getElementById("yo").src="img/yo-likes.gif";
 }
 
 function cambiarFoto(){
-    document.getElementById("miFoto").src="img/yo.jpg";
+    document.getElementById("yo").src="img/yo.jpg";
 }
