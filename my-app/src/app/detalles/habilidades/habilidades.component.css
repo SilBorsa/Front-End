@@ -19,7 +19,7 @@ h4 {
     -webkit-text-stroke-color: white;
     text-shadow: 
                3px 3px #b665f8,
-               7px 7px 2px #016432;
+               7px 7px 2px black;
 }
   
 .skills .progresos{
@@ -130,8 +130,8 @@ h4 {
   align-content: center;
   width: -moz-fit-content;
   width: fit-content;
-  grid-template-columns: repeat(6, 150px);
-  grid-template-rows: repeat(3, 150px);
+  grid-template-columns: repeat(7, 130px);
+  grid-template-rows: repeat(3, 130px);
   gap: 5px;
   padding: 5px;
   margin: 0 auto 10px auto;
@@ -145,15 +145,36 @@ h4 {
   align-items: center;
   border: 1px solid white;
   color: #fff;
+  font-size: 15px;
+}
+
+#violeta{
+  background-color:#8e44ad;
+}
+
+#naranja{
+  background-color:#f39c12;
+}
+
+#verde{
+  background-color:#1fb358;
+}
+
+#rosa{
+  background-color:#f862d7;
+}
+
+#azul{
+  background-color:#4f93c0;
 }
   
 .item:hover{
-  filter:drop-shadow(5px 5px 7px black) brightness(110%);
+  filter:drop-shadow(5px 5px 7px black) brightness(120%);
   border:1px solid black;
   text-shadow: 2px 2px 3px black;
   cursor: url("../../../assets/varita.png"), none;
 }
   
 .item img{
-  height: 80px;
+  height: 60px;
 }
