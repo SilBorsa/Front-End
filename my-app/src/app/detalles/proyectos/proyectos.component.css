@@ -3,10 +3,10 @@
 }
   
 .py_nombre{
-  font-size: 24px;
+  font-size: 20pt;
   font-weight: 600;
   color: rgb(196, 243, 141);
-  text-shadow: 2px 2px 5px rgb(1, 82, 1);
+  text-shadow: 2px 2px 5px black;
 }
   
 .py_txt{
