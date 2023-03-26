@@ -1,0 +1,43 @@
+.cab{
+  display:flex;
+  position: absolute;
+  z-index:3;
+  padding: 5px 15px 5px 15px;
+  height: 60px;
+  background:#03f803;
+  border: 1px solid white;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 7px 7px 15px 0px black;
+}
+   
+/* redes */
+.cab .redes{
+  position: relative;
+  align-items: center;
+}
+   
+.cab .redes img{
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  height: 100%;
+}
+   
+.cab .redes img:hover{
+  filter:opacity(100%);
+}
+   
+/* login */
+.cab .editar{
+  position: relative;
+  align-items:center;
+}
+   
+.cab .editar img{
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  height: 100%;
+  float:right;
+}
+   
+.cab .editar img:hover{
+  filter:opacity(100%);
+  cursor: url("../../assets/llave.png"), pointer;
+}
