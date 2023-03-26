@@ -1,6 +1,6 @@
 # Front-End
 contiene los codigos del FE para mi portfolio
-Los archivos fueron elaborados con Angular CLI en Visual Studio Code.
+Los archivos fueron elaborados con Angular V.15.0.2 en Visual Studio Code.
 Contiene HTML, CSS, JS
 
 El portfolio tiene 3 componentes principales: 
