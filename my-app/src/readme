@@ -1,3 +1,3 @@
-La carpeta src contiene otras carpetas:
+La carpeta src, ademas de tener el index y los archivos json, contiene otras carpetas:
 1. app (donde estan los componentes y los servicios)
 2. assets (donde estan los archivos multimedia)
