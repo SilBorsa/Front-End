@@ -1,0 +1,27 @@
+.proyectos{
+  margin: 0 5%;
+}
+  
+.py_nombre{
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(196, 243, 141);
+  text-shadow: 2px 2px 5px rgb(1, 82, 1);
+}
+  
+.py_txt{
+  margin-right: 20px;
+  text-align: justify;
+}
+  
+#album{
+  height: 40px;
+  float:right;
+  margin-right: 2%;
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+}
+  
+#album:hover{
+  cursor: pointer;
+  filter:opacity(100%);
+}
