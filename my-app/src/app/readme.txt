@@ -1,3 +1,3 @@
 Esta carpeta contiene los componentes y los servicios.
 Componentes principales: cuerpo, detalles, pie.
-El archivo app.components.html es el que los reune.
+El archivo app.component.html es el que los reune.
