@@ -11,33 +11,34 @@
 }
    
 /* redes */
-.cab .redes{
+.redes{
   position: relative;
   align-items: center;
 }
    
-.cab .redes img{
+.redes img{
   filter:grayscale(150%) brightness(2.5) opacity(85%);
   height: 100%;
+  padding-right: 10px;
 }
    
-.cab .redes img:hover{
+.redes img:hover{
   filter:opacity(100%);
 }
    
 /* login */
-.cab .editar{
+.editar{
   position: relative;
   align-items:center;
 }
    
-.cab .editar img{
+.editar img{
   filter:grayscale(150%) brightness(2.5) opacity(85%);
   height: 100%;
   float:right;
 }
    
-.cab .editar img:hover{
+.editar img:hover{
   filter:opacity(100%);
-  cursor: url("../../assets/llave.png"), pointer;
+  cursor: url("../../../assets/llave.png"), pointer;
 }
