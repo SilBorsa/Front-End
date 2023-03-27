@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 
 import { AppComponent } from './app.component';
 import { PieComponent } from './pie/pie.component';
@@ -30,7 +31,8 @@ import { ProyectosComponent } from './detalles/proyectos/proyectos.component';
     ProyectosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    EmojiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
