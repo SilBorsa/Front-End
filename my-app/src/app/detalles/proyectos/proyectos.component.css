@@ -1,27 +1,73 @@
-.proyectos{
+.proyectos {
   margin: 0 5%;
 }
   
-.py_nombre{
+.py_nombre {
   font-size: 20pt;
   font-weight: 600;
   color: rgb(196, 243, 141);
   text-shadow: 2px 2px 5px black;
 }
   
-.py_txt{
+.py_txt {
   margin-right: 20px;
   text-align: justify;
 }
   
-#album{
+#album {
   height: 40px;
   float:right;
   margin-right: 2%;
   filter:grayscale(150%) brightness(2.5) opacity(85%);
 }
   
-#album:hover{
+#album:hover {
   cursor: pointer;
   filter:opacity(100%);
+}
+
+.ajustes {
+  position: relative;
+  display: flex;
+  float: left;
+  width: 700px;
+  height: 470px;
+  margin-left: 170px;
+  margin-top: -500px;
+  padding: 20px;
+  z-index: 9;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(248, 114, 237);
+  border-radius: 15px;
+  border:1px solid white;
+  box-shadow: 7px 7px 15px 0px black;
+  /*gap: 5px;*/
+}
+
+.capturas {
+  position: absolute;
+  display:grid;
+  grid-template-columns: repeat(4, 130px);
+  grid-template-rows: repeat(3, 100px);
+  margin-top: 50px;
+  gap:15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.pic {
+  height: 70px;
+  filter: drop-shadow(2px 2px 4px black) grayscale(100%);
+}
+
+.pic:hover {
+  position: absolute;
+  display:flex;
+  justify-items: center;
+  place-content:center;
+  z-index: 15;
+  transform: scale(10);
+  transition: 1s ease-out;
+  filter: grayscale(0);
 }
