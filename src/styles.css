@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  background-color: rgb(8, 24, 248);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+}
+  
+body {
+  background-color:transparent;
+  padding: 0px 0px 10px 0px;
+  /*margin: 5px 5px 10px 5px;*/
+  margin: 15px auto;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  width: 1178px;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+

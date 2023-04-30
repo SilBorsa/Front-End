@@ -58,6 +58,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          
+          "options": {
+            "browserTarget": "my-app:build",
+            "proxyConfig": "proxy.conf.json"
+          },
+          
           "configurations": {
             "production": {
               "browserTarget": "mi-portfolio:build:production"
@@ -87,9 +93,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         }
       }

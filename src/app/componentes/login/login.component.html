@@ -1,0 +1,30 @@
+<div class="modal-overlay"  *ngIf="abrirModalLogin">
+  <div class="popup">
+  <div class="popup_body">
+      
+    <div class="titulo">
+      <span>Login</span>
+    </div>
+
+    <div class="subtitulo">
+      <span>(solo personas autorizadas)</span>
+    </div>
+
+      <form #myForm="ngForm" (ngSubmit)="miEnter()" novalidate>
+
+        <div class="row">
+          <input type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Usuario" [(ngModel)]="nombreUsuario" required />
+        </div>
+
+        <div class="row">
+          <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" required />
+        </div>
+
+        <div class="botones">
+          <input type="submit" class="in" value="Entrar" />
+          <input type="button" class="out" value="Cancelar" (click)="cerrarModalLogin()" />
+        </div>
+      </form>
+  </div>
+</div>
+</div>

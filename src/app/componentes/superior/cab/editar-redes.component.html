@@ -1,0 +1,38 @@
+<div class="modal-redes" *ngIf="abrirMostrarRedes">
+<div class="popup">
+  
+    <div class="popup_top">
+      <div class="titulo">
+        <span>MIS REDES</span>
+      </div>
+      <div class="botones">
+        <input type="button" class="out" value=" x " (click)="cerrarMostrarRedes()">
+      </div>
+    </div>
+    <div class="popup_body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">idRed</th>
+            <th scope="col">idPersona</th>
+            <th scope="col">nombreRed</th>
+            <th scope="col">urlRed</th>
+            <th scope="col">url_imgRed</th>
+            <th scope="col">editar</th>
+            <th scope="col">eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>numero</td>
+            <td>numero</td>
+            <td>texto</td>
+            <td>direccion web</td>
+            <td>direccion web img</td>
+            <td>boton</td>
+            <td>boton</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.laboral{
+  display:block;
+  margin: 0 15%;
+}
+  
+i {
+  margin-left: 50px;
+}
+
+ul {
+  padding-left: 7%;
+  text-indent: -15px;
+}
+  
+img {
+  width: 200px;
+  vertical-align: middle;
+  filter: drop-shadow(1px 1px 2px white);
+}
+  
+img:hover{
+  transform: scale(110%);
+}

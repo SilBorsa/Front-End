@@ -1,0 +1,42 @@
+.cab{
+  display:flex;
+  position: absolute;
+  z-index: 3;
+  padding: 5px 15px 5px 15px;
+  height: 60px;
+  background:#03f803;
+  border: 1px solid white;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 7px 7px 15px 0px black;
+}
+
+img{
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  height: 100%;
+}
+
+img:hover{
+  filter:opacity(100%);
+}
+   
+/* login */
+.entrar{
+  position: relative;
+  width: 100px;
+}
+   
+.entrar img:hover{
+  cursor: url("../../../../assets/llave.png"), pointer;
+}
+   
+/* redes */
+.redes{
+  position: relative;
+  align-items: center;
+}
+   
+/* capa solo visible si esta conectado el admin */
+.editar {
+  position: relative;
+  width: 50px;
+}
