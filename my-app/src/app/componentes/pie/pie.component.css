@@ -1,0 +1,45 @@
+.pie {
+  display:flex;
+  position: relative;
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  width:100%;
+  height: auto;
+  z-index: 5;
+  background:#03f803;
+  border: 1px solid white;
+  border-radius: 0px 0px 15px 15px;
+  box-shadow: 7px 7px 15px 0px black;  
+  font-size: medium;
+  column-count: 3;
+  column-gap: 20%;
+  text-align: center;
+}
+    
+a {
+  text-decoration: none;
+  color:rgb(251, 251, 252);
+  font-weight: 600;
+  text-shadow:2px 2px 4px black;
+}
+    
+a:hover {
+  color:blue;
+  text-shadow:2px 2px 4px white;
+}
+    
+#arroba {
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  height: 25px;
+}
+    
+#arroba:hover {
+  filter: opacity(100%) hue-rotate(90deg) drop-shadow(1px 1px 2px black);
+}
+
+#tel {
+  vertical-align:sub;
+  filter: drop-shadow(1px 1px 2px black);
+}
