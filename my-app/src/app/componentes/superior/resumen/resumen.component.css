@@ -1,0 +1,51 @@
+.resumen{
+   display: flexbox;
+   position: absolute;
+   z-index: 2;
+   margin-top: 140px;
+   padding: 10px 300px 5px 25px;
+   width:100%;
+   background:#03f803;
+   border: 1px solid white;
+   border-radius: 0px 0px 0px 0px;
+   box-shadow: 7px 7px 15px 0px black;
+   letter-spacing: -0.5px;
+   text-align: justify;
+}
+ 
+h4{
+   color:#074b72;
+}
+   
+.nombre{
+   text-align: center;
+   display: inline-block;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bolder;
+   font-size: 50px;
+   letter-spacing: 1px;
+   background-image: linear-gradient(-225deg, 
+                     #070707 0%,
+                     #0408fffa 33%,
+                     #f8cc07 66%,
+                     #042b42 100%);
+   background-size: auto auto;
+   background-clip: border-box;
+   background-size: 200% auto;
+   color: #fff;
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: textclip 4s linear infinite;
+}
+   
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+   
+#dibu {
+   filter: drop-shadow(1px 1px 2px black);
+   vertical-align: sub;
+}
