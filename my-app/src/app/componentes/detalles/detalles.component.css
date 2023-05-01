@@ -1,0 +1,98 @@
+/* bloque detalles */
+.detalles {
+  display:flexbox;
+  position: relative;
+  margin-top: 540px;
+  width:100%;
+  z-index: 1;
+  list-style-position: inside;
+}
+  
+/* bordes ondeados */
+.colour-block {
+  width: 100%;
+  background:#03f803;
+  padding:20px;
+  color:rgb(0, 0, 0);
+  box-shadow: 8px 23px 15px 0px black;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+  
+.colour-block p {
+  padding-top: 1%;
+  padding-left: 2%;
+}
+  
+.white-block {
+  width: 100%;
+  background:rgb(8,24,248);
+}
+  
+.scallop-down {
+  height:40px;
+  width:100%;
+  background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, 
+                              from(#03f803), color-stop(0.49, #03f803),
+                              color-stop(0.51, white),
+                              color-stop(0.55, rgb(0, 1, 12)), to(rgb(8,24,248)));
+  -webkit-background-size: 38px 100%;
+  background-size: 38px 100%;
+}
+  
+.scallop-up {
+  height:40px;
+  width:100%;
+  background: -webkit-gradient(radial, 50% 100%, 10, 50% 100%, 40, 
+                              from(#03f803), color-stop(0.49, #03f803), 
+                              color-stop(0.51, white),
+                              color-stop(0.55, rgb(8,24,248)), to(rgb(8,24,248)));
+  -webkit-background-size: 38px 100%;
+  background-size: 38px 100%;
+  box-shadow: 7px 35px 15px 0px black;
+}
+  
+.colour-block h2 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding-bottom: 15px;
+  font-weight: 900;
+  font-size:45px;
+  letter-spacing:0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 
+             4px 4px #fa50a5,
+             8px 8px 3px black;
+}
+  
+/*.colour-block h4 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding-bottom: 10px;
+  font-weight: 900;
+  font-size:35px;
+  letter-spacing:0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 
+             3px 3px #b665f8,
+             7px 7px 2px #016432;
+}*/
+
+.colour-block img {
+  float: left;
+}
+  
+/* laboral */
+  
+/* estudios */
+  
+/* habilidades */
+ 
+/* proyectos */
+  
+/* album fotos ajustes */
+  
