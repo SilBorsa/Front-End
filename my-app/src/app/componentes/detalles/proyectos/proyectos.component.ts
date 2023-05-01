@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MostrarService } from 'src/app/service/mostrar.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -8,7 +7,7 @@ import { MostrarService } from 'src/app/service/mostrar.service';
 })
 export class ProyectosComponent implements OnInit {
 
-  constructor(protected mostrarService: MostrarService) { }
+  constructor() { }
 
   ngOnInit(): void {
     
