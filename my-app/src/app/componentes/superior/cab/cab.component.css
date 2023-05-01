@@ -9,6 +9,24 @@
   border-radius: 15px 15px 0px 0px;
   box-shadow: 7px 7px 15px 0px black;
 }
+
+/* login */
+.editar{
+  position: relative;
+  align-items:start;
+  width: 100px;
+}
+   
+.editar img{
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  height: 100%;
+  /* float:right; */
+}
+   
+.editar img:hover{
+  filter:opacity(100%);
+  cursor: url("../../../../assets/llave.png"), pointer;
+}
    
 /* redes */
 .redes{
@@ -24,21 +42,4 @@
    
 .redes img:hover{
   filter:opacity(100%);
-}
-   
-/* login */
-.editar{
-  position: relative;
-  align-items:center;
-}
-   
-.editar img{
-  filter:grayscale(150%) brightness(2.5) opacity(85%);
-  height: 100%;
-  float:right;
-}
-   
-.editar img:hover{
-  filter:opacity(100%);
-  cursor: url("../../../../assets/llave.png"), pointer;
 }

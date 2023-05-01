@@ -26,9 +26,14 @@ export class CabComponent implements OnInit{
   tgmALT="mi telegram";
   logALT="solo para personas autorizadas";
 
+  mostrarLogin=false;
+
   constructor(protected mostrarLoginService: MostrarLoginService) { }
 
   ngOnInit(): void {
   }
 
+  abrirLogin() {
+    this.mostrarLogin = !this.mostrarLogin;
+  }
 }
