@@ -1,57 +1,79 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginUsuario } from 'src/app/modelo/login-usuario';
+import { AuthService } from 'src/app/service/auth.service';
 import { MostrarLoginService } from 'src/app/service/mostrar-login.service';
+import { TokenService } from 'src/app/service/token.service';
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit, OnDestroy{
+export class LoginComponent implements OnInit {
 
-  @Input() id?: string;
-  isOpen = false;
-  private element: any;
+    isLogged = false;
+    isLogginFail = false;
+    loginUsuario!: LoginUsuario;
+    nombreUsuario!: string;
+    pswUsuario!: string;
+    roles: string[] = [];
+    errMsj!: string;
 
-  constructor(private mostrarLoginService: MostrarLoginService, private el: ElementRef) {
-      this.element = el.nativeElement;
-  }
+    @Input() id?: string;
+    isOpen = false;
+    private element: any;
 
-  ngOnInit() {
-      // agrega el servicio para abrir cualquier componente emergente desde cualquier otro
-      this.mostrarLoginService.add(this);
+    constructor(private mostrarLoginService: MostrarLoginService,
+                private el: ElementRef,
+                private tokenService: TokenService,
+                private authService: AuthService,
+                private router: Router) {
+        this.element = el.nativeElement;
+    }
 
-      // uh esto me parece una cagada
-      document.body.appendChild(this.element);
+    ngOnInit() {
+    
+        // para el login
+        if (this.tokenService.getToken()) {
+            this.isLogged = true;
+            this.isLogginFail = false;
+            this.roles = this.tokenService.getAuthorities();
+        }
+    }
 
-      // cierra el emergente
-      this.element.addEventListener('click', (el: any) => {
-          if (el.target.className === 'popup') {
-              this.close();
-          }
-      });
-  }
+    open() {
+        this.element.style.display = 'block';
+        //document.body.classList.add('popup-open');
+        this.isOpen = true;
+    }
 
-  ngOnDestroy() {
-      // quita el componente del servicio
-      this.mostrarLoginService.remove(this);
+    close() {
+        this.element.style.display = 'none';
+        //document.body.classList.remove('popup-open');
+        this.isOpen = false;
+    }
 
-      // quita el componente del html
-      this.element.remove();
-  }
-
-  open() {
-      this.element.style.display = 'block';
-      document.body.classList.add('popup-open');
-      this.isOpen = true;
-  }
-
-  close() {
-      this.element.style.display = 'none';
-      document.body.classList.remove('popup-open');
-      this.isOpen = false;
-  }
+    onLogin(): void {
+        this.loginUsuario = new LoginUsuario(this.nombreUsuario,
+            this.pswUsuario);
+        this.authService.login(this.loginUsuario).subscribe(data => {
+            this.isLogged = true;
+            this.isLogginFail = false;
+            this.tokenService.setToken(data.token);
+            this.tokenService.setUserName(data.nombreUsuario);
+            this.tokenService.setAuthorities(data.authorities);
+            this.roles = data.authorities;
+            this.router.navigate(['']);
+        }, err => {
+            this.isLogged = false;
+            this.isLogginFail = true;
+            this.errMsj = err.error.mensaje;
+            console.log(this.errMsj);
+        })
+    }
 
 }
 

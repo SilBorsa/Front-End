@@ -1,19 +1,32 @@
-<div class="popup">
+<div class="modal-overlay">
+  <div class="popup">
   <div class="popup_body">
-    <button type="button" class="cerrarLogin" (click)="cerrar()">x</button>
-    <div class="titulo"><span>Login</span></div>
+      
+    <div class="titulo">
+      <span>Login</span>
+    </div>
 
-    <form action="#">
-      <div class="row">
-        <input type="text" placeholder="Usuario" required>
-      </div>
-      <div class="row">
-        <input type="pass" placeholder="Password" required>
-      </div>
-      <div class="row button">
-        <input type="submit" value="Entrar">
-      </div>
-    </form>
+    <div class="subtitulo">
+      <span>(solo personas autorizadas)</span>
+    </div>
+
+      <form #f="ngForm" (ngSubmit)="onLogin(); close()" novalidate>
+
+        <div class="row">
+          <input type="text" nombre="nombreUsuario" placeholder="Usuario" [(ngModel)]="nombreUsuario" required />
+        </div>
+
+        <div class="row">
+          <input type="password" nombre="pswUsuario" placeholder="Password" [(ngModel)]="pswUsuario" required />
+        </div>
+
+        <div class="botones">
+          <input type="submit" class="in" value="Entrar" />
+          <!-- <button type="button" class="cerrarLogin" (click)="close()">x</button> -->
+          <input type="button" class="out" value="Cerrar" (click)="close()" />
+        </div>
+      </form>
 
   </div>
+</div>
 </div>
