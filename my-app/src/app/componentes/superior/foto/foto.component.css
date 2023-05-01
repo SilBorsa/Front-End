@@ -1,0 +1,22 @@
+.foto{
+  display:flexbox;
+  float: right;
+  position:absolute;
+  /*margin-top: 1%;*/
+  right: 3%;
+  margin-top: 40px;
+  z-index: 5;
+  background-color:transparent;
+  border-radius: 150px;
+  box-shadow: 7px 7px 15px 0px black;
+}
+  
+.foto img{
+  border-radius: 150px;
+  filter:grayscale(100%);
+}
+  
+.foto img:hover{
+  filter:grayscale(0%);
+  cursor: url("../../../../assets/varita.png"), none;
+}
