@@ -1,0 +1,102 @@
+.popup {
+  display: block;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  width: 300px;
+  padding: 7px;
+  transform: translate(-50%, -50%);
+  background-color: #a820f7;
+  border: 1px solid #cccccc;
+  border-radius: 20px 0 20px 20px;
+  box-shadow: 7px 7px 15px 0px black;
+  z-index: 99;
+}
+
+.titulo {
+  height: 50px;
+  margin-bottom: 15px;
+  background: transparent;
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row input {
+  height: 100%;
+  width: 80%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.row input:focus {
+  border-color: #60037ce3;
+  box-shadow: inset 0px 0px 2px 2px #07c9faec;
+}
+
+.row input::placeholder {
+  color: rgb(119, 116, 116);
+}
+
+/*.pass {
+  margin: -8px 0 20px 0;
+}*/
+
+.button input {
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0;
+  background: #04b2dd;
+  border: 1px solid #0489f5;
+  box-shadow: 1px 1px 1px #60037ce3;
+  cursor: pointer;
+}
+
+.button input:hover{
+  background: #0cb7e2;
+  border: 1px solid #0489f5;
+  box-shadow: none;
+  color: rgb(70, 4, 114);
+  text-shadow: 1px 1px 2px white;
+}
+
+.cerrarLogin {
+  float: right;
+  width: 20px; 
+  color: #fff;
+  text-shadow: 1px 1px 2px black;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0;
+  background: #04b2dd;
+  border: 1px solid #0489f5;
+  box-shadow: 1px 1px 1px #60037ce3;
+  cursor: pointer;
+}
+
+.cerrarLogin:hover{
+  background: #0cb7e2;
+  border: 1px solid #045699;
+  box-shadow: none;
+  color: rgb(70, 4, 114);
+  text-shadow: 1px 1px 2px white;
+}
