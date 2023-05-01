@@ -12,9 +12,9 @@ export class MostrarLoginService {
 
     add(modal: LoginComponent) {
         // verifica que el componente tiene un unico id
-        if (!modal.id || this.modals.find(x => x.id === modal.id)) {
-            throw new Error('el id del componente no es unico');
-        }
+        //if (!modal.id || this.modals.find(x => x.id === modal.id)) {
+        //    throw new Error('el id del componente no es unico');
+        //}
 
         // agrega el componente a un array con popups activos
         this.modals.push(modal);
@@ -37,7 +37,7 @@ export class MostrarLoginService {
     }
 
     close() {
-        // close the modal that is currently open
+        // cierra el popup abierto
         const modal = this.modals.find(x => x.isOpen);
         modal?.close();
     }
