@@ -2,7 +2,7 @@
 
   <!-- abro subcapa editar -->
   <div class="editar">
-    <img src="{{logSRC}}" alt="{{logALT}}" (click)="abrirLogin()" height="" />
+    <img src="{{logSRC}}" alt="{{logALT}}" (click)="abrirModalLogin()" />
   </div>
   <!-- cierro editar -->
 
@@ -16,6 +16,6 @@
   <!-- cierro redes -->
 
   <!-- componente para login -->
-  <app-login id="verLogin" *ngIf="mostrarLogin"></app-login>
+  <app-login id="verLogin" ></app-login>
   
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MostrarLoginService } from 'src/app/service/mostrar-login.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-cab',
@@ -27,13 +29,26 @@ export class CabComponent implements OnInit{
   logALT="solo para personas autorizadas";
 
   mostrarLogin=false;
+  isLogged=false;
 
-  constructor(protected mostrarLoginService: MostrarLoginService) { }
+  constructor(protected mostrarLoginService: MostrarLoginService, private router: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    } else {
+      this.isLogged=false;
+    }
   }
 
-  abrirLogin() {
-    this.mostrarLogin = !this.mostrarLogin;
+  onLogOut(): void {
+    this.tokenService.logout();
+    window.location.reload();
   }
+
+  abrirModalLogin() {
+    document.body.classList.add('modal-open');
+    this.mostrarLoginService.abrirModalLogin();
+  }
+    
 }
