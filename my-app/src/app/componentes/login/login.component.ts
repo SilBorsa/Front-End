@@ -1,5 +1,6 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { LoginUsuario } from 'src/app/modelo/login-usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { MostrarLoginService } from 'src/app/service/mostrar-login.service';
@@ -12,7 +13,7 @@ import { TokenService } from 'src/app/service/token.service';
     styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
     isLogged = false;
     isLogginFail = false;
@@ -22,20 +23,19 @@ export class LoginComponent implements OnInit {
     roles: string[] = [];
     errMsj!: string;
 
-    @Input() id?: string;
-    isOpen = false;
-    private element: any;
+    abrirModalLogin=false;
+    private subscription: Subscription;
 
     constructor(private mostrarLoginService: MostrarLoginService,
-                private el: ElementRef,
                 private tokenService: TokenService,
                 private authService: AuthService,
                 private router: Router) {
-        this.element = el.nativeElement;
+        this.subscription = this.mostrarLoginService.abrirModalLogin$.subscribe(abrirModalLogin => {
+            this.abrirModalLogin = abrirModalLogin;
+          });
     }
 
     ngOnInit() {
-    
         // para el login
         if (this.tokenService.getToken()) {
             this.isLogged = true;
@@ -44,16 +44,13 @@ export class LoginComponent implements OnInit {
         }
     }
 
-    open() {
-        this.element.style.display = 'block';
-        //document.body.classList.add('popup-open');
-        this.isOpen = true;
+    cerrarModalLogin(){
+        document.body.classList.remove('modal-open');
+        this.mostrarLoginService.cerrarModalLogin();
     }
 
-    close() {
-        this.element.style.display = 'none';
-        //document.body.classList.remove('popup-open');
-        this.isOpen = false;
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 
     onLogin(): void {
