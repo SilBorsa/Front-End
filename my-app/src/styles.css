@@ -15,3 +15,7 @@ body {
   width: 1178px;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
