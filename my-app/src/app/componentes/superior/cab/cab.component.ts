@@ -20,7 +20,8 @@ export class CabComponent implements OnInit{
   pinSRC="../assets/pint.png";
   linSRC="../assets/lin.png";
   tgmSRC="../assets/tgm.png";
-  logSRC="../assets/login.png";
+  logInSRC = "../assets/login.png";
+  logOutSRC = "../assets/logout.png";
 
   fbALT="mi facebook";
   pinALT="mi pinterest";

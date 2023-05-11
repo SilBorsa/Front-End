@@ -2,7 +2,8 @@
 
   <!-- abro subcapa editar -->
   <div class="editar">
-    <img src="{{logSRC}}" alt="{{logALT}}" (click)="abrirModalLogin()" />
+    <img src="{{logInSRC}}" alt="{{logALT}}" (click)="abrirModalLogin()" *ngIf="!isLogged" />
+    <img src="{{logOutSRC}}" alt="{{logALT}}" (click)="onLogOut()" *ngIf="isLogged" />
   </div>
   <!-- cierro editar -->
 
