@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
-import { NgCircleProgressModule } from 'ng-circle-progress';
+import { interceptorProvider } from './service/interceptor-service.service';
 
 import { AppComponent } from './app.component';
 import { PieComponent } from './componentes/pie/pie.component';
@@ -22,7 +22,7 @@ import { HabilidadesComponent } from './componentes/detalles/habilidades/habilid
 import { ProyectosComponent } from './componentes/detalles/proyectos/proyectos.component';
 import { FotosajustesComponent } from './componentes/detalles/proyectos/fotosajustes/fotosajustes.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { AlbumComponent } from './componentes/detalles/album/album.component';
+
 
 
 @NgModule({
@@ -41,25 +41,19 @@ import { AlbumComponent } from './componentes/detalles/album/album.component';
     ProyectosComponent,
     FotosajustesComponent,
     HomeComponent,
-    LoginComponent,
-    AlbumComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     EmojiModule,
-    NgCircleProgressModule.forRoot({
-      radius: 100,
-      outerStrokeWidth: 16,
-      innerStrokeWidth: 8,
-      outerStrokeColor: "#78C000",
-      innerStrokeColor: "#C7E596",
-      animationDuration: 300,
-    }),
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
