@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LoginUsuario } from 'src/app/modelo/login-usuario';
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     isLogginFail = false;
     loginUsuario!: LoginUsuario;
     nombreUsuario!: string;
-    pswUsuario!: string;
+    password!: string;
     roles: string[] = [];
     errMsj!: string;
 
@@ -54,8 +54,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     onLogin(): void {
-        this.loginUsuario = new LoginUsuario(this.nombreUsuario,
-            this.pswUsuario);
+        this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
         this.authService.login(this.loginUsuario).subscribe(data => {
             this.isLogged = true;
             this.isLogginFail = false;
