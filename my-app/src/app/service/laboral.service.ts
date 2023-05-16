@@ -7,7 +7,7 @@ import { Laboral } from '../modelo/laboral';
   providedIn: 'root'
 })
 export class LaboralService {
-  expURL = "http://localhost:8080/expLab"
+  expURL = "http://localhost:8080/lab/"
   
   constructor(private httpClient: HttpClient) { }
 
