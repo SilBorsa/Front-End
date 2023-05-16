@@ -3,11 +3,11 @@ import { Persona } from 'src/app/modelo/persona.model';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
-  selector: 'app-resumen',
-  templateUrl: './resumen.component.html',
+  selector: 'app-resu-editar',
+  templateUrl: './resu-editar.component.html',
   styleUrls: ['./resumen.component.css']
 })
-export class ResumenComponent implements OnInit {
+export class ResuEditarComponent implements OnInit {
 
   persona: Persona = new Persona("","","");
 
