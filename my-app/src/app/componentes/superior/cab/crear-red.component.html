@@ -2,7 +2,7 @@
 
   <!-- abro subcapa editar -->
   <div class="editar">
-    <img src="../../../../assets/login.png" alt="{{logALT}}" (click)="abrirModalLogin()" *ngIf="!isLogged" />
+    <img src="../../../../assets/logout.png" alt="{{logALT}}" (click)="onLogOut()" *ngIf="isLogged" />
   </div>
   <!-- cierro editar -->
 
@@ -15,7 +15,4 @@
   </div>
   <!-- cierro redes -->
 
-  <!-- componente para login -->
-  <app-login id="verLogin" ></app-login>
-  
 </div>

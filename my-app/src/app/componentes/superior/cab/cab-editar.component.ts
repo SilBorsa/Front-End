@@ -4,12 +4,12 @@ import { MostrarLoginService } from 'src/app/service/mostrar-login.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
-  selector: 'app-cab',
-  templateUrl: './cab.component.html',
+  selector: 'app-cab-editar',
+  templateUrl: './cab-editar.component.html',
   styleUrls: ['./cab.component.css']
 })
 
-export class CabComponent implements OnInit{
+export class CabEditarComponent implements OnInit{
 
   fbURL="https://www.facebook.com/Tobias.te.amo";
   pinURL="https://ar.pinterest.com/silborsa";
