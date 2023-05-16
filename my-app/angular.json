@@ -58,6 +58,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          
+          "options": {
+            "browserTarget": "my-app:build",
+            "proxyConfig": "proxy.conf.json"
+          },
+          
           "configurations": {
             "production": {
               "browserTarget": "mi-portfolio:build:production"
