@@ -40,4 +40,25 @@
        <li>Data entry.</li>
        <li>Atenci&oacute;n al p&uacute;blico.</li>
     </ul>  -->
+<table class="table">
+  <tbody>
+    <tr *ngFor="let Laboral of lab">
+      <!-- <td>
+      <p>
+        <a href="{{Laboral.urlEmpresa}}" target="_blank" rel="noopener">
+          <img src="{{Laboral.url_imgLab}}" alt="" />
+        </a> <i>"{{Laboral.periodoEmpresa}}"</i>
+      </p>
+        "{{Laboral.descEmpresa}}"
+      </td> -->
+      <td>{{Laboral.url_imgLab}}</td>
+      <td>{{Laboral.nombreEmpresa}}</td>
+      <td>{{Laboral.periodoEmpresa}}</td>
+      <td>{{Laboral.descEmpresa}}</td>
+      <td>Editar</td>
+      <td>Borrar</td>
+    </tr>
+  </tbody>
+</table>
+
 </div>
