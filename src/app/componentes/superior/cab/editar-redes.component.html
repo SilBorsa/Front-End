@@ -6,11 +6,12 @@
         <span>MIS REDES</span>
       </div>
       <div class="botones">
-        <input type="button" class="out" value=" x " (click)="cerrarMostrarRedes()">
+        <img src="../../../../assets/mas.png" alt="agregar" class="boton" />
+        <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarRedes()" />
       </div>
     </div>
     <div class="popup_body">
-      <table class="table table-hover">
+      <table class="miTabla">
         <thead>
           <tr>
             <th scope="col">idRed</th>
@@ -18,8 +19,8 @@
             <th scope="col">nombreRed</th>
             <th scope="col">urlRed</th>
             <th scope="col">url_imgRed</th>
-            <th scope="col">editar</th>
-            <th scope="col">eliminar</th>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
           </tr>
         </thead>
         <tbody>
@@ -29,8 +30,8 @@
             <td>texto</td>
             <td>direccion web</td>
             <td>direccion web img</td>
-            <td>boton</td>
-            <td>boton</td>
+            <td><img src="../../../../assets/save.png" alt="save1" class="boton" /></td>
+            <td><img src="../../../../assets/borrar.png" alt="borrar1" class="boton" /></td>
           </tr>
         </tbody>
       </table>

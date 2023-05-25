@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 //import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { Redes } from 'src/app/modelo/redes';
 import { MostrarRedesService } from 'src/app/service/mostrar-redes.service';
+import { RedService } from 'src/app/service/red.service';
 
 @Component({
   selector: 'app-editar-redes',
@@ -10,11 +12,13 @@ import { MostrarRedesService } from 'src/app/service/mostrar-redes.service';
 })
 
 export class EditarRedesComponent implements OnInit, OnDestroy{
+  redes: Redes[] = [];
 
   abrirMostrarRedes=false;
   private subscription: Subscription;
 
   constructor(private mostrarRedesService: MostrarRedesService,
+              private redService: RedService,
               //private router: Router
               ) {
       this.subscription = this.mostrarRedesService.abrirMostrarRedes$.subscribe(abrirMostrarRedes => {
@@ -23,6 +27,7 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
 }
 
   ngOnInit(): void {
+    this.redService.listarRedes().subscribe(redes => this.redes = redes);
   }
   
   ngOnDestroy(): void {
