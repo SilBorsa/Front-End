@@ -6,34 +6,56 @@
         <span>MIS REDES</span>
       </div>
       <div class="botones">
-        <img src="../../../../assets/mas.png" alt="agregar" class="boton" />
+        <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
         <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarRedes()" />
       </div>
     </div>
     <div class="popup_body">
-      <table class="miTabla">
+      <div id="miTabla" class="table table-responsive-sm">
+        <table >
         <thead>
           <tr>
-            <th scope="col">idRed</th>
-            <th scope="col">idPersona</th>
-            <th scope="col">nombreRed</th>
-            <th scope="col">urlRed</th>
-            <th scope="col">url_imgRed</th>
-            <th scope="col"> </th>
-            <th scope="col"> </th>
+            <th width="15">idPer</th>
+            <th width="15">idRed</th>
+            <th width="100">Red</th>
+            <th width="300">Perfil (URL)</th>
+            <th width="300">Logo (URL)</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>numero</td>
-            <td>numero</td>
-            <td>texto</td>
-            <td>direccion web</td>
-            <td>direccion web img</td>
-            <td><img src="../../../../assets/save.png" alt="save1" class="boton" /></td>
-            <td><img src="../../../../assets/borrar.png" alt="borrar1" class="boton" /></td>
+            <td>1</td>
+            <td>1</td>
+            <td *ngIf="!celdaEditable">Facebook </td>
+              <td contenteditable="true" *ngIf="celdaEditable" class="celda">Facebook</td>
+            
+            <td *ngIf="!celdaEditable">https://www.facebook.com/Tobias.Te.Amo</td>
+              <td contenteditable="true" *ngIf="celdaEditable" class="celda">https://www.facebook.com/Tobias.Te.Amo</td>
+
+            <td *ngIf="!celdaEditable">https://www.dominio.com/imgs/facebook.png</td>
+              <td contenteditable="true" *ngIf="celdaEditable" class="celda">https://www.dominio.com/imgs/facebook.png</td>
+
+            <td><img src="../../../../assets/editar.png" alt="editar" class="boton" *ngIf="!celdaEditable" (click)="editarCelda()"/>
+                <img src="../../../../assets/save.png" alt="guardar" class="boton" *ngIf="celdaEditable"/>
+
+                <img src="../../../../assets/borrar.png" alt="borrar" class="boton" *ngIf="!celdaEditable"/>
+                <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" *ngIf="celdaEditable" (click)="noEditar()"/></td>
+          </tr>
+
+          
+          <!-- fila oculta para agregar registros -->
+          <tr *ngIf="filaVisible">
+            <td name="idPersona"></td>
+            <td name="idRed"></td>
+            <td contenteditable="true" name="nombreRed" class="celda"></td>
+            <td contenteditable="true" name="urlRed" class="celda"></td>
+            <td contenteditable="true" name="url_imgRed" class="celda"></td>
+            <td><img src="../../../../assets/save.png" alt="guardar" class="boton" />
+                <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" /></td>
           </tr>
         </tbody>
       </table>
     </div>
+  </div>
 </div>

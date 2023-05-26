@@ -12,6 +12,8 @@ import { RedService } from 'src/app/service/red.service';
 })
 
 export class EditarRedesComponent implements OnInit, OnDestroy{
+  filaVisible: boolean = false;
+  celdaEditable: boolean = false;
   redes: Redes[] = [];
 
   abrirMostrarRedes=false;
@@ -21,21 +23,39 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
               private redService: RedService,
               //private router: Router
               ) {
-      this.subscription = this.mostrarRedesService.abrirMostrarRedes$.subscribe(abrirMostrarRedes => {
-        this.abrirMostrarRedes = abrirMostrarRedes;
-});
+      this.subscription = this.mostrarRedesService.abrirMostrarRedes$
+          .subscribe(abrirMostrarRedes => {
+              this.abrirMostrarRedes = abrirMostrarRedes;
+          });
 }
 
   ngOnInit(): void {
-    this.redService.listarRedes().subscribe(redes => this.redes = redes);
+    this.redService.listarRedes()
+      .subscribe(redes => this.redes = redes);
   }
   
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  cerrarMostrarRedes(){
+  cerrarMostrarRedes() {
     document.body.classList.remove('modal-open');
     this.mostrarRedesService.cerrarMostrarRedes();
+  }
+
+  mostrarFila(): void {
+    this.filaVisible = true;
+  }
+
+  cancelarAgregar(): void {
+    this.filaVisible = false;
+  }
+
+  editarCelda(): void {
+    this.celdaEditable = true;
+  }
+
+  noEditar(): void {
+    this.celdaEditable = false;
   }
 }
