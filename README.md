@@ -10,3 +10,5 @@ Todavia no decido si ponerle un menu.
 
 Cambie el diseño unas 4 veces, pero creo que este es el que finalmente va a quedar,
 entre otras cosas, por una cuestion de tiempo.
+
+La version de mayo introduce formularios modales para la edicion de los contenidos
