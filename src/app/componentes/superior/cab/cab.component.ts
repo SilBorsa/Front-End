@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { MostrarLoginService } from 'src/app/service/mostrar-login.service';
 import { MostrarRedesService } from 'src/app/service/mostrar-redes.service';
@@ -39,7 +39,7 @@ export class CabComponent implements OnInit{
 
   constructor(protected mostrarLoginService: MostrarLoginService,
               protected mostrarRedesService: MostrarRedesService, 
-              //private router: Router, 
+              private router: Router, 
               private tokenService: TokenService) { }
 
   ngOnInit(): void {
@@ -47,7 +47,7 @@ export class CabComponent implements OnInit{
       this.isLogged=true;
     } else {
       this.isLogged=false;
-    }
+      }
   }
 
   onLogOut(): void {

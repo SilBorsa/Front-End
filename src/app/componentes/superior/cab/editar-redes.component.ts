@@ -12,9 +12,19 @@ import { RedService } from 'src/app/service/red.service';
 })
 
 export class EditarRedesComponent implements OnInit, OnDestroy{
-  filaVisible: boolean = false;
-  celdaEditable: boolean = false;
+  idRed?: number; 
+  idPersona: number = 1;
+  nombreRed: string = '';
+  urlRed: string = '';
+  url_imgRed: string = '';
   redes: Redes[] = [];
+
+  filaVisible: boolean = false; /* asociado a la creacion de registros */
+  redCreada: Redes = new Redes(1,"","","");
+  filaEditable: boolean = false; /* asociado a la edicion de regsitros */
+  redEditada: Redes = new Redes(1,"","","");
+
+  errMsj!: string;
 
   abrirMostrarRedes=false;
   private subscription: Subscription;
@@ -24,9 +34,7 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
               //private router: Router
               ) {
       this.subscription = this.mostrarRedesService.abrirMostrarRedes$
-          .subscribe(abrirMostrarRedes => {
-              this.abrirMostrarRedes = abrirMostrarRedes;
-          });
+          .subscribe(abrirMostrarRedes => { this.abrirMostrarRedes = abrirMostrarRedes; });
 }
 
   ngOnInit(): void {
@@ -43,19 +51,70 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
     this.mostrarRedesService.cerrarMostrarRedes();
   }
 
+  /* muestra el formulario de carga */
   mostrarFila(): void {
     this.filaVisible = true;
   }
 
+  /* oculta el formulario de carga */
   cancelarAgregar(): void {
     this.filaVisible = false;
   }
 
-  editarCelda(): void {
-    this.celdaEditable = true;
+  /* guarda los cambios del registro modificado */
+  actualizarFila() {
+    if (this.redEditada && this.redEditada.idRed) {
+      this.redService.updateRed(this.redEditada.idRed, this.redEditada)
+        .subscribe(response => {
+          this.redService.listarRedes().subscribe(redes => this.redes = redes);
+          alert(`Se actualizaron los datos de ${this.redEditada.nombreRed}.`);
+          this.filaEditable = false;
+        }, error => {
+        alert(`Los datos de ${this.redEditada.nombreRed} no se pudieron modificar.`);
+      });
+    }
   }
 
+  /* oculta campos de edicion para el registro seleccionado */
   noEditar(): void {
-    this.celdaEditable = false;
+    this.filaEditable = false;
+  }
+
+  /* muestra campos de edicion para el registro seleccionado */
+  editarFila(red: Redes) {
+    this.filaEditable = true;
+    this.redEditada = {...red};
+  }
+  
+  /* elimina el registro seleccionado */
+  borrarRed(idRed?: number) {
+    if(idRed!=undefined){
+      const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar la red con id ${idRed}?`);
+      if(confirmarEliminacion) {
+        this.redService.deleteRed(idRed)
+          .subscribe(response => {
+            alert('Se ha eliminado la red');
+            this.redService.listarRedes();
+          }, error => {
+            alert('No se pudo eliminar la red');
+          });
+      } else {
+        alert('Eliminacion cancelada por el usuario');
+      }
+    }
+  }
+
+  /* guarda el registro creado */
+  guardarRed(red: Redes) {
+    const miRed = new Redes(this.redCreada.idPersona,
+                            this.redCreada.nombreRed,
+                            this.redCreada.urlRed,
+                            this.redCreada.url_imgRed)
+    this.redService.saveRed(miRed)
+    .subscribe(response => {
+      alert(`Se ha agregado ${this.redCreada.nombreRed}`);
+      this.redService.listarRedes();
+      this.filaEditable = false;
+    });
   }
 }
