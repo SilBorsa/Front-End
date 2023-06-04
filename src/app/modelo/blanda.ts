@@ -1,4 +1,4 @@
-export class Blandas {
+export class Blanda {
     idPersona:number;
     idBlanda?: number;
     nombreBlanda: string;

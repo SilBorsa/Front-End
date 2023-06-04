@@ -1,4 +1,4 @@
-export class Estudios {
+export class Estudio {
     idPersona:number;
     idEstudio?: number;
     nombreInstituto: string;

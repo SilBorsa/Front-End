@@ -1,4 +1,4 @@
-export class Duras {
+export class Dura {
     idPersona:number;
     idDura?: number;
     nombreDura: string;
