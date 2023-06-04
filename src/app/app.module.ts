@@ -27,7 +27,7 @@ import { PieComponent } from './componentes/pie/pie.component';
 
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { HomeEditComponent } from './componentes/home/home-edit.component';
+import { AlertaEdicionComponent } from './componentes/alerta-edicion/alerta-edicion.component';
 
 @NgModule({
   declarations: [
@@ -49,8 +49,8 @@ import { HomeEditComponent } from './componentes/home/home-edit.component';
     PieComponent,
 
     HomeComponent,
-    HomeEditComponent,
-    LoginComponent
+    LoginComponent,
+    AlertaEdicionComponent
   ],
   imports: [
     BrowserModule,
