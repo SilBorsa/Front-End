@@ -14,7 +14,7 @@
   position: fixed;
   top: 10%;
   left: 5%;
-  width: 900px;
+  width: 950px;
   height: 500px;
   padding: 15px;
   background-color: #a820f7;
@@ -35,38 +35,59 @@
   justify-content: center;
   background: transparent;
   color: #fff;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px rgb(71, 2, 99);
   font-size: 24px;
   font-weight: bold;
-}
-
-.botones {
-  display:flex;
-  width: 40px;
-}
-
-.out {
-  color: #fff;
-  width: 25px;
-  height: 25px;
-  text-shadow: 1px 1px 2px black;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 0;
-  background: #04b2dd;
-  border: 1px solid #ffffff;
-  box-shadow: 1px 1px 2px #60037ce3;
-  cursor: pointer;
-}
-
-.botones input:hover{
-  background: #0cb7e2;
-  border: 1px solid #63048f;
-  box-shadow: none;
-  color: rgb(70, 4, 114);
-  text-shadow: 1px 1px 2px white;
+  z-index: 1;
 }
 
 .popup_body {
   font-size: medium;
+  margin-top: 20px;
 }
+
+.botones {
+  display: inline-flex;
+  z-index: 2;
+}
+
+.boton {
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  height: 40px;
+  padding: 2px 3px 5px 3px;
+}
+
+.boton:hover{
+  filter:opacity(100%);
+}
+
+#miTabla, #miCarga {
+  display:grid;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  width: 900px;
+  position: relative;
+  box-shadow: 1px 1px 1px 2px rgb(89, 2, 100);
+  font-size: small;
+}
+
+#miTabla {
+  background-color: rgb(156, 239, 250);
+}
+
+#miCarga {
+  background-color: rgb(240, 241, 165);
+}
+
+th {
+  text-align: center;
+}
+
+.celda {
+  background-color: #f0c9fc;
+  border: 1px dotted rgb(117, 116, 119);
+  box-shadow: inset 0 0 5px rgba(117, 116, 119, 0.822);
+  padding: 2px;
+}
+

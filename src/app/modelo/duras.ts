@@ -5,17 +5,17 @@ export class Duras {
     porcentaje: number;
     num: number;
     giro: number;
-    color: string;
+    colorDura: string;
 
     constructor (idPersona: number, 
                  nombreDura: string, 
                  porcentaje: number, 
-                 color: string) {
+                 colorDura: string) {
         this.idPersona = idPersona;
         this.nombreDura = nombreDura;
         this.porcentaje = porcentaje;
         this.num = (440 - 440 * porcentaje / 100);
         this.giro = (3.6 * porcentaje);
-        this.color = color;
+        this.colorDura = colorDura;
     }
 }

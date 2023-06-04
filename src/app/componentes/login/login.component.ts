@@ -1,6 +1,6 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 import { LoginUsuario } from 'src/app/modelo/login-usuario';
@@ -16,7 +16,6 @@ import { TokenService } from 'src/app/service/token.service';
 })
 
 export class LoginComponent implements OnInit, OnDestroy { 
-
     isLogged = false;
     isLogginFail = false;
     loginUsuario!: LoginUsuario;
@@ -30,8 +29,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     constructor(private mostrarLoginService: MostrarLoginService,
                 private tokenService: TokenService,
-                private authService: AuthService,
-                private router: Router) {
+                private authService: AuthService) {   //,
+                //private router: Router) {
         this.subscription = this.mostrarLoginService.abrirModalLogin$.subscribe(abrirModalLogin => {
             this.abrirModalLogin = abrirModalLogin;
           });
@@ -69,7 +68,8 @@ export class LoginComponent implements OnInit, OnDestroy {
             this.tokenService.setUserName(data.nombreUsuario);
             this.tokenService.setAuthorities(data.authorities);
             this.roles = data.authorities;
-            this.router.navigate(['']);
+            //this.router.navigate(['']);
+            window.location.reload();
         }, err => {
             this.isLogged = false;
             this.isLogginFail = true;

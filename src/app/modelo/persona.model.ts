@@ -1,14 +1,23 @@
 export class Persona {
     idPersona?: number;
-    nombre: string;
-    apellido: string;
-    url_img: string;
+    nombrePersona: string;
+    apellidoPersona: string;
+    emailPersona: string;
+    celuPersona: string;
+    acercaPersona: string;
+    url_imgPersona: string;
 
-    constructor(nombre: string, 
-                apellido: string, 
-                url_img: string) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.url_img = url_img;
+    constructor(nombrePersona: string, 
+                apellidoPersona: string, 
+                emailPersona: string,
+                celuPersona: string,
+                acercaPersona: string,
+                url_imgPersona: string) {
+        this.nombrePersona = nombrePersona;
+        this.apellidoPersona = apellidoPersona;
+        this.emailPersona = emailPersona;
+        this.celuPersona = celuPersona;
+        this.acercaPersona = acercaPersona;
+        this.url_imgPersona = url_imgPersona;
     }
 }

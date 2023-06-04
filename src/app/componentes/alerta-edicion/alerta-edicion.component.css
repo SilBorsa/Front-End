@@ -1,0 +1,23 @@
+@keyframes titileo {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+#alerta-flotante {
+    position: fixed;
+    z-index: 99;
+    top: 5px;
+    left: 10px;
+    width: 800px;
+    height: 20px;
+    background-color: transparent;
+    padding: 5px 10px;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF,
+                 0 0 20px #49FF18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    color: rgb(252, 7, 7);
+    animation: titileo 1s infinite;
+}

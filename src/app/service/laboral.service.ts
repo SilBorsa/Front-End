@@ -11,23 +11,23 @@ export class LaboralService {
   
   constructor(private httpClient: HttpClient) { }
 
-  public lista(): Observable<Laboral[]> {
+  public listarLab(): Observable<Laboral[]> {
     return this.httpClient.get<Laboral[]>(this.expURL + 'listarLab');
   }
 
-  public detail(idLaboral: number): Observable<Laboral> {
-    return this.httpClient.get<Laboral>(this.expURL + 'detail/${idLaboral}');
+  public detailLab(idLaboral: number): Observable<Laboral> {
+    return this.httpClient.get<Laboral>(this.expURL + 'detailLab/${idLaboral}');
   }
 
-  public save(laboral: Laboral): Observable<any>{
+  public saveLab(laboral: Laboral): Observable<any>{
     return this.httpClient.post<any>(this.expURL + 'crearLab', laboral);
   }
 
-  public update(idLaboral: number, laboral: Laboral): Observable<any>{
+  public updateLab(idLaboral: number, laboral: Laboral): Observable<any>{
     return this,this.httpClient.put<any>(this.expURL + 'editar/${idLaboral}', laboral);
   }
 
-  public delete(idLaboral: number): Observable<any>{
+  public deleteLab(idLaboral: number): Observable<any>{
     return this.httpClient.delete<any>(this.expURL + 'borrar/${idLaboral}');
   }
 

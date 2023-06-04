@@ -11,23 +11,23 @@ export class EstudioService {
   
   constructor(private httpClient: HttpClient) { }
 
-  public lista(): Observable<Estudios[]> {
+  public listarEdu(): Observable<Estudios[]> {
     return this.httpClient.get<Estudios[]>(this.eduURL + 'listarEdu');
   }
 
-  public detail(idEstudio: number): Observable<Estudios> {
-    return this.httpClient.get<Estudios>(this.eduURL + 'detail/${idEstudio}');
+  public detailEdu(idEstudio: number): Observable<Estudios> {
+    return this.httpClient.get<Estudios>(this.eduURL + 'detailEdu/${idEstudio}');
   }
 
-  public save(estudios: Estudios): Observable<any>{
+  public saveEdu(estudios: Estudios): Observable<any>{
     return this.httpClient.post<any>(this.eduURL + 'crearEdu', estudios);
   }
 
-  public update(idEstudio: number, estudios: Estudios): Observable<any>{
+  public updateEdu(idEstudio: number, estudios: Estudios): Observable<any>{
     return this,this.httpClient.put<any>(this.eduURL + 'editarEdu/${idEstudio}', estudios);
   }
 
-  public delete(idEstudio: number): Observable<any>{
+  public deleteEdu(idEstudio: number): Observable<any>{
     return this.httpClient.delete<any>(this.eduURL + 'borrarEdu/${idEstudio}');
   }
 
