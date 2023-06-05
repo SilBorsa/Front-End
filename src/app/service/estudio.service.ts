@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Estudios } from '../modelo/estudios';
+import { Estudio } from '../modelo/estudio';
 
 @Injectable({
   providedIn: 'root'
@@ -11,24 +11,24 @@ export class EstudioService {
   
   constructor(private httpClient: HttpClient) { }
 
-  public listarEdu(): Observable<Estudios[]> {
-    return this.httpClient.get<Estudios[]>(this.eduURL + 'listarEdu');
+  public listarEdu(): Observable<Estudio[]> {
+    return this.httpClient.get<Estudio[]>(this.eduURL + `listarEdu`);
   }
 
-  public detailEdu(idEstudio: number): Observable<Estudios> {
-    return this.httpClient.get<Estudios>(this.eduURL + 'detailEdu/${idEstudio}');
+  public detailEdu(idEstudio: number): Observable<Estudio> {
+    return this.httpClient.get<Estudio>(this.eduURL + `detailEdu/${idEstudio}`);
   }
 
-  public saveEdu(estudios: Estudios): Observable<any>{
-    return this.httpClient.post<any>(this.eduURL + 'crearEdu', estudios);
+  public saveEdu(estudio: Estudio): Observable<any>{
+    return this.httpClient.post<any>(this.eduURL + `crearEdu`, estudio);
   }
 
-  public updateEdu(idEstudio: number, estudios: Estudios): Observable<any>{
-    return this,this.httpClient.put<any>(this.eduURL + 'editarEdu/${idEstudio}', estudios);
+  public updateEdu(idEstudio: number, estudio: Estudio): Observable<any>{
+    return this,this.httpClient.put<any>(this.eduURL + `editarEdu/${idEstudio}`, estudio);
   }
 
   public deleteEdu(idEstudio: number): Observable<any>{
-    return this.httpClient.delete<any>(this.eduURL + 'borrarEdu/${idEstudio}');
+    return this.httpClient.delete<any>(this.eduURL + `borrarEdu/${idEstudio}`);
   }
 
 }
