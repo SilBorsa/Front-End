@@ -1,0 +1,31 @@
+<div class="cab">
+
+  <!-- abro subcapa editar -->
+  <div class="entrar">
+    <img src="{{logInSRC}}" alt="{{logALT}}" (click)="abrirModalLogin()" *ngIf="!isLogged" />
+    <img src="{{logOutSRC}}" alt="{{logALT}}" (click)="onLogOut()" *ngIf="isLogged" />
+  </div>
+  <!-- cierro editar -->
+
+  <!-- abro subcapa redes -->
+  <div class="redes">
+    <a href="{{fbURL}}" target="_blank" rel="noopener"><img src="{{fbSRC}}" alt="{{fbALT}}" /></a>
+    <a href="{{pinURL}}" target="_blank" rel="noopener"><img src="{{pinSRC}}" alt="{{pinALT}}" /></a>
+    <a href="{{linURL}}" target="_blank" rel="noopener"><img src="{{linSRC}}" alt="{{linALT}}" /></a>
+    <a href="{{tgmURL}}" target="_blank" rel="noopener"><img src="{{tgmSRC}}" alt="{{tgmALT}}" /></a>
+  </div>
+  <!-- cierro redes -->
+
+  <!-- abro subcapa para modificaciones -->
+  <div class="editar">
+    <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarRedes()" *ngIf="isLogged" />
+  </div>
+  <!-- cierro subcapa para modificaciones -->
+
+  <!-- componente para login -->
+  <app-login id="verLogin"></app-login>
+
+  <!-- componente para editar las redes -->
+  <app-editar-redes id="verRedes"></app-editar-redes>
+  
+</div>

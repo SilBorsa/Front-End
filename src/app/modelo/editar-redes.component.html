@@ -1,0 +1,90 @@
+<div class="modal-redes" *ngIf="abrirMostrarRedes">
+  <div class="popup">
+
+    <div class="popup_top">
+      <div class="titulo">
+        <span>MIS REDES</span>
+      </div>
+      <div class="botones">
+        <!--boton para mostrar el formulario de carda-->
+        <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
+        <!--boton para cerrar este componente modal-->
+        <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarRedes()" />
+      </div>
+    </div>
+    <div class="popup_body">
+      <div id="miTabla" class="table table-responsive-sm">
+        <table>
+          <thead>
+            <tr>
+              <th width="15">idPer</th>
+              <th width="15">idRed</th>
+              <th width="100">Red</th>
+              <th width="300">Perfil (URL)</th>
+              <th width="300">Logo (URL)</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let red of redes">
+              <td width="15">{{red.idPersona}}</td>
+              <td width="15">{{red.idRed}}</td>
+              <td width="100" *ngIf="!filaEditable">{{red.nombreRed}}</td>
+              <td width="100" *ngIf="filaEditable && red.idRed === redEditada.idRed">
+                  <input type="text" size="15" [(ngModel)]="redEditada.nombreRed" /></td>
+              <td width="300" *ngIf="!filaEditable">{{red.urlRed}}</td>
+              <td width="300" *ngIf="filaEditable && red.idRed === redEditada.idRed">
+                  <input type="text" size="45" [(ngModel)]="redEditada.urlRed" /></td>
+              <td width="300" *ngIf="!filaEditable">{{red.url_imgRed}}</td>
+              <td width="300" *ngIf="filaEditable && red.idRed === redEditada.idRed">
+                  <input type="text" size="43" [(ngModel)]="redEditada.url_imgRed"></td>
+              <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                  <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(red)" />
+                  <!--boton para eliminar un registro particular-->
+                  <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarRed(red.idRed)"/></td>                
+              <td *ngIf="filaEditable && red.idRed === redEditada.idRed"><!--boton para guardar los cambios-->
+                  <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                  <!--boton para cancelar cambios-->
+                  <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+      </div>
+      <br>
+      <!-- form oculto para agregar registros -->
+      <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+        <br>
+        <table>
+          <thead>
+            <tr>
+              <th width="15">idPer</th>
+              <th width="15">idRed</th>
+              <th width="100">Red</th>
+              <th width="300">Perfil (URL)</th>
+              <th width="300">Logo (URL)</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6">
+                <!-- <form #myForm="ngForm" novalidate (ngSubmit)="guardarRed()"> -->
+                  <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="redCreada.idPersona" required />
+                  <input type="text" size="2" name="idRed" placeholder="idRed" />
+                  <input type="text" size="20" name="nombreRed" placeholder="nombreRed" [(ngModel)]="redCreada.nombreRed" required />
+                  <input type="text" size="40" name="urlRed" placeholder="urlRed" [(ngModel)]="redCreada.urlRed" required />
+                  <input type="text" size="40" name="url_imgRed" placeholder="url_imgRed" [(ngModel)]="redCreada.url_imgRed" required />
+                  <!--boton para guardar el nuevo registro-->
+                  <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarRed(redCreada)" />
+                  <!--boton para cancelar la creacion de un nuevo registro-->
+                  <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
+                <!-- </form> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
