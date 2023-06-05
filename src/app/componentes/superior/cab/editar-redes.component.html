@@ -43,7 +43,7 @@
                   <!--boton para eliminar un registro particular-->
                   <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarRed(red.idRed)"/></td>                
               <td *ngIf="filaEditable && red.idRed === redEditada.idRed"><!--boton para guardar los cambios-->
-                  <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="actualizarFila()">
+                  <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
                   <!--boton para cancelar cambios-->
                   <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
             </tr>

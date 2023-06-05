@@ -70,7 +70,7 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
           alert(`Se actualizaron los datos de ${this.redEditada.nombreRed}.`);
           this.filaEditable = false;
         }, error => {
-        alert(`Los datos de ${this.redEditada.nombreRed} no se pudieron modificar.`);
+        alert(`Los datos de ${this.redEditada.nombreRed} no pudieron modificarse.`);
       });
     }
   }
@@ -89,14 +89,14 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
   /* elimina el registro seleccionado */
   borrarRed(idRed?: number) {
     if(idRed!=undefined){
-      const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar la red con id ${idRed}?`);
+      const confirmarEliminacion = confirm('¿Seguro que quieres eliminar la red con id ${idRed}?');
       if(confirmarEliminacion) {
         this.redService.deleteRed(idRed)
           .subscribe(response => {
             alert('Se ha eliminado la red');
             this.redService.listarRedes();
           }, error => {
-            alert('No se pudo eliminar la red');
+            alert('No pudo eliminarse la red');
           });
       } else {
         alert('Eliminacion cancelada por el usuario');
@@ -113,8 +113,11 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
     this.redService.saveRed(miRed)
     .subscribe(response => {
       alert(`Se ha agregado ${this.redCreada.nombreRed}`);
-      this.redService.listarRedes();
+      this.redCreada.nombreRed='';
+      this.redCreada.urlRed='';
+      this.redCreada.url_imgRed='';
       this.filaEditable = false;
+      this.redService.listarRedes();
     });
   }
 }

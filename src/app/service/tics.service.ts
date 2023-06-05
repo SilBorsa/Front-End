@@ -12,23 +12,23 @@ export class TicsService {
   constructor(private httpClient: HttpClient) { }
 
   public listarTic(): Observable<Tics[]> {
-    return this.httpClient.get<Tics[]>(this.ticURL + 'listarTic');
+    return this.httpClient.get<Tics[]>(this.ticURL + `listarTic`);
   }
 
   public detailTic(idTic: number): Observable<Tics> {
-    return this.httpClient.get<Tics>(this.ticURL + 'detailTic/${idTic}');
+    return this.httpClient.get<Tics>(this.ticURL + `detailTic/${idTic}`);
   }
 
   public saveTic(tics: Tics): Observable<any>{
-    return this.httpClient.post<any>(this.ticURL + 'crearTic', tics);
+    return this.httpClient.post<any>(this.ticURL + `crearTic`, tics);
   }
 
   public updateTic(idTic: number, tics: Tics): Observable<any>{
-    return this,this.httpClient.put<any>(this.ticURL + 'editarTic/${idTic}', tics);
+    return this,this.httpClient.put<any>(this.ticURL + `editarTic/${idTic}`, tics);
   }
 
   public deleteTic(idTic: number): Observable<any>{
-    return this.httpClient.delete<any>(this.ticURL + 'borrarTic/${idTic}');
+    return this.httpClient.delete<any>(this.ticURL + `borrarTic/${idTic}`);
   }
 
 }
