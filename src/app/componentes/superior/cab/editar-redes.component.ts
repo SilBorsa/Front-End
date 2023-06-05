@@ -88,13 +88,13 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
   
   /* elimina el registro seleccionado */
   borrarRed(idRed?: number) {
-    if(idRed!=undefined){
-      const confirmarEliminacion = confirm('¿Seguro que quieres eliminar la red con id ${idRed}?');
+    if(idRed!==undefined){
+      const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar la red #${idRed}?`);
       if(confirmarEliminacion) {
         this.redService.deleteRed(idRed)
-          .subscribe(response => {
+          .subscribe(data => {
             alert('Se ha eliminado la red');
-            this.redService.listarRedes();
+            this.redService.listarRedes().subscribe(redes => this.redes = redes);
           }, error => {
             alert('No pudo eliminarse la red');
           });
@@ -111,13 +111,15 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
                             this.redCreada.urlRed,
                             this.redCreada.url_imgRed)
     this.redService.saveRed(miRed)
-    .subscribe(response => {
+    .subscribe(() => {
       alert(`Se ha agregado ${this.redCreada.nombreRed}`);
+      this.redService.listarRedes().subscribe(redes => this.redes = redes);
       this.redCreada.nombreRed='';
       this.redCreada.urlRed='';
       this.redCreada.url_imgRed='';
-      this.filaEditable = false;
-      this.redService.listarRedes();
+      this.filaVisible = false;
+    }, error => {
+      alert('No pudo aregarse la red, es probable que ya exista. Verifique los datos y vuelva a intentarlo');
     });
   }
 }
