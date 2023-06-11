@@ -6,7 +6,7 @@
           <span>MIS DATOS</span>
         </div>
         <div class="botones">
-          <!--boton para mostrar el formulario de carda-->
+          <!--boton para mostrar el formulario de carga-->
           <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
           <!--boton para cerrar este componente modal-->
           <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPersona()" />
@@ -98,7 +98,6 @@
             <tbody>
               <tr>
                 <td colspan="6">
-                  <!-- <form #myForm="ngForm" novalidate (ngSubmit)="guardarRed()"> -->
                     <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="persCreada.idPersona" required />
                     <input type="text" size="20" name="nombrePersona" placeholder="nombres" [(ngModel)]="persCreada.nombrePersona" required />
                     <input type="text" size="40" name="apellidoPersona" placeholder="apellidos" [(ngModel)]="persCreada.apellidoPersona" required />

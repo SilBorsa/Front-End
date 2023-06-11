@@ -19,5 +19,5 @@ export class MostrarPersonaService {
   cerrarMostrarPersona() {
     this.abrirMostrarPersonaSubject.next(false);
   }
- 
+   
 }
