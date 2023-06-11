@@ -8,13 +8,23 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent implements OnInit {
+  editSRC = "../../../../assets/editar.png";
+  editALT="agregar, editar, eliminar";
 
-  persona: Persona = new Persona("","","","","","");
+  persona: Persona = {nombrePersona:"",
+                      apellidoPersona:"",
+                      subTitulo:"",
+                      emailPersona:"",
+                      celuPersona:"",
+                      acercaPersona:"",
+                      url_imgPersona:""}; /*= new Persona("","","","","","","");*/
     
   constructor(public personaService: PersonaService) {
   }
 
   ngOnInit() {
-    this.personaService.getPersona().subscribe(persona => {this.persona = persona} )
+    const idPersona = 1;
+    this.personaService.getPersona(idPersona)
+        .subscribe(persona => {this.persona = persona;});
   }
 }

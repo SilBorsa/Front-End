@@ -38,3 +38,25 @@ img:hover{
 #noformales{
   width: auto; 
 }
+
+.titulos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* capa solo visible si esta conectado el admin */
+.editar {
+  position: relative;
+  width: 50px;
+}
+
+.editar img {
+  float: right;
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  width: 50px;
+}
+
+.editar img:hover {
+  filter:opacity(100%);
+  cursor: pointer;
+}

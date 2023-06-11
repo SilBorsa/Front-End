@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./estudios.component.css']
 })
 export class EstudiosComponent implements OnInit {
+  editSRC = "../../../../assets/editar.png";
+  editALT="agregar, editar, eliminar";
 
   udaURL="https://www.uda.edu.ar";
   rvfURL="https://www.reconstruccionforense.com";

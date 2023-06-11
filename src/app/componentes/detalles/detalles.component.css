@@ -85,6 +85,31 @@
 .colour-block img {
   float: left;
 }
+
+.titulos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* capa solo visible si esta conectado el admin */
+.editar {
+  position: absolute;
+  right: 150px;
+  z-index: 6;
+}
+
+.editar img {
+  float:right;
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  border-radius: 0;
+  width: 50px;
+}
+
+.editar img:hover {
+  filter:opacity(100%);
+  cursor: pointer;
+}
   
 /* laboral */
   

@@ -70,7 +70,7 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
           alert(`Se actualizaron los datos de ${this.redEditada.nombreRed}.`);
           this.filaEditable = false;
         }, error => {
-        alert(`Los datos de ${this.redEditada.nombreRed} no pudieron modificarse.`);
+        alert(`Los datos no pudieron modificarse. Si intento cambiar el nombre de la red, verifique si ya no esta cargada.`);
       });
     }
   }
@@ -119,7 +119,7 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
       this.redCreada.url_imgRed='';
       this.filaVisible = false;
     }, error => {
-      alert('No pudo aregarse la red, es probable que ya exista. Verifique los datos y vuelva a intentarlo');
+      alert('No pudo agregarse la red, es probable que ya exista. Verifique los datos y vuelva a intentarlo');
     });
   }
 }

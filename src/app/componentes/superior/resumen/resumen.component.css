@@ -48,4 +48,27 @@ h4{
 #dibu {
    filter: drop-shadow(1px 1px 2px black);
    vertical-align: sub;
+   padding: 0 2px;
+}
+
+.encabezado {
+   display: inline-flex;
+   align-items: center;
+}
+
+/* capa solo visible si esta conectado el admin */
+.editar {
+   position: relative;
+   width: 100px;
+ }
+
+.editar img {
+   float: right;
+   filter:grayscale(150%) brightness(2.5) opacity(85%);
+   width: 50px;
+}
+
+.editar img:hover {
+   filter:opacity(100%);
+   cursor: pointer;
 }

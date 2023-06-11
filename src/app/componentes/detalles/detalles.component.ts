@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalles.component.css']
 })
 export class DetallesComponent implements OnInit{
+  editSRC = "../../../../assets/editar.png";
+  editALT="agregar, editar, eliminar";
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
   }
 }

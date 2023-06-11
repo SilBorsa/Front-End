@@ -1,7 +1,13 @@
 <div class="resumen">
-    <h1 class="nombre"> Silvana Borsani</h1>
+    <div class="encabezado">
+        <h1 class="nombre"> Silvana Borsani</h1>
+       
+        <div class="editar">
+            <img src="{{editSRC}}" alt="{{editALT}}" />
+        </div>
+    </div>
     <h4>Full Stack Web Developer Jr.</h4>
-    <h6>{{persona.apellidoPersona}}</h6>
+    <h6 *ngIF="persona">{{persona.apellidoPersona}}</h6>
     <hr>
     <p>Nac&iacute; en CABA un <b>23 de septiembre</b>, con el Sol <ngx-emoji emoji="sunny" id="dibu"></ngx-emoji> en <b>libra</b> 
        <ngx-emoji emoji="libra" id="dibu"></ngx-emoji>, por eso soy muy curiosa y me gusta aprender de todo, por ejemplo: astrolog&iacute;a. 

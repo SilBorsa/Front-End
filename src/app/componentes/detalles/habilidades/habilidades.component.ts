@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit{
-
+  editSRC = "../../../../assets/editar.png";
+  editALT="agregar, editar, eliminar";
+  
   ngOnInit(): void {
     
   }
