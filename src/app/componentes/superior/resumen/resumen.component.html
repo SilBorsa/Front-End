@@ -3,7 +3,7 @@
         <h1 class="nombre"> Silvana Borsani</h1>
        
         <div class="editar">
-            <img src="{{editSRC}}" alt="{{editALT}}" />
+            <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPersona()" />
         </div>
     </div>
     <h4>Full Stack Web Developer Jr.</h4>
@@ -22,4 +22,8 @@
        <ngx-emoji emoji="prince" id="dibu"></ngx-emoji>, que se llama <b>Tobias</b>, y mi hija de cuatro patas <ngx-emoji emoji="dog" id="dibu"></ngx-emoji> 
        que se llama <b>Kiwa.</b>
     </p>
+
+ <!-- componente para editar las redes -->
+ <app-editar-persona id="verPersona"></app-editar-persona>
+
 </div>

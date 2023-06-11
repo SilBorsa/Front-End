@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelo/persona';
+import { MostrarPersonaService } from 'src/app/service/mostrar-persona.service';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
@@ -11,6 +12,9 @@ export class ResumenComponent implements OnInit {
   editSRC = "../../../../assets/editar.png";
   editALT="agregar, editar, eliminar";
 
+  mostrarPersona=false;
+  isLogged=false;
+
   persona: Persona = {nombrePersona:"",
                       apellidoPersona:"",
                       subTitulo:"",
@@ -19,12 +23,17 @@ export class ResumenComponent implements OnInit {
                       acercaPersona:"",
                       url_imgPersona:""}; /*= new Persona("","","","","","","");*/
     
-  constructor(public personaService: PersonaService) {
-  }
+  constructor(private personaService: PersonaService,
+              private mostrarPersonaService: MostrarPersonaService) { }
 
   ngOnInit() {
     const idPersona = 1;
     this.personaService.getPersona(idPersona)
         .subscribe(persona => {this.persona = persona;});
+  }
+
+  abrirMostrarPersona() {
+    document.body.classList.add('modal-open');
+    this.mostrarPersonaService.abrirMostrarPersona();
   }
 }
