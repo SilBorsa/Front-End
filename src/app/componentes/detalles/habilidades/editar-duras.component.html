@@ -1,0 +1,99 @@
+<div class="modal-hard" *ngIf="abrirMostrarDuras">
+    <div class="popup">
+  
+      <div class="popup_top">
+        <div class="titulo">
+          <span>MIS HABILIDADES DURAS</span>
+        </div>
+        <div class="botones">
+          <!--boton para mostrar el formulario de carda-->
+          <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
+          <!--boton para cerrar este componente modal-->
+          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarDuras()" />
+        </div>
+      </div>
+      <div class="popup_body">
+        <div id="miTabla" class="table table-responsive-sm">
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idDura</th>
+                <th width="50">Nombre</th>
+                <th width="15">Porcentaje</th>
+                <th width="15">num</th>
+                <th width="15">giro</th>
+                <th width="50">Color</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let hard of hard">
+                <td width="15">{{hard.idPersona}}</td>
+                <td width="15">{{hard.idDura}}</td>
+                <td width="100" *ngIf="!filaEditable">{{hard.nombreDura}}</td>
+                <td width="100" *ngIf="filaEditable && hard.idDura === hardEditado.idDura">
+                    <input type="text" size="15" [(ngModel)]="hardEditado.nombreDura" /></td>
+                <td width="100" *ngIf="!filaEditable">{{hard.porcentaje}}</td>
+                <td width="15" *ngIf="filaEditable && hard.idDura === hardEditado.idDura">
+                    <input type="text" size="15" [(ngModel)]="hardEditado.porcentaje" /></td>
+                <td width="15">{{hard.num}}</td>
+                <td width="15">{{hard.giro}}</td>  
+                <td width="100" *ngIf="!filaEditable">{{hard.colorDura}}</td>
+                <td width="100" *ngIf="filaEditable && hard.idDura === hardEditado.idDura">
+                    <input type="text" size="20" [(ngModel)]="hardEditado.colorDura" /></td>
+                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(hard)" />
+                    <!--boton para eliminar un registro particular-->
+                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarHard(hard.idDura)"/></td>                
+                <td *ngIf="filaEditable && hard.idDura === hardEditado.idDura"><!--boton para guardar los cambios-->
+                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                    <!--boton para cancelar cambios-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <br>
+        <!-- form oculto para agregar registros -->
+        <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idDura</th>
+                <th width="50">Nombre</th>
+                <th width="15">Porcentaje</th>
+                <th width="15">num</th>
+                <th width="15">giro</th>
+                <th width="50">Color</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="8">
+                    <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="hardCreado.idPersona" required />
+                    <input type="text" size="2" name="idDura" placeholder="idDura" />
+                    <input type="text" size="20" name="nombreDura" placeholder="nombre" [(ngModel)]="hardCreado.nombreDura" required />
+                    <input type="text" size="2" name="porcentaje" placeholder="color" [(ngModel)]="hardCreado.porcentaje" required />
+                    <input type="text" size="2" name="num" placeholder="num"/>
+                    <input type="text" size="2" name="giro" placeholder="giro" />
+                    <input type="text" size="40" name="colorDura" placeholder="color" [(ngModel)]="hardCreado.colorDura" required />
+                    <!--boton para guardar el nuevo registro-->
+                    <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarHard(hardCreado)" />
+                    <!--boton para cancelar la creacion de un nuevo registro-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
+                  <!-- </form> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </div>
+    </div>
+
+
