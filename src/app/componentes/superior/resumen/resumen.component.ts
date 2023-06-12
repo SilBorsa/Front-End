@@ -32,8 +32,16 @@ export class ResumenComponent implements OnInit {
         .subscribe(persona => {this.persona = persona;});
   }
 
+  desplazarPersona() {
+    const acerca = document.getElementById('acercaDe');
+    if (acerca) {
+      acerca.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   abrirMostrarPersona() {
     document.body.classList.add('modal-open');
     this.mostrarPersonaService.abrirMostrarPersona();
+    this.desplazarPersona();
   }
 }

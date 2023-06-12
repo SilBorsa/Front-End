@@ -6,111 +6,80 @@
           <span>MIS DATOS</span>
         </div>
         <div class="botones">
-          <!--boton para mostrar el formulario de carga-->
-          <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
           <!--boton para cerrar este componente modal-->
           <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPersona()" />
         </div>
       </div>
       <div class="popup_body">
-        <div id="miTabla" class="table table-responsive-sm">
-          <table *ngFor="let persona of personas">
+        <div id="miTabla">
+          <table *ngFor="let persona of personas" boder="0">
             <thead>
               <tr>
-                <th width="100">Campos</th>
-                <th width="300">Valores</th>
+                <th width="60">Campos</th>
+                <th width="290">Valores</th>
                 <th width="100">Acciones</th>
-                <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td width="150">idPersona</td>
-                <td width="300">{{persona.idPersona}}</td>
+                <td class="campos">idPersona:</td>
+                <td>{{persona.idPersona}}</td>
                 <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
                     <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(persona)" />
-                    <!--boton para eliminar un registro particular-->
-                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrar(persona.idPersona)"/></td>                
-                <td *ngIf="filaEditable && persona.idPersona === persEditada.idPersona"><!--boton para guardar los cambios-->
+                </td>
+                    <!--boton para guardar los cambios-->
+                <td *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
                     <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
                     <!--boton para cancelar cambios-->
                     <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
               </tr>
               <tr>
-                <td width="150">Nombres:</td>
-                <td colspan="2" *ngIf="!filaEditable">{{persona.nombrePersona}}</td>
+                <td class="campos">Nombres:</td>
+                <td *ngIf="!filaEditable">{{persona.nombrePersona}}</td>
                 <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.nombrePersona" /></td>
+                    <input type="text" size="35" [(ngModel)]="persEditada.nombrePersona" /></td>
               </tr>
               <tr>
-                <td width="150">Apellidos:</td>
-                <td colspam="2" *ngIf="!filaEditable">{{persona.apellidoPersona}}</td>
+                <td class="campos">Apellidos:</td>
+                <td *ngIf="!filaEditable">{{persona.apellidoPersona}}</td>
                 <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.apellidoPersona" /></td>
+                    <input type="text" size="35" [(ngModel)]="persEditada.apellidoPersona" /></td>
               </tr>
               <tr>
-                <td width="150">Titulo</td>
-                <td colspan="2" *ngIf="!filaEditable">{{persona.subTitulo}}</td>
+                <td class="campos">Titulo:</td>
+                <td *ngIf="!filaEditable">{{persona.subTitulo}}</td>
                 <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.subTitulo"></td>
+                    <input type="text" size="35" [(ngModel)]="persEditada.subTitulo"></td>
               </tr>
               <tr>
-                <td width="150">eMail:</td>
-                <td colspan="2" *ngIf="!filaEditable">{{persona.emailPersona}}</td>
+                <td class="campos">Celular:</td>
+                <td *ngIf="!filaEditable">{{persona.celuPersona}}</td>
+                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                    <input type="text" size="35" [(ngModel)]="persEditada.celuPersona"></td>
+              </tr>
+              <tr>
+                <td class="campos">eMail:</td>
+                <td *ngIf="!filaEditable">{{persona.emailPersona}}</td>
                 <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
                     <input type="text" size="50" [(ngModel)]="persEditada.emailPersona"></td>
               </tr>
               <tr>
-                <td width="150">Celular:</td>
-                <td colspan="2" *ngIf="!filaEditable">{{persona.celuPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.celuPersona"></td>
-              </tr>
-              <tr>
-                <td width="150">Foto</td>
-                <td colspan="2" *ngIf="!filaEditable">{{persona.url_imgPersona}}</td>
+                <td class="campos">Foto:</td>
+                <td *ngIf="!filaEditable">{{persona.url_imgPersona}}</td>
                 <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
                     <input type="text" size="50" [(ngModel)]="persEditada.url_imgPersona"></td>
               </tr>
               <tr>
-                <td width="150">Acerca de:</td>
-                <td colspan="2" *ngIf="!filaEditable">{{persona.acercaPersona}}</td>
+                <td class="campos">Acerca de:</td>
+                <td *ngIf="!filaEditable">{{persona.acercaPersona}}</td>
                 <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.acercaPersona"></td>
+                    <textarea cols="47" rows="10" wrap [(ngModel)]="persEditada.acercaPersona"></textarea></td>
               </tr>
             </tbody>
           </table>
           <br>
         </div>
-        <br>
-        <!-- form oculto para agregar registros -->
-        <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
-          <br>
-          <table>
-            <thead>
-              <tr>
-                <th width="15">idPer</th>
-                <th width="100">Nombres</th>
-                <th width="300">Apellidos</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan="6">
-                    <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="persCreada.idPersona" required />
-                    <input type="text" size="20" name="nombrePersona" placeholder="nombres" [(ngModel)]="persCreada.nombrePersona" required />
-                    <input type="text" size="40" name="apellidoPersona" placeholder="apellidos" [(ngModel)]="persCreada.apellidoPersona" required />
-                    <!--boton para guardar el nuevo registro-->
-                    <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardar(persCreada)" />
-                    <!--boton para cancelar la creacion de un nuevo registro-->
-                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
-                  <!-- </form> -->
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-  
+
       </div>
     </div>
+</div>

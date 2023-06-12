@@ -4,9 +4,8 @@
 </div>
 
 <div class="editar">
-  <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarFoto()" />
+  <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarFoto()" *ngIf="isLogged" />
 </div>
-
   
   <!-- componente para editar la foto -->
   <app-editar-foto id="verPersona"></app-editar-foto>
