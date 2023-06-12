@@ -1,1 +1,65 @@
-<p>editar-lab works!</p>
+<div class="modal-pie" *ngIf="abrirMostrarPie">
+    <div class="popup">
+  
+      <div class="popup_top">
+        <div class="titulo">
+          <span>MI CONTACTO</span>
+        </div>
+        <div class="botones">
+          <!--boton para cerrar este componente modal-->
+          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPie()" />
+        </div>
+      </div>
+
+      <div class="popup_body">
+        <div id="miTabla" class="table table-responsive-sm">
+          <table *ngFor="let persona of personas">
+            <thead>
+              <tr>
+                <th width="100">Campos</th>
+                <th width="300">Valores</th>
+                <th width="100">Acciones</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td width="150">idPersona</td>
+                <td width="300">{{persona.idPersona}}</td>
+                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(persona)" />
+                    <!--boton para eliminar un registro particular-->
+                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrar(persona.idPersona)"/></td>                
+                <td *ngIf="filaEditable && persona.idPersona === persEditada.idPersona"><!--boton para guardar los cambios-->
+                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                    <!--boton para cancelar cambios-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+              </tr>
+              <tr>
+                <td width="150">Nombres:</td>
+                <td colspan="2">{{persona.nombrePersona}}</td>
+              </tr>
+              <tr>
+                <td width="150">Apellidos:</td>
+                <td colspam="2">{{persona.apellidoPersona}}</td>
+              </tr>
+              <tr>
+                <td width="150">Email:</td>
+                <td colspan="2" *ngIf="!filaEditable">{{persona.emailPersona}}</td>
+                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                    <input type="text" size="50" [(ngModel)]="persEditada.emailPersona"></td>
+              </tr>
+              <tr>
+                <td width="150">Celular:</td>
+                <td colspan="2" *ngIf="!filaEditable">{{persona.celuPersona}}</td>
+                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                    <input type="text" size="50" [(ngModel)]="persEditada.celuPersona"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        </div>
+
+      </div>
+    </div>

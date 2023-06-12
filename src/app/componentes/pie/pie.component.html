@@ -12,5 +12,8 @@
   <!-- cierro pie -->
 
   <div class="editar">
-    <img src="{{editSRC}}" alt="{{editALT}}" />
+    <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPie()" />
+
+    <!-- componente para editar el pie -->
+    <app-editar-pie id="verPie"></app-editar-pie>
   </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Persona } from 'src/app/modelo/persona';
 import { MostrarPersonaService } from 'src/app/service/mostrar-persona.service';
@@ -9,7 +9,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   templateUrl: './editar-persona.component.html',
   styleUrls: ['./editar-persona.component.css']
 })
-export class EditarPersonaComponent {
+export class EditarPersonaComponent implements OnInit, OnDestroy {
   idPersona: number = 1;
   nombrePersona: string = '';
   apellidoPersona: string = '';

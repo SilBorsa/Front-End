@@ -4,14 +4,18 @@
     <!-- abro laboral -->
     <div class="scallop-up"></div>
     <div class="colour-block">
-      <div class="titulos">
+      <div class="titulos" id="empresas">
         <h2>EXPERIENCIA LABORAL</h2>
         <div class="editar">
-          <img src="{{editSRC}}" alt="{{editALT}}" />
+          <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarLab()" />
         </div>
       </div>
       <app-laboral></app-laboral>
+
+      <!-- componente para editar experiencia laboral -->
+      <app-editar-lab id="verLaboral"></app-editar-lab>
     </div>
+
     <div class="scallop-down"></div>
     <div class="white-block"></div>      
     <!-- cierro laboral -->

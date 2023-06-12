@@ -38,8 +38,8 @@ export class CabComponent implements OnInit{
   isLogged=false;
 
   constructor(protected mostrarLoginService: MostrarLoginService,
-              protected mostrarRedesService: MostrarRedesService, 
-              private router: Router, 
+              private mostrarRedesService: MostrarRedesService, 
+              //private router: Router, 
               private tokenService: TokenService) { }
 
   ngOnInit(): void {
