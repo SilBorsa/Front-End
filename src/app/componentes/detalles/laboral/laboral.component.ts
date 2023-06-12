@@ -15,10 +15,11 @@ export class LaboralComponent implements OnInit {
   cgnSRC="../../../../assets/logo-mecon.png";
   migraSRC="../../../../assets/logo-migra.png";
 
-  lab: Laboral[] = []; 
+  /*lab: Laboral[] = []; */
   isLogged= false;
 
-  constructor(private laboralService: LaboralService, private tokenService: TokenService) {}
+  constructor(private laboralService: LaboralService, 
+              private tokenService: TokenService) {}
 
   ngOnInit(): void {}
   

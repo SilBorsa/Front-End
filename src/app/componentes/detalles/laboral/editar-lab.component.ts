@@ -11,7 +11,7 @@ import { MostrarLabService } from 'src/app/service/mostrar-lab.service';
 })
 export class EditarLabComponent implements OnInit, OnDestroy {
   idLaboral?: number; 
-  idpersona: number = 1;
+  idPersona: number = 1;
   nombreEmpresa: string = '';
   periodoEmpresa: string = '';
   descEmpresa: string ='';

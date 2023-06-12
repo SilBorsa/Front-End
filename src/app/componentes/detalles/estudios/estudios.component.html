@@ -5,8 +5,11 @@
   <div class="titulos">
     <h4>FORMALES</h4>
     <div class="editar">
-      <img src="{{editSRC}}" alt="{{editALT}}" />
+      <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarEdu()" />
     </div>
+
+     <!-- componente para editar educacion formal -->
+     <app-editar-edu id="verEstudios"></app-editar-edu>
   </div>
     <p>
         <a href="{{udaURL}}" target="_blank" rel="noopener">
@@ -60,8 +63,11 @@
   <div class="titulos">
     <h4>CAPACITACIONES TICS</h4>
     <div class="editar">
-      <img src="{{editSRC}}" alt="{{editALT}}" />
+      <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarTics()" />
     </div>
+
+    <!-- componente para editar educacion tics -->
+    <app-editar-tics id="verTICS"></app-editar-tics>
   </div>
    <p>
       <a href="{{apURL}}" target="_blank" rel="noopener">

@@ -1,1 +1,101 @@
-<p>editar-lab works!</p>
+<div class="modal-tics" *ngIf="abrirMostrarTics">
+    <div class="popup">
+  
+      <div class="popup_top">
+        <div class="titulo">
+          <span>MI CAPACITACION TIC</span>
+        </div>
+        <div class="botones">
+          <!--boton para mostrar el formulario de carda-->
+          <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
+          <!--boton para cerrar este componente modal-->
+          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarTics()" />
+        </div>
+      </div>
+      <div class="popup_body">
+        <div id="miTabla" class="table table-responsive-sm">
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idTic</th>
+                <th width="50">Periodo</th>
+                <th width="100">Instituto</th>
+                <th width="300">Web (URL)</th>
+                <th width="300">Logo (URL)</th>
+                <th width="100">Curso</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tic of tic">
+                <td width="15">{{tic.idPersona}}</td>
+                <td width="15">{{tic.idTic}}</td>
+                <td width="100" *ngIf="!filaEditable">{{tic.periodoTic}}</td>
+                <td width="100" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
+                    <input type="text" size="15" [(ngModel)]="ticEditado.periodoTic" /></td>
+                <td width="100" *ngIf="!filaEditable">{{tic.nombreInstTic}}</td>
+                <td width="100" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
+                    <input type="text" size="20" [(ngModel)]="ticEditado.nombreInstTic" /></td>
+                <td width="300" *ngIf="!filaEditable">{{tic.urlInstTic}}</td>
+                <td width="300" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
+                    <input type="text" size="45" [(ngModel)]="ticEditado.urlInstTic" /></td>
+                <td width="300" *ngIf="!filaEditable">{{tic.url_imgTic}}</td>
+                <td width="300" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
+                    <input type="text" size="43" [(ngModel)]="ticEditado.url_imgTic"></td>
+                <td width="100" *ngIf="!filaEditable">{{tic.cursoTic}}</td>
+                <td width="100" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
+                    <input type="text" size="20" [(ngModel)]="ticEditado.cursoTic"></td>
+                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(tic)" />
+                    <!--boton para eliminar un registro particular-->
+                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarTic(tic.idTic)"/></td>                
+                <td *ngIf="filaEditable && tic.idTic === ticEditado.idTic"><!--boton para guardar los cambios-->
+                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                    <!--boton para cancelar cambios-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <br>
+        <!-- form oculto para agregar registros -->
+        <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idTic</th>
+                <th width="50">Periodo</th>
+                <th width="100">Instituto</th>
+                <th width="300">Web (URL)</th>
+                <th width="300">Logo (URL)</th>
+                <th width="100">Curso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="8">
+                    <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="ticCreado.idPersona" required />
+                    <input type="text" size="2" name="idTic" placeholder="idTic" />
+                    <input type="text" size="20" name="periodoTic" [(ngModel)]="ticCreado.periodoTic" required />
+                    <input type="text" size="20" name="nombreInstTic" placeholder="Instituto" [(ngModel)]="ticCreado.nombreInstTic" required />
+                    <input type="text" size="40" name="urlInstTic" placeholder="urlInstituto" [(ngModel)]="ticCreado.urlInstTic" required />
+                    <input type="text" size="40" name="url_imgTic" placeholder="url_imgInst" [(ngModel)]="ticCreado.url_imgTic" required />
+                    <input type="text" size="20" name="cursoTic" placeholder="curso" [(ngModel)]="ticCreado.cursoTic" required />
+                    <!--boton para guardar el nuevo registro-->
+                    <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarTic(ticCreado)" />
+                    <!--boton para cancelar la creacion de un nuevo registro-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
+                  <!-- </form> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </div>
+    </div>
+

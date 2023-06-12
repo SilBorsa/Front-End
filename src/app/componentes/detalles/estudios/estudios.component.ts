@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MostrarEduService } from 'src/app/service/mostrar-edu.service';
+import { MostrarTicsService } from 'src/app/service/mostrar-tics.service';
 
 @Component({
   selector: 'app-estudios',
@@ -27,7 +29,38 @@ export class EstudiosComponent implements OnInit {
   inapSRC="../assets/logo-inap.png";
   capacSRC="../assets/logo-mecon.png";
 
+  mostrarEdu=false;
+  mostrarTics=false;
+
+  constructor (private mostrarEduService: MostrarEduService,
+               private mostrarTicsService: MostrarTicsService) {}
+
   ngOnInit(): void {
-    
+  }
+
+  desplazarEdu() {
+    const edu = document.getElementById('formales');
+    if (edu) {
+      edu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  abrirMostrarEdu() {
+    document.body.classList.add('modal-open');
+    this.mostrarEduService.abrirMostrarEdu();
+    this.desplazarEdu();
+  }
+
+  desplazarTics() {
+    const tics = document.getElementById('noformales');
+    if (tics) {
+      tics.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  abrirMostrarTics() {
+    document.body.classList.add('modal-open');
+    this.mostrarTicsService.abrirMostrarTics();
+    this.desplazarTics();
   }
 }
