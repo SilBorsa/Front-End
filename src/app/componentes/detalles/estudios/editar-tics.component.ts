@@ -38,7 +38,7 @@ export class EditarTicsComponent implements OnInit, OnDestroy{
 }
 
   ngOnInit(): void {
-    this.ticsService.listarTics()
+    this.ticsService.listarTic()
       .subscribe(tic => this.tic = tic);
   }
   
@@ -66,7 +66,7 @@ export class EditarTicsComponent implements OnInit, OnDestroy{
     if (this.ticEditado && this.ticEditado.idTic) {
       this.ticsService.updateTic(this.ticEditado.idTic, this.ticEditado)
         .subscribe(response => {
-          this.ticsService.listarTics().subscribe(tic => this.tic = tic);
+          this.ticsService.listarTic().subscribe(tic => this.tic = tic);
           alert(`Se actualizaron los datos de ${this.ticEditado.nombreInstTic}.`);
           this.filaEditable = false;
         }, error => {
@@ -94,12 +94,12 @@ export class EditarTicsComponent implements OnInit, OnDestroy{
         this.ticsService.deleteTic(idTic)
           .subscribe(data => {
             alert('Se ha eliminado el curso');
-            this.ticsService.listarTics().subscribe(tic => this.tic = tic);
+            this.ticsService.listarTic().subscribe(tic => this.tic = tic);
           }, error => {
             alert('No pudo eliminarse el curso');
           });
       } else {
-          alert('Eliminacion cancelada por el usuario');
+            alert('Eliminacion cancelada por el usuario');
       }
     }
   }
@@ -115,7 +115,7 @@ export class EditarTicsComponent implements OnInit, OnDestroy{
     this.ticsService.saveTic(miTic)
     .subscribe(() => {
       alert(`Se ha agregado ${this.ticCreado.cursoTic}`);
-      this.ticsService.listarTics().subscribe(tic => this.tic = tic);
+      this.ticsService.listarTic().subscribe(tic => this.tic = tic);
       this.ticCreado.nombreInstTic='';
       this.ticCreado.periodoTic='';
       this.ticCreado.urlInstTic='';
