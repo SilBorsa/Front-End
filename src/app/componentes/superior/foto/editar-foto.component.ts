@@ -9,6 +9,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   templateUrl: './editar-foto.component.html',
   styleUrls: ['./editar-foto.component.css']
 })
+
 export class EditarFotoComponent implements OnInit, OnDestroy {
   idPersona: number = 1;
   nombrePersona: string = '';
@@ -18,9 +19,8 @@ export class EditarFotoComponent implements OnInit, OnDestroy {
   celuPersona: string = '';
   acercaPersona: string = '';
   url_imgPersona: string = '';
-  personas: Persona[] = [];
+  persona: Persona[] = [];
 
-  filaVisible: boolean = false; /* asociado a la creacion de registros */
   filaEditable: boolean = false; /* asociado a la edicion de regsitros */
   persEditada: Persona = new Persona("","","","","","","");
 
@@ -39,7 +39,7 @@ export class EditarFotoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.personaService.listar()
-      .subscribe(persona => this.personas = persona);
+      .subscribe(persona => this.persona = persona);
   }
   
   ngOnDestroy(): void {
@@ -51,28 +51,18 @@ export class EditarFotoComponent implements OnInit, OnDestroy {
     this.mostrarFotoService.cerrarMostrarFoto();
   }
 
-  /* muestra el formulario de carga */
-  mostrarFila(): void {
-    this.filaVisible = true;
-  }
-
-  /* oculta el formulario de carga */
-  cancelarAgregar(): void {
-    this.filaVisible = false;
-  }
-
   /* guarda los cambios del registro modificado */
   actualizarFila() {
-    if (this.persEditada && this.persEditada.idPersona) {
-      this.personaService.update(this.persEditada.idPersona, this.persEditada)
-        .subscribe(response => {
-          this.personaService.listar().subscribe(persona => this.personas = persona);
+    //if (this.persEditada && this.persEditada.idPersona) {
+    //  this.personaService.update(this.persEditada.idPersona, this.persEditada)
+    //    .subscribe(response => {
+    //      this.personaService.listar().subscribe(persona => this.persona = persona);
           alert(`Se actualizaron los datos de ${this.persEditada.nombrePersona}.`);
-          this.filaEditable = false;
-        }, error => {
-        alert(`Los datos no pudieron modificarse. Si intento cambiar el nombre de la red, verifique si ya no esta cargada.`);
-      });
-    }
+    //      this.filaEditable = false;
+    //    }, error => {
+    //      alert(`Los datos no pudieron modificarse.`);
+    //  });
+    //}
   }
 
   /* oculta campos de edicion para el registro seleccionado */
@@ -84,24 +74,6 @@ export class EditarFotoComponent implements OnInit, OnDestroy {
   editarFila(persona: Persona) {
     this.filaEditable = true;
     this.persEditada = {...persona};
-  }
-  
-  /* elimina el registro seleccionado */
-  borrar(idPersona?: number) {
-    if(idPersona!==undefined){
-      const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar a la persona #${idPersona}?`);
-      if(confirmarEliminacion) {
-        this.personaService.delete(idPersona)
-          .subscribe(data => {
-            alert('Se ha eliminado la persona');
-            this.personaService.listar().subscribe(persona => this.personas = persona);
-          }, error => {
-            alert('No pudo eliminarse la persona');
-          });
-      } else {
-        alert('Eliminacion cancelada por el usuario');
-      }
-    }
   }
 
 }

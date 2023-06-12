@@ -4,7 +4,7 @@
   position:absolute;
   right: 3%;
   margin-top: 40px;
-  z-index: 5;
+  z-index: 9;
   background-color:transparent;
   border-radius: 150px;
   box-shadow: 7px 7px 15px 0px black;
@@ -25,7 +25,7 @@
   position:absolute;
   right: 4%;
   margin-top: 400px;
-  z-index: 6;
+  z-index: 10;
 }
 
 .editar img {
