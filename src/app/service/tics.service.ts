@@ -11,8 +11,8 @@ export class TicsService {
   
   constructor(private httpClient: HttpClient) { }
 
-  public listarTic(): Observable<Tics[]> {
-    return this.httpClient.get<Tics[]>(this.ticURL + `listarTic`);
+  public listarTics(): Observable<Tics[]> {
+    return this.httpClient.get<Tics[]>(this.ticURL + `listarTics`);
   }
 
   public detailTic(idTic: number): Observable<Tics> {
