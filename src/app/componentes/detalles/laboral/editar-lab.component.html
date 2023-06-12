@@ -1,0 +1,99 @@
+<div class="modal-lab" *ngIf="abrirMostrarLab">
+    <div class="popup">
+  
+      <div class="popup_top">
+        <div class="titulo">
+          <span>MI EXPERIENCIA LABORAL</span>
+        </div>
+        <div class="botones">
+          <!--boton para mostrar el formulario de carda-->
+          <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
+          <!--boton para cerrar este componente modal-->
+          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarLab()" />
+        </div>
+      </div>
+      <div class="popup_body">
+        <div id="miTabla" class="table table-responsive-sm">
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idLab</th>
+                <th width="50">Periodo</th>
+                <th width="100">Empresa</th>
+                <th width="300">Web (URL)</th>
+                <th width="300">Logo (URL)</th>
+                <th width="300">Tareas</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let lab of laboral">
+                <td width="15">{{lab.idPersona}}</td>
+                <td width="15">{{lab.idLaboral}}</td>
+                <td width="100" *ngIf="!filaEditable">{{lab.periodoEmpresa}}</td>
+                <td width="100" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="15" [(ngModel)]="labEditado.periodoEmpresa" /></td>
+                <td width="100" *ngIf="!filaEditable">{{lab.nombreEmpresa}}</td>
+                <td width="100" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="15" [(ngModel)]="labEditado.nombreEmpresa" /></td>
+                <td width="300" *ngIf="!filaEditable">{{lab.urlEmpresa}}</td>
+                <td width="300" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="45" [(ngModel)]="labEditado.urlEmpresa" /></td>
+                <td width="300" *ngIf="!filaEditable">{{lab.url_imgLab}}</td>
+                <td width="300" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="43" [(ngModel)]="labEditado.url_imgLab"></td>
+                <td width="300" *ngIf="!filaEditable">{{lab.descEmpresa}}</td>
+                <td width="300" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="43" [(ngModel)]="labEditado.descEmpresa"></td>
+                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(lab)" />
+                    <!--boton para eliminar un registro particular-->
+                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarLab(lab.idLaboral)"/></td>                
+                <td *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral"><!--boton para guardar los cambios-->
+                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                    <!--boton para cancelar cambios-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <br>
+        <!-- form oculto para agregar registros -->
+        <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idLab</th>
+                <th width="50">Periodo</th>
+                <th width="100">Empresa</th>
+                <th width="300">Web (URL)</th>
+                <th width="300">Logo (URL)</th>
+                <th width="300">Tareas</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="8">
+                    <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="labCreado.idPersona" required />
+                    <input type="text" size="2" name="idLaboral" placeholder="idLaboral" />
+                    <input type="text" size="20" name="nombreEmpresa" placeholder="Empresa" [(ngModel)]="labCreado.nombreEmpresa" required />
+                    <input type="text" size="40" name="urlEmpresa" placeholder="urlEmpresa" [(ngModel)]="labCreado.urlEmpresa" required />
+                    <input type="text" size="40" name="url_imgLab" placeholder="url_imgLab" [(ngModel)]="labCreado.url_imgLab" required />
+                    <!--boton para guardar el nuevo registro-->
+                    <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarLab(labCreado)" />
+                    <!--boton para cancelar la creacion de un nuevo registro-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
+                  <!-- </form> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </div>
+    </div>
