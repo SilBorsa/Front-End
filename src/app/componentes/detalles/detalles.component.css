@@ -4,7 +4,7 @@
   position: relative;
   margin-top: 540px;
   width:100%;
-  z-index: 1;
+  z-index: 2;
   list-style-position: inside;
 }
   
@@ -67,23 +67,33 @@
              8px 8px 3px black;
 }
   
-/*.colour-block h4 {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  padding-bottom: 10px;
-  font-weight: 900;
-  font-size:35px;
-  letter-spacing:0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: white;
-  text-shadow: 
-             3px 3px #b665f8,
-             7px 7px 2px #016432;
-}*/
-
 .colour-block img {
   float: left;
+}
+
+.titulos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* capa solo visible si esta conectado el admin */
+.editar {
+  position: absolute;
+  right: 150px;
+  z-index: 6;
+}
+
+.editar img {
+  float:right;
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  border-radius: 0;
+  width: 50px;
+}
+
+.editar img:hover {
+  filter:opacity(100%);
+  cursor: pointer;
 }
   
 /* laboral */
