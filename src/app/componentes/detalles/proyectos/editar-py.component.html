@@ -1,1 +1,95 @@
-<p>editar-lab works!</p>
+<div class="modal-py" *ngIf="abrirMostrarPy">
+    <div class="popup">
+  
+      <div class="popup_top">
+        <div class="titulo">
+          <span>MIS PROYECTOS</span>
+        </div>
+        <div class="botones">
+          <!--boton para mostrar el formulario de carda-->
+          <img src="../../../../assets/mas.png" alt="agregar" class="boton" (click)="mostrarFila()" />
+          <!--boton para cerrar este componente modal-->
+          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPy()" />
+        </div>
+      </div>
+      <div class="popup_body">
+        <div id="miTabla" class="table table-responsive-sm">
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idPy</th>
+                <th width="50">Nombre</th>
+                <th width="50">Periodo</th>
+                <th width="300">Descripcion</th>
+                <th width="15">Fotos</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let proy of proy">
+                <td width="15">{{proy.idPersona}}</td>
+                <td width="15">{{proy.idPy}}</td>
+                <td width="100" *ngIf="!filaEditable">{{proy.periodoPy}}</td>
+                <td width="100" *ngIf="filaEditable && proy.idPy === pyEditado.idPy">
+                    <input type="text" size="15" [(ngModel)]="pyEditado.periodoPy" /></td>
+                <td width="100" *ngIf="!filaEditable">{{proy.nombrePy}}</td>
+                <td width="100" *ngIf="filaEditable && proy.idPy === pyEditado.idPy">
+                    <input type="text" size="20" [(ngModel)]="pyEditado.nombrePy" /></td>
+                <td width="300" *ngIf="!filaEditable">{{proy.descPy}}</td>
+                <td width="300" *ngIf="filaEditable && proy.idPy === pyEditado.idPy">
+                    <input type="text" size="45" [(ngModel)]="pyEditado.descPy" /></td>
+                <td width="100" *ngIf="!filaEditable">{{proy.fotoPy}}</td>
+                <td width="100" *ngIf="filaEditable && proy.idPy === pyEditado.idPy">
+                    <input type="text" size="43" [(ngModel)]="pyEditado.fotoPy"></td>
+                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(proy)" />
+                    <!--boton para eliminar un registro particular-->
+                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarPy(proy.idPy)"/></td>                
+                <td *ngIf="filaEditable && proy.idPy === pyEditado.idPy"><!--boton para guardar los cambios-->
+                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                    <!--boton para cancelar cambios-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <br>
+        <!-- form oculto para agregar registros -->
+        <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th width="15">idPer</th>
+                <th width="15">idPy</th>
+                <th width="50">Nombre</th>
+                <th width="50">Periodo</th>
+                <th width="300">Descripcion</th>
+                <th width="15">Fotos</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="7">
+                    <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="pyCreado.idPersona" required />
+                    <input type="text" size="2" name="idPy" placeholder="idPy" />
+                    <input type="text" size="20" name="periodoPy" [(ngModel)]="pyCreado.periodoPy" required />
+                    <input type="text" size="20" name="nombrePy" placeholder="Nombre" [(ngModel)]="pyCreado.nombrePy" required />
+                    <input type="text" size="40" name="descPy" placeholder="Descripcion" [(ngModel)]="pyCreado.descPy"required />
+                    <input type="text" size="40" name="fotoPy" placeholder="fotos" [(ngModel)]="pyCreado.fotoPy" required />
+                    <!--boton para guardar el nuevo registro-->
+                    <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarPy(pyCreado)" />
+                    <!--boton para cancelar la creacion de un nuevo registro-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
+                  <!-- </form> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </div>
+    </div>

@@ -43,10 +43,13 @@
     <!-- abro proyectos -->
     <div class="scallop-up"></div>
     <div class="colour-block">
-      <div class="titulos">
+      <div class="titulos" id="proy">
         <h2>PROYECTOS</h2>
         <div class="editar">
-          <img src="{{editSRC}}" alt="{{editALT}}" />
+          <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPy()" />
+
+          <!-- componente para editar proyectos -->
+          <app-editar-py id="verProy"></app-editar-py>
         </div>
       </div>
       <app-proyectos></app-proyectos>

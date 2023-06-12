@@ -33,9 +33,17 @@ export class DetallesComponent implements OnInit{
     this.desplazarLab();
   }
 
+  desplazarPy() {
+    const proy = document.getElementById('proy');
+    if (proy) {
+      proy.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   abrirMostrarPy() {
     document.body.classList.add('modal-open');
     this.mostrarPyService.abrirMostrarPy();
+    this.desplazarPy();
   }
 
 }

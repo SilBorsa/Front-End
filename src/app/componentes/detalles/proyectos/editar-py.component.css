@@ -1,0 +1,99 @@
+.modal-py {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.603);
+    z-index: 90;
+  }
+  
+  .popup {
+    display: flexbox;
+    justify-content: center;
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    width: 950px;
+    /*height: 600px;*/
+    height:auto;
+    max-height: 600px;
+    padding: 15px;
+    background-color: #a820f7;
+    border: 1px solid #ffffff;
+    border-radius: 20px 0px 20px 20px;
+    box-shadow: 7px 7px 15px 0px black;
+  }
+  
+  .popup_top {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .titulo {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    justify-content: center;
+    background: transparent;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgb(71, 2, 99);
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .popup_body {
+    font-size: medium;
+    margin-top: 20px;
+  }
+  
+  .botones {
+    display: inline-flex;
+    z-index: 2;
+  }
+  
+  .boton {
+    filter:grayscale(150%) brightness(2.5) opacity(85%);
+    height: 40px;
+    padding: 2px 3px 5px 3px;
+  }
+  
+  .boton:hover{
+    filter:opacity(100%);
+  }
+  
+  #miTabla, #miCarga {
+    display:grid;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 auto;
+    width: 900px;
+    position: relative;
+    box-shadow: 1px 1px 1px 2px rgb(89, 2, 100);
+    font-size: small;
+  }
+  
+  #miTabla {
+    background-color: rgb(156, 239, 250);
+    max-height: 380px;
+    overflow: auto;
+  }
+  
+  #miCarga {
+    background-color: rgb(240, 241, 165);
+  }
+  
+  th {
+    /*text-align: center;*/
+    position:sticky;
+    top: 0;
+  }
+  
+  .celda {
+    background-color: #f0c9fc;
+    border: 1px dotted rgb(117, 116, 119);
+    box-shadow: inset 0 0 5px rgba(117, 116, 119, 0.822);
+    padding: 2px;
+  }
+  
