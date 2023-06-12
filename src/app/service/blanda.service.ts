@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Blanda } from '.../modelo/blanda';
+import { Blanda } from '../modelo/blanda';
 
 @Injectable({
   providedIn: 'root'

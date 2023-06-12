@@ -1,10 +1,13 @@
 <div class="habilidades">
 
     <!-- abro duras -->
-    <div class="titulos">
+    <div class="titulos" id="duras">
       <h4>DURAS</h4>
       <div class="editar">
-        <img src="{{editSRC}}" alt="{{editALT}}" />
+        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarDuras()" />
+
+         <!-- componente para editar hard skills -->
+         <app-editar-duras id="verDuras"></app-editar-duras>
       </div>
     </div>
     <div class="skills">
@@ -208,10 +211,13 @@
     <p></p>
 
     <!-- abro blandas -->
-    <div class="titulos">
+    <div class="titulos" id="blandas">
       <h4>BLANDAS</h4>
       <div class="editar">
-        <img src="{{editSRC}}" alt="{{editALT}}" />
+        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarBlandas()" />
+
+        <!-- componente para editar soft skills -->
+        <app-editar-blandas id="verBlandas"></app-editar-blandas>
       </div>
     </div>
       <div class="blandas">
