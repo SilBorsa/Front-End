@@ -20,9 +20,7 @@ export class EditarPersonaComponent implements OnInit, OnDestroy {
   url_imgPersona: string = '';
   personas: Persona[] = [];
 
-  filaVisible: boolean = false; /* asociado a la creacion de registros */
-  persCreada: Persona = new Persona("","","","","","","");
-  filaEditable: boolean = false; /* asociado a la edicion de regsitros */
+  filaEditable: boolean = false;
   persEditada: Persona = new Persona("","","","","","","");
 
   errMsj!: string;
@@ -52,16 +50,6 @@ export class EditarPersonaComponent implements OnInit, OnDestroy {
     this.mostrarPersonaService.cerrarMostrarPersona();
   }
 
-  /* muestra el formulario de carga */
-  mostrarFila(): void {
-    this.filaVisible = true;
-  }
-
-  /* oculta el formulario de carga */
-  cancelarAgregar(): void {
-    this.filaVisible = false;
-  }
-
   /* guarda los cambios del registro modificado */
   actualizarFila() {
     if (this.persEditada && this.persEditada.idPersona) {
@@ -71,7 +59,7 @@ export class EditarPersonaComponent implements OnInit, OnDestroy {
           alert(`Se actualizaron los datos de ${this.persEditada.nombrePersona}.`);
           this.filaEditable = false;
         }, error => {
-        alert(`Los datos no pudieron modificarse. Si intento cambiar el nombre de la red, verifique si ya no esta cargada.`);
+        alert(`Los datos no pudieron modificarse.`);
       });
     }
   }
@@ -87,47 +75,4 @@ export class EditarPersonaComponent implements OnInit, OnDestroy {
     this.persEditada = {...persona};
   }
   
-  /* elimina el registro seleccionado */
-  borrar(idPersona?: number) {
-    if(idPersona!==undefined){
-      const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar a la persona #${idPersona}?`);
-      if(confirmarEliminacion) {
-        this.personaService.delete(idPersona)
-          .subscribe(data => {
-            alert('Se ha eliminado la persona');
-            this.personaService.listar().subscribe(persona => this.personas = persona);
-          }, error => {
-            alert('No pudo eliminarse la persona');
-          });
-      } else {
-        alert('Eliminacion cancelada por el usuario');
-      }
-    }
-  }
-
-  /* guarda el registro creado */
-  guardar(persona: Persona) {
-    const miPersona = new Persona(this.persCreada.nombrePersona,
-                                  this.persCreada.apellidoPersona,
-                                  this.persCreada.subTitulo,
-                                  this.persCreada.emailPersona,
-                                  this.persCreada.celuPersona,
-                                  this.persCreada.acercaPersona,
-                                  this.persCreada.url_imgPersona)
-    this.personaService.save(miPersona)
-    .subscribe(() => {
-      alert(`Se ha agregado ${this.persCreada.nombrePersona}`);
-      this.personaService.listar().subscribe(persona => this.personas = persona);
-      this.persCreada.nombrePersona='';
-      this.persCreada.apellidoPersona='';
-      this.persCreada.subTitulo='';
-      this.persCreada.emailPersona='';
-      this.persCreada.celuPersona='';
-      this.persCreada.acercaPersona='';
-      this.persCreada.url_imgPersona='';
-      this.filaVisible = false;
-    }, error => {
-      alert('No pudo agregarse la red, es probable que ya exista. Verifique los datos y vuelva a intentarlo');
-    });
-  }
 }
