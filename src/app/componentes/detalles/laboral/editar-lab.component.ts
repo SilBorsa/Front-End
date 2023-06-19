@@ -10,13 +10,13 @@ import { MostrarLabService } from 'src/app/service/mostrar-lab.service';
   styleUrls: ['./editar-lab.component.css']
 })
 export class EditarLabComponent implements OnInit, OnDestroy {
-  idLaboral?: number; 
   idPersona: number = 1;
-  nombreEmpresa: string = '';
+  idLaboral?: number; 
   periodoEmpresa: string = '';
-  descEmpresa: string ='';
+  nombreEmpresa: string = '';
   urlEmpresa: string = '';
   url_imgLab: string = '';
+  descEmpresa: string ='';
   laboral: Laboral[] = [];
 
   filaVisible: boolean = false; /* asociado a la creacion de registros */
@@ -70,7 +70,7 @@ export class EditarLabComponent implements OnInit, OnDestroy {
           alert(`Se actualizaron los datos de ${this.labEditado.nombreEmpresa}.`);
           this.filaEditable = false;
         }, error => {
-        alert(`Los datos no pudieron modificarse. Si intento cambiar el nombre de la empresa, verifique si ya no esta cargada.`);
+          alert(`Los datos no pudieron modificarse.`);
       });
     }
   }
@@ -89,14 +89,14 @@ export class EditarLabComponent implements OnInit, OnDestroy {
   /* elimina el registro seleccionado */
   borrarLab(idLaboral?: number) {
     if(idLaboral!==undefined){
-      const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar la empresa #${idLaboral}?`);
+      const confirmarEliminacion = confirm(`¿Seguro que quieres eliminar el trabajo #${idLaboral}?`);
       if(confirmarEliminacion) {
         this.labService.deleteLab(idLaboral)
           .subscribe(data => {
-            alert('Se ha eliminado la empresa');
+            alert('Se ha eliminado el trabajo');
             this.labService.listarLab().subscribe(laboral => this.laboral = laboral);
           }, error => {
-            alert('No pudo eliminarse la empresa');
+            alert('No pudo eliminarse el trabajo');
           });
       } else {
           alert('Eliminacion cancelada por el usuario');
@@ -107,17 +107,17 @@ export class EditarLabComponent implements OnInit, OnDestroy {
   /* guarda el registro creado */
   guardarLab(lab: Laboral) {
     const miLab = new Laboral(this.labCreado.idPersona,
-                              this.labCreado.nombreEmpresa,
                               this.labCreado.periodoEmpresa,
-                              this.labCreado.descEmpresa,
+                              this.labCreado.nombreEmpresa,
                               this.labCreado.urlEmpresa,
-                              this.labCreado.url_imgLab)
+                              this.labCreado.url_imgLab,
+                              this.labCreado.descEmpresa,)
     this.labService.saveLab(miLab)
     .subscribe(() => {
       alert(`Se ha agregado ${this.labCreado.nombreEmpresa}`);
       this.labService.listarLab().subscribe(laboral => this.laboral = laboral);
-      this.labCreado.nombreEmpresa='';
       this.labCreado.periodoEmpresa='';
+      this.labCreado.nombreEmpresa='';
       this.labCreado.urlEmpresa='';
       this.labCreado.url_imgLab='';
       this.labCreado.descEmpresa='';

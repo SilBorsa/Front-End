@@ -12,9 +12,9 @@
     display: flexbox;
     justify-content: center;
     position: fixed;
-    top: 10%;
-    left: 5%;
-    width: 890px;
+    top: 1%;
+    left: 15%;
+    width: 940px;
     /*height: 600px;*/
     height:auto;
     max-height: 700px;
@@ -66,9 +66,9 @@
   #miTabla, #miCarga {
     display:grid;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
     margin: 0 auto;
-    width: 850px;
+    width: 910px;
     position: relative;
     box-shadow: 1px 1px 1px 2px rgb(89, 2, 100);
     font-size: small;
@@ -76,7 +76,7 @@
   
   #miTabla {
     background-color: rgb(156, 239, 250);
-    max-height: 380px;
+    max-height: 350px;
     overflow: auto;
   }
   

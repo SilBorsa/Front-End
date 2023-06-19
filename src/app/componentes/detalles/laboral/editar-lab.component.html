@@ -18,15 +18,24 @@
 <!--            <thead> -->
               <tr *ngFor="let lab of laboral">
                 <td width="500" *ngIf="!filaEditable">
-                  <p>idPersona: {{lab.idPersona}} - idLab: {{lab.idLaboral}} - Periodo: {{lab.periodoEmpresa}} - Empresa: {{lab.nombreEmpresa}}</p>
-                  <p>WEB: {{lab.urlEmpresa}} - img: {{lab.url_imgLab}}</p>
+                  <p>idPersona: {{lab.idPersona}} 
+                    - idLaboral: {{lab.idLaboral}} 
+                    - Periodo: {{lab.periodoEmpresa}} 
+                    - Empresa: {{lab.nombreEmpresa}}</p>
+                  <p>WEB: {{lab.urlEmpresa}} 
+                    - img: {{lab.url_imgLab}}</p>
                   <p>Tareas:<br>{{lab.descEmpresa}}</p>
                 </td>
                 <td *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
-                  <p>idPersona: {{lab.idPersona}} - idLab: {{lab.idLaboral}} - Periodo:<input type="text" size="7" [(ngModel)]="labEditado.periodoEmpresa" />
-                    - Empresa: <input type="text" size="27" [(ngModel)]="labEditado.nombreEmpresa" /></p>
-                  <p>WEB: <input type="text" size="35" [(ngModel)]="labEditado.urlEmpresa" /> - img: <input type="text" size="35" [(ngModel)]="labEditado.url_imgLab" /></p>
-                  <p>Tareas: <br><textarea cols="100" rows="5">{{labEditado.descEmpresa}}</textarea></p>
+                  <p>idPersona: {{lab.idPersona}} 
+                    - idLaboral: {{lab.idLaboral}} 
+                    - Periodo:<input type="text" size="10" [(ngModel)]="labEditado.periodoEmpresa" />
+                    - Empresa: <input type="text" size="35" [(ngModel)]="labEditado.nombreEmpresa" />
+                  </p>
+                  <p>WEB: <input type="text" size="40" [(ngModel)]="labEditado.urlEmpresa" /> 
+                    - img: <input type="text" size="40" [(ngModel)]="labEditado.url_imgLab" />
+                  </p>
+                  <p>Tareas:<br><textarea cols="110" rows="3" [(ngModel)]="labEditado.descEmpresa"></textarea></p>
                 </td>
                 <td *ngIf="!filaEditable">
                     <!--boton para habilitar la edicion de un registro particular-->
@@ -88,39 +97,32 @@
         </div>
         <br>
         <!-- form oculto para agregar registros -->
-        <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+        <div id="miCarga" *ngIf="filaVisible">
           <br>
           <table>
-            <thead>
               <tr>
-                <th width="17">idPer</th>
-                <th width="17">idLab</th>
-                <th width="52">Periodo</th>
-                <th width="180">Empresa</th>
-                <th width="250">Web (URL)</th>
-                <th width="250">Logo (URL)</th>
-                <th width="250">Tareas</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan="8">
-                    <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="labCreado.idPersona" required />
-                    <input type="text" size="2" name="idLaboral" placeholder="idLaboral" />
-                    <input type="text" size="20" name="nombreEmpresa" placeholder="Empresa" [(ngModel)]="labCreado.nombreEmpresa" required />
-                    <input type="text" size="40" name="urlEmpresa" placeholder="urlEmpresa" [(ngModel)]="labCreado.urlEmpresa" required />
-                    <input type="text" size="40" name="url_imgLab" placeholder="url_imgLab" [(ngModel)]="labCreado.url_imgLab" required />
+                <td width="500">
+                  <p>idPersona: <input type="text" size="1" name="idPersona" value="1" [(ngModel)]="labCreado.idPersona" readonly />
+                    - idLaboral: <input type="text" size="1" name="idLaboral" [(ngModel)]="labCreado.idLaboral" readonly />
+                    - Periodo: <input type="text" size="10" name="periodoEmpresa" [(ngModel)]="labCreado.periodoEmpresa" required />
+                    - Empresa: <input type="text" size="35" name="nombreEmpresa" [(ngModel)]="labCreado.nombreEmpresa" required />
+                  </p>
+                  <p>
+                    WEB: <input type="text" size="40" name="urlEmpresa" [(ngModel)]="labCreado.urlEmpresa" required />
+                    - img: <input type="text" size="40" name="url_imgLab" [(ngModel)]="labCreado.url_imgLab" required />
+                  </p>
+                  <p>
+                    Tareas:<br><textarea cols="110" rows="4" name="descEmpresa" [(ngModel)]="labCreado.descEmpresa"></textarea>
+                  </p>
+                </td>
+                <td>
                     <!--boton para guardar el nuevo registro-->
                     <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarLab(labCreado)" />
                     <!--boton para cancelar la creacion de un nuevo registro-->
                     <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
-                  <!-- </form> -->
                 </td>
               </tr>
-            </tbody>
           </table>
         </div>
-  
       </div>
     </div>

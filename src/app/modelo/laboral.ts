@@ -1,24 +1,24 @@
 export class Laboral {
     idPersona:number;
     idLaboral?: number;
-    nombreEmpresa: string;
     periodoEmpresa: string;
-    descEmpresa: string;
+    nombreEmpresa: string;
     urlEmpresa: string;
     url_imgLab: string;
+    descEmpresa: string;
 
     constructor (idPersona: number,
-                nombreEmpresa: string, 
                 periodoEmpresa: string, 
-                descEmpresa: string, 
+                nombreEmpresa: string, 
                 urlEmpresa: string, 
-                url_imgLab: string) {
+                url_imgLab: string,
+                descEmpresa: string) {
         this.idPersona = idPersona;
-        this.nombreEmpresa = nombreEmpresa;
         this.periodoEmpresa = periodoEmpresa;
-        this.descEmpresa = descEmpresa;
+        this.nombreEmpresa = nombreEmpresa;
         this.urlEmpresa = urlEmpresa;
         this.url_imgLab = url_imgLab;
+        this.descEmpresa = descEmpresa;
     }
 
 }
