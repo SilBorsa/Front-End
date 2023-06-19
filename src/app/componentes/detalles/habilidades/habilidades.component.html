@@ -4,7 +4,7 @@
     <div class="titulos" id="duras">
       <h4>DURAS</h4>
       <div class="editar">
-        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarDuras()" />
+        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarDuras()" *ngIf="isLogged" />
 
          <!-- componente para editar hard skills -->
          <app-editar-duras id="verDuras"></app-editar-duras>
@@ -214,7 +214,7 @@
     <div class="titulos" id="blandas">
       <h4>BLANDAS</h4>
       <div class="editar">
-        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarBlandas()" />
+        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarBlandas()" *ngIf="isLogged" />
 
         <!-- componente para editar soft skills -->
         <app-editar-blandas id="verBlandas"></app-editar-blandas>

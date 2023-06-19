@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MostrarBlandasService } from 'src/app/service/mostrar-blandas.service';
 import { MostrarDurasService } from 'src/app/service/mostrar-duras.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -13,11 +14,18 @@ export class HabilidadesComponent implements OnInit{
   
   mostrarEdu=false;
   mostrarTics=false;
+  isLogged=false;
 
   constructor (private mostrarDurasService: MostrarDurasService,
-               private mostrarBlandasService: MostrarBlandasService) {}
+               private mostrarBlandasService: MostrarBlandasService,
+               private tokenService: TokenService) {}
 
   ngOnInit(): void {
+  if(this.tokenService.getToken()){
+      this.isLogged=true;
+   } else {
+     this.isLogged=false;
+   }
   }
 
   desplazarHard() {

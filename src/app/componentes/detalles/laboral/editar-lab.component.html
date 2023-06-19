@@ -15,48 +15,75 @@
       <div class="popup_body">
         <div id="miTabla" class="table table-responsive-sm">
           <table>
-            <thead>
-              <tr>
-                <th width="15">idPer</th>
-                <th width="15">idLab</th>
-                <th width="50">Periodo</th>
-                <th width="100">Empresa</th>
-                <th width="300">Web (URL)</th>
-                <th width="300">Logo (URL)</th>
+<!--            <thead> -->
+              <tr *ngFor="let lab of laboral">
+                <td width="500" *ngIf="!filaEditable">
+                  <p>idPersona: {{lab.idPersona}} - idLab: {{lab.idLaboral}} - Periodo: {{lab.periodoEmpresa}} - Empresa: {{lab.nombreEmpresa}}</p>
+                  <p>WEB: {{lab.urlEmpresa}} - img: {{lab.url_imgLab}}</p>
+                  <p>Tareas:<br>{{lab.descEmpresa}}</p>
+                </td>
+                <td *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                  <p>idPersona: {{lab.idPersona}} - idLab: {{lab.idLaboral}} - Periodo:<input type="text" size="7" [(ngModel)]="labEditado.periodoEmpresa" />
+                    - Empresa: <input type="text" size="27" [(ngModel)]="labEditado.nombreEmpresa" /></p>
+                  <p>WEB: <input type="text" size="35" [(ngModel)]="labEditado.urlEmpresa" /> - img: <input type="text" size="35" [(ngModel)]="labEditado.url_imgLab" /></p>
+                  <p>Tareas: <br><textarea cols="100" rows="5">{{labEditado.descEmpresa}}</textarea></p>
+                </td>
+                <td *ngIf="!filaEditable">
+                    <!--boton para habilitar la edicion de un registro particular-->
+                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(lab)" />
+                    <!--boton para eliminar un registro particular-->
+                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarLab(lab.idLaboral)"/>
+                </td>                
+                <td *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <!--boton para guardar los cambios-->
+                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                    <!--boton para cancelar cambios-->
+                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()">
+                </td>
+              </tr>
+          </table>
+
+<!--                <th width="17">idPer</th>
+                <th width="17">idLab</th>
+                <th width="52">Periodo</th>
+                <th width="150">Empresa</th> 
+                <th width="250">Web (URL)</th>
+                <th width="250">Logo (URL)</th>
                 <th width="300">Tareas</th>
                 <th>Acciones</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let lab of laboral">
-                <td width="15">{{lab.idPersona}}</td>
-                <td width="15">{{lab.idLaboral}}</td>
-                <td width="100" *ngIf="!filaEditable">{{lab.periodoEmpresa}}</td>
-                <td width="100" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
-                    <input type="text" size="15" [(ngModel)]="labEditado.periodoEmpresa" /></td>
-                <td width="100" *ngIf="!filaEditable">{{lab.nombreEmpresa}}</td>
-                <td width="100" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
-                    <input type="text" size="15" [(ngModel)]="labEditado.nombreEmpresa" /></td>
-                <td width="300" *ngIf="!filaEditable">{{lab.urlEmpresa}}</td>
-                <td width="300" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
-                    <input type="text" size="45" [(ngModel)]="labEditado.urlEmpresa" /></td>
-                <td width="300" *ngIf="!filaEditable">{{lab.url_imgLab}}</td>
-                <td width="300" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
-                    <input type="text" size="43" [(ngModel)]="labEditado.url_imgLab"></td>
+                <td width="17">{{lab.idPersona}}</td>
+                <td width="17">{{lab.idLaboral}}</td>
+                <td width="52" *ngIf="!filaEditable">{{lab.periodoEmpresa}}</td>
+                <td width="52" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="3" [(ngModel)]="labEditado.periodoEmpresa" /></td>
+                <td width="150" *ngIf="!filaEditable">{{lab.nombreEmpresa}}</td>
+                <td width="150" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="25" [(ngModel)]="labEditado.nombreEmpresa" /></td>
+                <td width="250" *ngIf="!filaEditable">{{lab.urlEmpresa}}</td>
+                <td width="250" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral"> 
+                    <input type="text" size="37" [(ngModel)]="labEditado.urlEmpresa" /></td>
+                <td width="250" *ngIf="!filaEditable">{{lab.url_imgLab}}</td>
+                <td width="250" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
+                    <input type="text" size="37" [(ngModel)]="labEditado.url_imgLab"></td>
                 <td width="300" *ngIf="!filaEditable">{{lab.descEmpresa}}</td>
                 <td width="300" *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
-                    <input type="text" size="43" [(ngModel)]="labEditado.descEmpresa"></td>
-                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
-                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(lab)" />
+                    <textarea cols="20" rows="20">{{labEditado.descEmpresa}}</textarea></td> -->
+<!--                <td *ngIf="!filaEditable"> --><!--boton para habilitar la edicion de un registro particular-->
+<!--                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(lab)" /> -->
                     <!--boton para eliminar un registro particular-->
-                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarLab(lab.idLaboral)"/></td>                
-                <td *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral"><!--boton para guardar los cambios-->
-                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+<!--                    <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarLab(lab.idLaboral)"/></td> -->              
+<!--                <td *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral"> -->
+                    <!--boton para guardar los cambios-->
+<!--                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">-->
                     <!--boton para cancelar cambios-->
-                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+<!--                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
           <br>
         </div>
         <br>
@@ -66,13 +93,13 @@
           <table>
             <thead>
               <tr>
-                <th width="15">idPer</th>
-                <th width="15">idLab</th>
-                <th width="50">Periodo</th>
-                <th width="100">Empresa</th>
-                <th width="300">Web (URL)</th>
-                <th width="300">Logo (URL)</th>
-                <th width="300">Tareas</th>
+                <th width="17">idPer</th>
+                <th width="17">idLab</th>
+                <th width="52">Periodo</th>
+                <th width="180">Empresa</th>
+                <th width="250">Web (URL)</th>
+                <th width="250">Logo (URL)</th>
+                <th width="250">Tareas</th>
                 <th>Acciones</th>
               </tr>
             </thead>

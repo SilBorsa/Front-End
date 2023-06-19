@@ -5,7 +5,7 @@
   <div class="titulos">
     <h4>FORMALES</h4>
     <div class="editar">
-      <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarEdu()" />
+      <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarEdu()" *ngIf="isLogged" />
     </div>
 
      <!-- componente para editar educacion formal -->
@@ -63,7 +63,7 @@
   <div class="titulos">
     <h4>CAPACITACIONES TICS</h4>
     <div class="editar">
-      <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarTics()" />
+      <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarTics()" *ngIf="isLogged" />
     </div>
 
     <!-- componente para editar educacion tics -->

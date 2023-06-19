@@ -12,7 +12,7 @@
   display:flexbox;
   justify-content: center;
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 40%;
   width: 500px;
   height:auto;
@@ -20,7 +20,7 @@
   padding: 15px;
   background-color: #a820f7;
   border: 1px solid #ffffff;
-  border-radius: 20px 0px 20px 20px;
+  border-radius: 20px 20px 0px 20px;
   box-shadow: 7px 7px 15px 0px black;
 }
 

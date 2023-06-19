@@ -53,16 +53,16 @@ export class EditarFotoComponent implements OnInit, OnDestroy {
 
   /* guarda los cambios del registro modificado */
   actualizarFila() {
-    //if (this.persEditada && this.persEditada.idPersona) {
-    //  this.personaService.update(this.persEditada.idPersona, this.persEditada)
-    //    .subscribe(response => {
-    //      this.personaService.listar().subscribe(persona => this.persona = persona);
+  if (this.persEditada && this.persEditada.idPersona) {
+      this.personaService.update(this.persEditada.idPersona, this.persEditada)
+        .subscribe(response => {
+          this.personaService.listar().subscribe(persona => this.persona = persona);
           alert(`Se actualizaron los datos de ${this.persEditada.nombrePersona}.`);
-    //      this.filaEditable = false;
-    //    }, error => {
-    //      alert(`Los datos no pudieron modificarse.`);
-    //  });
-    //}
+          this.filaEditable = false;
+        }, error => {
+          alert(`Los datos no pudieron modificarse.`);
+      });
+    }
   }
 
   /* oculta campos de edicion para el registro seleccionado */

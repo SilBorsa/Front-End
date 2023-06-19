@@ -10,11 +10,11 @@ import { MostrarEduService } from 'src/app/service/mostrar-edu.service';
   styleUrls: ['./editar-edu.component.css']
 })
 export class EditarEduComponent implements OnInit, OnDestroy{
-  idEstudio?: number; 
   idPersona: number = 1;
-  nombreInstituto: string = '';
-  periodoEstudio: string = '';
+  idEstudio?: number; 
   tituloEstudio: string ='';
+  periodoEstudio: string = '';
+  nombreInstituto: string = '';
   urlInstituto: string = '';
   url_imgEdu: string = '';
   estudio: Estudio[] = [];
@@ -67,7 +67,7 @@ export class EditarEduComponent implements OnInit, OnDestroy{
       this.eduService.updateEdu(this.eduEditado.idEstudio, this.eduEditado)
         .subscribe(response => {
           this.eduService.listarEdu().subscribe(estudio => this.estudio = estudio);
-          alert(`Se actualizaron los datos de ${this.eduEditado.nombreInstituto}.`);
+          alert(`Se actualizaron los datos de ${this.eduEditado.tituloEstudio}.`);
           this.filaEditable = false;
         }, error => {
           alert(`Los datos no pudieron modificarse. Si intento cambiar el nombre del instituto o el titulo obtenido, verifique si ya no esta cargado`);
@@ -107,20 +107,20 @@ export class EditarEduComponent implements OnInit, OnDestroy{
   /* guarda el registro creado */
   guardarEdu(edu: Estudio) {
     const miEdu = new Estudio(this.eduCreado.idPersona,
-                              this.eduCreado.nombreInstituto,
-                              this.eduCreado.periodoEstudio,
                               this.eduCreado.tituloEstudio,
+                              this.eduCreado.periodoEstudio,
+                              this.eduCreado.nombreInstituto,
                               this.eduCreado.urlInstituto,
-                              this.eduCreado.url_imgInst)
+                              this.eduCreado.url_imgInst) 
     this.eduService.saveEdu(miEdu)
     .subscribe(() => {
-      alert(`Se ha agregado ${this.eduCreado.nombreInstituto}`);
+      alert(`Se ha agregado ${this.eduCreado.tituloEstudio}`);
       this.eduService.listarEdu().subscribe(estudio => this.estudio = estudio);
-      this.eduCreado.nombreInstituto='';
+      this.eduCreado.tituloEstudio='';
       this.eduCreado.periodoEstudio='';
+      this.eduCreado.nombreInstituto='';
       this.eduCreado.urlInstituto='';
       this.eduCreado.url_imgInst='';
-      this.eduCreado.tituloEstudio='';
       this.filaVisible = false;
     }, error => {
         alert('No pudo agregarse el estudio, es probable que ya exista. Verifique los datos y vuelva a intentarlo');

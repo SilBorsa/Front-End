@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MostrarEduService } from 'src/app/service/mostrar-edu.service';
 import { MostrarTicsService } from 'src/app/service/mostrar-tics.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-estudios',
@@ -31,11 +32,18 @@ export class EstudiosComponent implements OnInit {
 
   mostrarEdu=false;
   mostrarTics=false;
+  isLogged=false;
 
   constructor (private mostrarEduService: MostrarEduService,
-               private mostrarTicsService: MostrarTicsService) {}
+               private mostrarTicsService: MostrarTicsService,
+               private tokenService: TokenService) {}
 
   ngOnInit(): void {
+  if(this.tokenService.getToken()){
+     this.isLogged=true;
+   } else {
+     this.isLogged=false;
+   }
   }
 
   desplazarEdu() {

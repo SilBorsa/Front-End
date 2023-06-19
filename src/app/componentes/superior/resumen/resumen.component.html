@@ -3,7 +3,7 @@
         <h1 class="nombre"> Silvana Borsani</h1>
        
         <div class="editar">
-            <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPersona()" />
+            <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPersona()" *ngIf="isLogged" />
         </div>
     </div>
     <h4>Full Stack Web Developer Jr.</h4>

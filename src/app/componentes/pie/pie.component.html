@@ -12,7 +12,7 @@
   <!-- cierro pie -->
 
   <div class="editar">
-    <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPie()" />
+    <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPie()" *ngIf="isLogged" />
 
     <!-- componente para editar el pie -->
     <app-editar-pie id="verPie"></app-editar-pie>

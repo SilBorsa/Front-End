@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelo/persona';
 import { MostrarPieService } from 'src/app/service/mostrar-pie.service';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-pie',
@@ -18,6 +19,7 @@ export class PieComponent implements OnInit{
   bootsoon="https://www.npmjs.com/package/ng-circle-progress";
 
   mostrarPie=false;
+  isLogged=false;
 
   persona: Persona = {nombrePersona:"",
                       apellidoPersona:"",
@@ -25,15 +27,21 @@ export class PieComponent implements OnInit{
                       emailPersona:"",
                       celuPersona:"",
                       acercaPersona:"",
-                      url_imgPersona:""}; /*= new Persona("","","","","","","");*/
+                      url_imgPersona:""}; 
     
   constructor(private personaService: PersonaService,
-              private mostrarPieService: MostrarPieService) { }
+              private mostrarPieService: MostrarPieService,
+              private tokenService: TokenService) { }
   
   ngOnInit(): void {
-    const idPersona = 1;
-    this.personaService.getPersona(idPersona)
-        .subscribe(persona => {this.persona = persona;});
+  //  const idPersona = 1;
+  //  this.personaService.detail(idPersona)
+  //      .subscribe(persona => {this.persona = persona;});
+    if(this.tokenService.getToken()){
+       this.isLogged=true;
+    } else {
+      this.isLogged=false;
+    }
   }
 
   abrirMostrarPie() {

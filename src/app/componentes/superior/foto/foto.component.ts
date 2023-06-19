@@ -23,7 +23,7 @@ export class FotoComponent implements OnInit {
                       emailPersona:"",
                       celuPersona:"",
                       acercaPersona:"",
-                      url_imgPersona:""}; /*= new Persona("","","","","","","");*/
+                      url_imgPersona:""};
     
   constructor(private personaService: PersonaService,
               private mostrarFotoService: MostrarFotoService,
@@ -31,7 +31,7 @@ export class FotoComponent implements OnInit {
   
   ngOnInit(): void {
     const idPersona = 1;
-    this.personaService.getPersona(idPersona)
+    this.personaService.detail(idPersona)
         .subscribe(persona => {this.persona = persona;});
     if(this.tokenService.getToken()){
        this.isLogged=true;

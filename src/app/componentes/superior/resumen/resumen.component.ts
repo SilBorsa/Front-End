@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/modelo/persona';
 import { MostrarPersonaService } from 'src/app/service/mostrar-persona.service';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-resumen',
@@ -21,15 +22,21 @@ export class ResumenComponent implements OnInit {
                       emailPersona:"",
                       celuPersona:"",
                       acercaPersona:"",
-                      url_imgPersona:""}; /*= new Persona("","","","","","","");*/
+                      url_imgPersona:""}; 
     
   constructor(private personaService: PersonaService,
-              private mostrarPersonaService: MostrarPersonaService) { }
+              private mostrarPersonaService: MostrarPersonaService,
+              private tokenService: TokenService) { }
 
   ngOnInit() {
     const idPersona = 1;
-    this.personaService.getPersona(idPersona)
+    this.personaService.detail(idPersona)
         .subscribe(persona => {this.persona = persona;});
+    if(this.tokenService.getToken()){
+       this.isLogged=true;
+    } else {
+      this.isLogged=false;
+    }
   }
 
   desplazarPersona() {

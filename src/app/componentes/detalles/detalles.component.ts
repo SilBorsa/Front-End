@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MostrarLabService } from 'src/app/service/mostrar-lab.service';
 import { MostrarPyService } from 'src/app/service/mostrar-py.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-detalles',
@@ -13,11 +14,18 @@ export class DetallesComponent implements OnInit{
 
   mostrarLab=false;
   mostrarPy=false;
+  isLogged=false;
 
   constructor (private mostrarLabService: MostrarLabService, 
-               private mostrarPyService: MostrarPyService) {}
+               private mostrarPyService: MostrarPyService,
+               private tokenService: TokenService) {}
 
   ngOnInit(): void { 
+  if(this.tokenService.getToken()){
+     this.isLogged=true;
+   } else {
+     this.isLogged=false;
+   }
   }
 
   desplazarLab() {

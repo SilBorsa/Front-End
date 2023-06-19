@@ -10,11 +10,11 @@ import { TicsService } from 'src/app/service/tics.service';
   styleUrls: ['./editar-tics.component.css']
 })
 export class EditarTicsComponent implements OnInit, OnDestroy{
-  idTic?: number; 
   idPersona: number = 1;
-  nombreInstTic: string = '';
-  periodoTic: string = '';
+  idTic?: number; 
   cursoTic: string ='';
+  periodoTic: string = '';
+  nombreInstTic: string = '';
   urlInstTic: string = '';
   url_imgTic: string = '';
   tic: Tics[] = [];
@@ -67,7 +67,7 @@ export class EditarTicsComponent implements OnInit, OnDestroy{
       this.ticsService.updateTic(this.ticEditado.idTic, this.ticEditado)
         .subscribe(response => {
           this.ticsService.listarTic().subscribe(tic => this.tic = tic);
-          alert(`Se actualizaron los datos de ${this.ticEditado.nombreInstTic}.`);
+          alert(`Se actualizaron los datos de ${this.ticEditado.cursoTic}.`);
           this.filaEditable = false;
         }, error => {
           alert(`Los datos no pudieron modificarse. Si intento cambiar el nombre del instituto o del curso, verifique si ya no esta cargado`);
@@ -107,20 +107,20 @@ export class EditarTicsComponent implements OnInit, OnDestroy{
   /* guarda el registro creado */
   guardarTic(tic: Tics) {
     const miTic = new Tics(this.ticCreado.idPersona,
-                              this.ticCreado.nombreInstTic,
-                              this.ticCreado.periodoTic,
                               this.ticCreado.cursoTic,
+                              this.ticCreado.periodoTic,
+                              this.ticCreado.nombreInstTic,
                               this.ticCreado.urlInstTic,
                               this.ticCreado.url_imgTic)
     this.ticsService.saveTic(miTic)
     .subscribe(() => {
-      alert(`Se ha agregado ${this.ticCreado.cursoTic}`);
+      alert(`Se ha agregado el curso ${this.ticCreado.cursoTic}`);
       this.ticsService.listarTic().subscribe(tic => this.tic = tic);
-      this.ticCreado.nombreInstTic='';
+      this.ticCreado.cursoTic='';
       this.ticCreado.periodoTic='';
+      this.ticCreado.nombreInstTic='';
       this.ticCreado.urlInstTic='';
       this.ticCreado.url_imgTic='';
-      this.ticCreado.cursoTic='';
       this.filaVisible = false;
     }, error => {
         alert('No pudo agregarse el curso, es probable que ya exista. Verifique los datos y vuelva a intentarlo');
