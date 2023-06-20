@@ -10,8 +10,8 @@ import { MostrarBlandasService } from 'src/app/service/mostrar-blandas.service';
   styleUrls: ['./editar-blandas.component.css']
 })
 export class EditarBlandasComponent implements OnInit, OnDestroy{
-  idBlanda?: number; 
   idPersona: number = 1;
+  idBlanda?: number; 
   nombreBlanda: string = '';
   colorBlanda: string = '';
   url_imgBlanda: string = '';

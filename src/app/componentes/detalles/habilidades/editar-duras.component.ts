@@ -14,6 +14,8 @@ export class EditarDurasComponent implements OnInit, OnDestroy{
   idPersona: number = 1;
   nombreDura: string = '';
   porcentaje: number = 0;
+//  num: string = '';
+//  giro: string = '';
   colorDura: string = '';
   hard: Dura[] = [];
 

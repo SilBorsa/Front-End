@@ -39,18 +39,20 @@
                     <input type="text" size="3" [(ngModel)]="ticEditado.periodoTic" /></td>
                 <td width="180" *ngIf="!filaEditable">{{tic.nombreInstTic}}</td>
                 <td width="180" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
-                    <input type="text" size="27" [(ngModel)]="ticEditado.nombreInstTic" /></td>
+                    <input type="text" size="25" [(ngModel)]="ticEditado.nombreInstTic" /></td>
                 <td width="250" *ngIf="!filaEditable">{{tic.urlInstTic}}</td>
                 <td width="250" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
-                    <input type="text" size="35" [(ngModel)]="ticEditado.urlInstTic" /></td>
-                <td width="250" *ngIf="!filaEditable">{{tic.url_imgTic}}</td>
-                <td width="250" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
-                    <input type="text" size="35" [(ngModel)]="ticEditado.url_imgTic"></td>
-                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                    <input type="text" size="37" [(ngModel)]="ticEditado.urlInstTic" /></td>
+                <td width="260" *ngIf="!filaEditable">{{tic.url_imgTic}}</td>
+                <td width="260" *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
+                    <input type="text" size="37" [(ngModel)]="ticEditado.url_imgTic"></td>
+                <td *ngIf="!filaEditable">
+                    <!--boton para habilitar la edicion de un registro particular-->
                     <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(tic)" />
                     <!--boton para eliminar un registro particular-->
                     <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarTic(tic.idTic)"/></td>                
-                <td *ngIf="filaEditable && tic.idTic === ticEditado.idTic"><!--boton para guardar los cambios-->
+                <td *ngIf="filaEditable && tic.idTic === ticEditado.idTic">
+                    <!--boton para guardar los cambios-->
                     <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
                     <!--boton para cancelar cambios-->
                     <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
@@ -61,18 +63,18 @@
         </div>
         <br>
         <!-- form oculto para agregar registros -->
-        <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+        <div id="miCarga" *ngIf="filaVisible">
           <br>
           <table>
             <thead>
               <tr>
-                <th width="17">idPer</th>
-                <th width="17">idTic</th>
-                <th width="200">Curso</th>
+                <th width="35">idPer</th>
+                <th width="35">idTic</th>
+                <th width="180">Curso</th>
                 <th width="52">Periodo</th>
                 <th width="180">Instituto</th>
                 <th width="250">Web (URL)</th>
-                <th width="250">Logo (URL)</th>
+                <th width="260">Logo (URL)</th>
                 <th>Acciones</th>
               </tr>
             </thead>
@@ -81,7 +83,7 @@
                 <td colspan="8">
                     <input type="text" size="1" name="idPersona" value="1" [(ngModel)]="ticCreado.idPersona" readonly />
                     <input type="text" size="1" name="idTic" [(ngModel)]="ticCreado.idTic" readonly/>
-                    <input type="text" size="28" name="cursoTic" placeholder="curso" [(ngModel)]="ticCreado.cursoTic" required />
+                    <input type="text" size="25" name="cursoTic" placeholder="curso" [(ngModel)]="ticCreado.cursoTic" required />
                     <input type="text" size="3" name="periodoTic" placeholder="año" [(ngModel)]="ticCreado.periodoTic" required />
                     <input type="text" size="25" name="nombreInstTic" placeholder="Instituto" [(ngModel)]="ticCreado.nombreInstTic" required />
                     <input type="text" size="37" name="urlInstTic" placeholder="urlInstituto" [(ngModel)]="ticCreado.urlInstTic" required />
@@ -90,13 +92,11 @@
                     <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarTic(ticCreado)" />
                     <!--boton para cancelar la creacion de un nuevo registro-->
                     <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
-                  <!-- </form> -->
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-  
       </div>
     </div>
 

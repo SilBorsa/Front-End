@@ -37,8 +37,9 @@
                   <input type="text" size="45" [(ngModel)]="redEditada.urlRed" /></td>
               <td width="300" *ngIf="!filaEditable">{{red.url_imgRed}}</td>
               <td width="300" *ngIf="filaEditable && red.idRed === redEditada.idRed">
-                  <input type="text" size="43" [(ngModel)]="redEditada.url_imgRed"></td>
-              <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                  <input type="text" size="45" [(ngModel)]="redEditada.url_imgRed"></td>
+              <td *ngIf="!filaEditable">
+                  <!--boton para habilitar la edicion de un registro particular-->
                   <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(red)" />
                   <!--boton para eliminar un registro particular-->
                   <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarRed(red.idRed)"/></td>                
@@ -53,14 +54,14 @@
       </div>
       <br>
       <!-- form oculto para agregar registros -->
-      <div id="miCarga" class="table table-responsive-sm" *ngIf="filaVisible">
+      <div id="miCarga" *ngIf="filaVisible">
         <br>
         <table>
           <thead>
             <tr>
-              <th width="15">idPer</th>
-              <th width="15">idRed</th>
-              <th width="100">Red</th>
+              <th width="20">idPer</th>
+              <th width="20">idRed</th>
+              <th width="120">Red</th>
               <th width="300">Perfil (URL)</th>
               <th width="300">Logo (URL)</th>
               <th>Acciones</th>
@@ -69,22 +70,19 @@
           <tbody>
             <tr>
               <td colspan="6">
-                <!-- <form #myForm="ngForm" novalidate (ngSubmit)="guardarRed()"> -->
-                  <input type="text" size="2" name="idPersona" value="1" [(ngModel)]="redCreada.idPersona" required />
-                  <input type="text" size="2" name="idRed" placeholder="idRed" />
-                  <input type="text" size="20" name="nombreRed" placeholder="nombreRed" [(ngModel)]="redCreada.nombreRed" required />
-                  <input type="text" size="40" name="urlRed" placeholder="urlRed" [(ngModel)]="redCreada.urlRed" required />
-                  <input type="text" size="40" name="url_imgRed" placeholder="url_imgRed" [(ngModel)]="redCreada.url_imgRed" required />
+                  <input type="text" size="1" name="idPersona" value="1" [(ngModel)]="redCreada.idPersona" readonly />
+                  <input type="text" size="1" name="idRed" placeholder="idRed" [(ngModel)]="redCreada.idRed" readonly />
+                  <input type="text" size="15" name="nombreRed" placeholder="nombreRed" [(ngModel)]="redCreada.nombreRed" required />
+                  <input type="text" size="44" name="urlRed" placeholder="urlRed" [(ngModel)]="redCreada.urlRed" required />
+                  <input type="text" size="44" name="url_imgRed" placeholder="url_imgRed" [(ngModel)]="redCreada.url_imgRed" required />
                   <!--boton para guardar el nuevo registro-->
                   <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarRed(redCreada)" />
                   <!--boton para cancelar la creacion de un nuevo registro-->
                   <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
-                <!-- </form> -->
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-
     </div>
   </div>

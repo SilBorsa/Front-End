@@ -46,11 +46,13 @@
                 <td width="250" *ngIf="!filaEditable">{{edu.url_imgInst}}</td>
                 <td width="250" *ngIf="filaEditable && edu.idEstudio === eduEditado.idEstudio">
                     <input type="text" size="37" [(ngModel)]="eduEditado.url_imgInst"></td>
-                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                <td *ngIf="!filaEditable">
+                    <!--boton para habilitar la edicion de un registro particular-->
                     <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(edu)" />
                     <!--boton para eliminar un registro particular-->
                     <img src="../../../../assets/borrar.png" alt="borrar" class="boton" (click)="borrarEdu(edu.idEstudio)"/></td>                
-                <td *ngIf="filaEditable && edu.idEstudio === eduEditado.idEstudio"><!--boton para guardar los cambios-->
+                <td *ngIf="filaEditable && edu.idEstudio === eduEditado.idEstudio">
+                    <!--boton para guardar los cambios-->
                     <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
                     <!--boton para cancelar cambios-->
                     <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
@@ -90,7 +92,6 @@
                     <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarEdu(eduCreado)" />
                     <!--boton para cancelar la creacion de un nuevo registro-->
                     <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="cancelarAgregar()" />
-                  <!-- </form> -->
                 </td>
               </tr>
             </tbody>

@@ -12,7 +12,7 @@
     display: flexbox;
     justify-content: center;
     position: fixed;
-    top: 1%;
+    top: 2%;
     left: 15%;
     width: 940px;
     /*height: 600px;*/
@@ -68,7 +68,7 @@
     justify-content: center;
     padding: 5px;
     margin: 0 auto;
-    width: 910px;
+    width: 900px;
     position: relative;
     box-shadow: 1px 1px 1px 2px rgb(89, 2, 100);
     font-size: small;
