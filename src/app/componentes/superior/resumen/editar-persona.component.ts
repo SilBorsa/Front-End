@@ -23,15 +23,14 @@ export class EditarPersonaComponent implements OnInit, OnDestroy {
   filaEditable: boolean = false;
   persEditada: Persona = new Persona("","","","","","","");
 
-  errMsj!: string;
+  // errMsj!: string;
+  //editor: Editor;
 
   abrirMostrarPersona=false;
   private subscription: Subscription;
 
   constructor(private mostrarPersonaService: MostrarPersonaService,
-              private personaService: PersonaService,
-              //private router: Router
-              ) {
+              private personaService: PersonaService,) {
       this.subscription = this.mostrarPersonaService.abrirMostrarPersona$
           .subscribe(abrirMostrarPersona => { this.abrirMostrarPersona = abrirMostrarPersona; });
 }

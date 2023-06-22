@@ -28,9 +28,7 @@ export class EditarBlandasComponent implements OnInit, OnDestroy{
   private subscription: Subscription;
 
   constructor(private mostrarBlandasService: MostrarBlandasService,
-              private softService: BlandaService,
-              //private router: Router
-              ) {
+              private softService: BlandaService,) {
       this.subscription = this.mostrarBlandasService.abrirMostrarBlandas$
           .subscribe(abrirMostrarBlandas => { this.abrirMostrarBlandas = abrirMostrarBlandas; });
 }
