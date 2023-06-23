@@ -23,9 +23,6 @@ export class EditarPersonaComponent implements OnInit, OnDestroy {
   filaEditable: boolean = false;
   persEditada: Persona = new Persona("","","","","","","");
 
-  // errMsj!: string;
-  //editor: Editor;
-
   abrirMostrarPersona=false;
   private subscription: Subscription;
 

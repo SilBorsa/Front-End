@@ -9,6 +9,7 @@ import { TokenService } from 'src/app/service/token.service';
   templateUrl: './resumen.component.html',
   styleUrls: ['./resumen.component.css']
 })
+
 export class ResumenComponent implements OnInit {
   editSRC = "../../../../assets/editar.png";
   editALT="agregar, editar, eliminar";
@@ -29,9 +30,7 @@ export class ResumenComponent implements OnInit {
               private tokenService: TokenService) { }
 
   ngOnInit() {
-    const idPersona = 1;
-    this.personaService.detail(idPersona)
-        .subscribe(persona => {this.persona = persona;});
+    this.personaService.listar();
     if(this.tokenService.getToken()){
        this.isLogged=true;
     } else {
