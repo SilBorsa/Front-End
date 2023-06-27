@@ -14,23 +14,25 @@ export class ResumenComponent implements OnInit {
   editSRC = "../../../../assets/editar.png";
   editALT="agregar, editar, eliminar";
 
+  idPersona: number = 1;
+
   mostrarPersona=false;
   isLogged=false;
 
-  persona: Persona = {nombrePersona:"",
-                      apellidoPersona:"",
-                      subTitulo:"",
-                      emailPersona:"",
-                      celuPersona:"",
-                      acercaPersona:"",
-                      url_imgPersona:""}; 
+  persona: Persona [] = [{nombrePersona:"",
+                          apellidoPersona:"",
+                          subTitulo:"",
+                          emailPersona:"",
+                          celuPersona:"",
+                          acercaPersona:"",
+                          url_imgPersona:""}];
     
   constructor(private personaService: PersonaService,
               private mostrarPersonaService: MostrarPersonaService,
               private tokenService: TokenService) { }
 
   ngOnInit() {
-    this.personaService.listar();
+    this.personaService.listar().subscribe(persona => this.persona = persona);
     if(this.tokenService.getToken()){
        this.isLogged=true;
     } else {
