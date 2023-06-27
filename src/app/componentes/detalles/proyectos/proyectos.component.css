@@ -1,5 +1,7 @@
 .proyectos {
   margin: 0 5%;
+  display: flexbox;
+  align-content: center;
 }
   
 .py_nombre {
@@ -26,3 +28,22 @@
   filter:opacity(100%);
 }
 
+/* capa solo visible si esta conectado el admin */
+.editar {
+  position: absolute;
+  top: 86%;
+  right: 150px;
+  z-index: 6;
+}
+
+.editar img {
+  float:right;
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  border-radius: 0;
+  width: 50px;
+}
+
+.editar img:hover {
+  filter:opacity(100%);
+  cursor: pointer;
+}

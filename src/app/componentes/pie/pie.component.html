@@ -1,13 +1,11 @@
  <!-- abro capa pie -->
- <div class="pie">
-    <p><a href="mailto:silvanaborsani@gmail.com">silvanaborsani<img src="../assets/correo.png" alt="mi correo electronico" id="arroba"/>gmail.com</a></p>
+ <div class="pie" *ngFor="let persona of persona">
+    <p><a href="mailto:{{persona.emailPersona}}"><img src="../assets/correo.png" alt="mi correo electronico" id="arroba"/>{{persona.emailPersona}}</a></p>
     <p>Iconos provistos por <a href="{{iconURL}}" target="_blank" rel="noopener">FlatIcon</a>
       <br>
        Los emojis son de <a href="{{emojiURL}}" target="_blank" rel="noopener">emoji-Mart</a>
-      <!-- <br>
-       Los c&iacute;rculos de progreso son de <a href="{{bootsoon}}" target="_blank" rel="noopener">bootsoon</a> -->
     </p>
-    <p><ngx-emoji emoji="phone" id="tel"></ngx-emoji> <a href="tel:+5491169642886" target="_blank" rel="noopener">+54 9 11 6964-2886</a></p>
+    <p><ngx-emoji emoji="phone" id="tel"></ngx-emoji><a href="tel:" target="_blank" rel="noopener">{{persona.celuPersona}}</a></p>
   </div>
   <!-- cierro pie -->
 

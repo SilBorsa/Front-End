@@ -24,15 +24,13 @@ export class EditarFotoComponent implements OnInit, OnDestroy {
   filaEditable: boolean = false; /* asociado a la edicion de regsitros */
   persEditada: Persona = new Persona("","","","","","","");
 
-  errMsj!: string;
+  //errMsj!: string;
 
   abrirMostrarFoto=false;
   private subscription: Subscription;
 
   constructor(private mostrarFotoService: MostrarFotoService,
-              private personaService: PersonaService,
-              //private router: Router
-              ) {
+              private personaService: PersonaService,) {
       this.subscription = this.mostrarFotoService.abrirMostrarFoto$
           .subscribe(abrirMostrarFoto => { this.abrirMostrarFoto = abrirMostrarFoto; });
 }

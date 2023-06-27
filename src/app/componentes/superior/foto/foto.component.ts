@@ -17,22 +17,21 @@ export class FotoComponent implements OnInit {
   mostrarFoto=false;
   isLogged=false;
 
-  persona: Persona = {nombrePersona:"",
+  persona: Persona[] = [{nombrePersona:"",
                       apellidoPersona:"",
                       subTitulo:"",
                       emailPersona:"",
                       celuPersona:"",
                       acercaPersona:"",
-                      url_imgPersona:""};
+                      url_imgPersona:""}];
     
   constructor(private personaService: PersonaService,
               private mostrarFotoService: MostrarFotoService,
               private tokenService: TokenService) { }
   
   ngOnInit(): void {
-    const idPersona = 1;
-    this.personaService.detail(idPersona)
-        .subscribe(persona => {this.persona = persona;});
+    this.personaService.listar()
+    .subscribe(persona => this.persona = persona);
     if(this.tokenService.getToken()){
        this.isLogged=true;
     } else {

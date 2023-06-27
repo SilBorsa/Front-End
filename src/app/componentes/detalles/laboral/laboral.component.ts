@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Laboral } from 'src/app/modelo/laboral';
 import { LaboralService } from 'src/app/service/laboral.service';
+import { MostrarLabService } from 'src/app/service/mostrar-lab.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -9,18 +10,44 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./laboral.component.css']
 })
 export class LaboralComponent implements OnInit {
-  cgnURL="https://www.argentina.gob.ar/economia/sechacienda/cgn";
-  migraURL="https://www.argentina.gob.ar/interior/migraciones";
+  editSRC = "../../../../assets/editar.png";
+  editALT="agregar, editar, eliminar";
 
-  cgnSRC="../../../../assets/logo-mecon.png";
-  migraSRC="../../../../assets/logo-migra.png";
+  laboral: Laboral[] = [{idPersona: 1,
+                         nombreEmpresa: "",
+                         periodoEmpresa: "",
+                         urlEmpresa:"",
+                         url_imgLab:"",
+                         descEmpresa:""}];
 
-  /*lab: Laboral[] = []; */
+  mostrarLab=false;
   isLogged= false;
 
   constructor(private laboralService: LaboralService, 
+              private mostrarLabService: MostrarLabService,
               private tokenService: TokenService) {}
 
-  ngOnInit(): void {}
-  
+  ngOnInit(): void {
+  this.laboralService.listarLab()
+    .subscribe(laboral => this.laboral = laboral);
+    if(this.tokenService.getToken()){
+       this.isLogged=true;
+    } else {
+      this.isLogged=false;
+    }
+  }
+
+  desplazarLab() {
+    const expLab = document.getElementById('empresas');
+    if (expLab) {
+      expLab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  abrirMostrarLab() {
+    document.body.classList.add('modal-open');
+    this.mostrarLabService.abrirMostrarLab();
+    this.desplazarLab();
+  }
+
 }

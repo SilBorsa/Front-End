@@ -18,25 +18,26 @@ export class PieComponent implements OnInit{
   emojiURL="https://missiveapp.com/open/emoji-mart";
   bootsoon="https://www.npmjs.com/package/ng-circle-progress";
 
+  idPersona: number = 1;
+ 
   mostrarPie=false;
   isLogged=false;
 
-  persona: Persona = {nombrePersona:"",
-                      apellidoPersona:"",
-                      subTitulo:"",
-                      emailPersona:"",
-                      celuPersona:"",
-                      acercaPersona:"",
-                      url_imgPersona:""}; 
-    
+  persona: Persona [] = [{nombrePersona:"",
+                          apellidoPersona:"",
+                          subTitulo:"",
+                          emailPersona:"",
+                          celuPersona:"",
+                          acercaPersona:"",
+                          url_imgPersona:""}]; 
+  
   constructor(private personaService: PersonaService,
               private mostrarPieService: MostrarPieService,
               private tokenService: TokenService) { }
   
   ngOnInit(): void {
-  //  const idPersona = 1;
-  //  this.personaService.detail(idPersona)
-  //      .subscribe(persona => {this.persona = persona;});
+    this.personaService.listar()
+    .subscribe(persona => this.persona = persona);
     if(this.tokenService.getToken()){
        this.isLogged=true;
     } else {
@@ -48,5 +49,4 @@ export class PieComponent implements OnInit{
     document.body.classList.add('modal-open');
     this.mostrarPieService.abrirMostrarPie();
   }
-
 }

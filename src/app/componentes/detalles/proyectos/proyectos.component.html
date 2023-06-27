@@ -1,37 +1,16 @@
 <div class="proyectos">
-        
-    <p class="py_nombre">Mi Portfolio Personal - (2022/2023)</p> 
-    <p class="py_txt">Mi segundo gran proyecto, todav&iacute;a en proceso. Con el cual estoy aprendiendo enormemente y el que estoy disfrutando 
-                      mucho m&aacute;s.</p>
-
-    <hr align="center" class="mi-hr">
-
-    <p class="py_nombre">Ingenier&iacute;a del nuevo Sistema de Informaci&oacute;n Financiera (eSIDIF) - (2007)</p> 
-    <p class="py_txt">
-        Me toc&oacute; participar en definiciones funcionales para los m&oacute;dulos de <i>"Pasajes y Vi&aacute;ticos"</i> y 
-        <i>"Fondo Rotatorio y Cajas Chicas"</i>, actualmente vigente a trav&eacute;s de internet <i>(eSIDIF)</i>.</p>
-
-    <hr align="center" class="mi-hr">
-
-    <p class="py_nombre">Administrador de maxi-kiosco - (2001)</p> 
-    <p class="py_txt">
-        Fu&eacute; un trabajo para una persona amiga, realizado con MS Access y Visual Basic. Contaba con un controlador de stock de 
-        mercader&iacute;a y control de caja, tambi&eacute;n permit&iacute;a imprimir. Estuvo en funcionamiento unos 4 a&#241;os, hasta 
-        que cerr&oacute; el negocio para irse a vivir afuera.</p>
-
-    <hr align="center" class="mi-hr">
-
-    <p class="py_nombre">Sistema de Ajustes Contables - (1999) 
-      <img src="../assets/camara.png" alt="ver fotos" id="verAlbum" />
-    </p>
-    <p class="py_txt">Fu&eacute; mi primer gran proyecto, con el que m&aacute;s aprend&iacute;. Era un sistema en el que cada usuario habilitado 
-        cargaba las modificaciones Contables que consideraba necesarias para el an&aacute;lisis a su cargo, luego un usuario de nivel
-        superior lo autorizaba y finalmente se imprim&iacute;a para cargarlo formalmente en el sistema propio.
-        Realizado con MS Access 97 y Visual Basic. Se acced&iacute;a con usuario y clave, ten&iacute;a un men&uacute; para navegar entre las ocpiones 
-        disponibles, seg&uacute;n los niveles de acceso. Hab&iacute;a formularios de carga, formularios de consulta y reportes con diferentes tipos 
-        de impresiones (detallada, sumarizada, por cuenta contable, por organismo, etc).
-        Estuvo vigente por 3 años, hasta que se diseñ&oacute; el sistema nuevo (SIDIF gr&aacute;fico en ese momento) y se incorpor&oacute; la idea de 
-        los ajustes.</p>
+    <div class="editar">
+        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPy()" *ngIf="isLogged" />
+    </div>
     
-        <app-fotosajustes></app-fotosajustes>
+    <br />
+
+    <ng-container *ngFor="let proy of proy">
+        <p class="py_nombre">{{proy.nombrePy}} - ({{proy.periodoPy}})</p> 
+        <p class="py_txt">{{proy.descPy}}</p>
+    </ng-container>
 </div>
+
+        <!-- componente para editar proyectos -->
+        <app-editar-py id="verProy"></app-editar-py>
+

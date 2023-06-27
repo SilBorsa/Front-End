@@ -23,15 +23,13 @@ export class EditarPyComponent implements OnInit, OnDestroy{
   filaEditable: boolean = false; /* asociado a la edicion de regsitros */
   pyEditado: Proyecto = new Proyecto(1,"","","",0);
 
-  errMsj!: string;
+  //errMsj!: string;
 
   abrirMostrarPy=false;
   private subscription: Subscription;
 
   constructor(private mostrarPyService: MostrarPyService,
-              private pyService: ProyectoService,
-              //private router: Router
-              ) {
+              private pyService: ProyectoService,) {
       this.subscription = this.mostrarPyService.abrirMostrarPy$
           .subscribe(abrirMostrarPy => { this.abrirMostrarPy = abrirMostrarPy; });
 }

@@ -1,6 +1,6 @@
-<div class="resumen">
+<div class="resumen" *ngFor="let persona of persona">
     <div class="encabezado" id="acercaDe">
-        <h1 class="nombre"> {{persona.nombrePersona}} {{persona.apellidoPersona}}</h1>   
+        <h1 class="nombre">{{persona.nombrePersona}} {{persona.apellidoPersona}}</h1>   
         <div class="editar">
             <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPersona()" *ngIf="isLogged" />
         </div>

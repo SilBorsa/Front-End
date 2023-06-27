@@ -1,6 +1,6 @@
 <div class="marco">
-<div class="foto"> 
-  <img src="{{fotoURL}}"  alt="esta soy yo!" />
+<div class="foto" *ngFor="let persona of persona"> 
+  <img src="{{persona.url_imgPersona}}"  alt="esta soy yo!" />
 </div>
 
 <div class="editar">

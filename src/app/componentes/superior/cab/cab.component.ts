@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Redes } from 'src/app/modelo/redes';
 
 import { MostrarLoginService } from 'src/app/service/mostrar-login.service';
 import { MostrarRedesService } from 'src/app/service/mostrar-redes.service';
+import { RedService } from 'src/app/service/red.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -13,25 +14,19 @@ import { TokenService } from 'src/app/service/token.service';
 
 export class CabComponent implements OnInit{
 
-  fbURL="https://www.facebook.com/Tobias.te.amo";
-  pinURL="https://ar.pinterest.com/silborsa";
-  linURL="https://www.linkedin.com/in/licspb";
-  tgmURL="https://t.me/51lv4n4_ok";
-  
-  fbSRC="../../../../assets/face.png";
-  pinSRC="../../../../assets/pint.png";
-  linSRC="../../../../assets/lin.png";
-  tgmSRC="../../../../assets/tgm.png";
   logInSRC = "../../../../assets/login.png";
   logOutSRC = "../../../../assets/logout.png";
   editSRC = "../../../../assets/editar.png";
 
-  fbALT="mi facebook";
-  pinALT="mi pinterest";
-  linALT="mi linked in";
-  tgmALT="mi telegram";
   logALT="solo para personas autorizadas";
   editALT="agregar, editar, eliminar";
+
+  idRed?: number; 
+  idPersona: number = 1;
+  nombreRed: string = '';
+  urlRed: string = '';
+  url_imgRed: string = '';
+  redes: Redes[] = [];
 
   mostrarLogin=false;
   mostrarRedes=false;
@@ -39,10 +34,12 @@ export class CabComponent implements OnInit{
 
   constructor(protected mostrarLoginService: MostrarLoginService,
               private mostrarRedesService: MostrarRedesService, 
-              //private router: Router, 
+              private redService: RedService,
               private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    this.redService.listarRedes()
+        .subscribe(redes => this.redes = redes);
     if(this.tokenService.getToken()){
       this.isLogged=true;
     } else {

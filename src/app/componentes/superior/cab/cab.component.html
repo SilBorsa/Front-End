@@ -8,11 +8,8 @@
   <!-- cierro editar -->
 
   <!-- abro subcapa redes -->
-  <div class="redes">
-    <a href="{{fbURL}}" target="_blank" rel="noopener"><img src="{{fbSRC}}" alt="{{fbALT}}" /></a>
-    <a href="{{pinURL}}" target="_blank" rel="noopener"><img src="{{pinSRC}}" alt="{{pinALT}}" /></a>
-    <a href="{{linURL}}" target="_blank" rel="noopener"><img src="{{linSRC}}" alt="{{linALT}}" /></a>
-    <a href="{{tgmURL}}" target="_blank" rel="noopener"><img src="{{tgmSRC}}" alt="{{tgmALT}}" /></a>
+  <div class="redes" *ngFor="let red of redes">
+    <a href="{{red.urlRed}}" target="_blank" rel="noopener"><img src="{{red.url_imgRed}}" alt="{{red.nombreRed}}" /></a>
   </div>
   <!-- cierro redes -->
 

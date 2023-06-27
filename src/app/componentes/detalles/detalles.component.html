@@ -6,14 +6,8 @@
     <div class="colour-block">
       <div class="titulos" id="empresas">
         <h2>EXPERIENCIA LABORAL</h2>
-        <div class="editar">
-          <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarLab()" *ngIf="isLogged" />
-        </div>
       </div>
       <app-laboral></app-laboral>
-
-      <!-- componente para editar experiencia laboral -->
-      <app-editar-lab id="verLaboral"></app-editar-lab>
     </div>
 
     <div class="scallop-down"></div>
@@ -45,12 +39,6 @@
     <div class="colour-block">
       <div class="titulos" id="proy">
         <h2>PROYECTOS</h2>
-        <div class="editar">
-          <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPy()" *ngIf="isLogged" />
-
-          <!-- componente para editar proyectos -->
-          <app-editar-py id="verProy"></app-editar-py>
-        </div>
       </div>
       <app-proyectos></app-proyectos>
     </div>
