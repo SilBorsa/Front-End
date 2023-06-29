@@ -1,17 +1,20 @@
+<!-- abro capa laboral -->
 <div class="laboral">
   <div class="editar">
     <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarLab()" *ngIf="isLogged" />
   </div>
-<div id="miExp" *ngFor="let laboral of laboral">
-  <p>
-    <a href="{{laboral.urlEmpresa}}" target="_blank" rel="noopener">
-      <img src="{{laboral.url_imgLab}}" alt="{{laboral.nombreEmpresa}}" />
-    </a> <i>({{laboral.periodoEmpresa}})</i>
-  </p>
-  <p class="tareas">
-      {{laboral.descEmpresa}}
-  </p>
- </div>
+
+  <div *ngFor="let laboral of laboral">
+    <p>
+      <a href="{{laboral.urlEmpresa}}" target="_blank" rel="noopener">
+        <img src="{{laboral.url_imgLab}}" alt="{{laboral.nombreEmpresa}}" /></a>
+        <i>({{laboral.periodoEmpresa}})</i>
+    </p>
+    <p class="tareas" [innerHTML]="laboral.descEmpresa"></p>
+  </div>
+
+</div>
+<!-- cierro capa laboral -->
 
 <!-- componente para editar experiencia laboral -->
 <app-editar-lab id="verLaboral"></app-editar-lab>

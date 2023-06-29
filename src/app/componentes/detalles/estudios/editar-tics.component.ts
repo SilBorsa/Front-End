@@ -49,6 +49,7 @@ export class EditarTicsComponent implements OnInit, OnDestroy{
   cerrarMostrarTics() {
     document.body.classList.remove('modal-open');
     this.mostrarTicsService.cerrarMostrarTics();
+    window.location.reload();
   }
 
   /* muestra el formulario de carga */

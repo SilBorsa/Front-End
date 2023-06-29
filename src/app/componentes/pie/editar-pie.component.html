@@ -1,75 +1,81 @@
 <div class="modal-pie" *ngIf="abrirMostrarPie">
-    <div class="popup">
+  <div class="popup">
   
-      <div class="popup_top">
-        <div class="titulo">
-          <span>MIS VIAS DE CONTACTO</span>
-        </div>
-        <div class="botones">
-          <!--boton para cerrar este componente modal-->
-          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPie()" />
-        </div>
+    <div class="popup_top">
+      <div class="titulo">
+        <span>MIS VIAS DE CONTACTO</span>
       </div>
-      <div class="popup_body">
-        <div id="miTabla">
-          <table *ngFor="let persona of persona" boder="0">
-            <thead>
-              <tr>
-                <th width="60">Campos</th>
-                <th width="290">Valores</th>
-                <th width="100">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="campos">idPersona:</td>
-                <td>{{persona.idPersona}}</td>
-                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
-                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(persona)" />
-                </td>
-                    <!--boton para guardar los cambios-->
-                <td *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
-                    <!--boton para cancelar cambios-->
-                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
-              </tr>
-              <tr>
-                <td class="campos">Nombres:</td>
-                <td>{{persona.nombrePersona}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Apellidos:</td>
-                <td>{{persona.apellidoPersona}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Titulo:</td>
-                <td>{{persona.subTitulo}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Celular:</td>
-                <td *ngIf="!filaEditable">{{persona.celuPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="35" [(ngModel)]="persEditada.celuPersona"></td>
-              </tr>
-              <tr>
-                <td class="campos">eMail:</td>
-                <td *ngIf="!filaEditable">{{persona.emailPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="35" [(ngModel)]="persEditada.emailPersona"></td>
-              </tr>
-              <tr>
-                <td class="campos">Foto:</td>
-                <td>{{persona.url_imgPersona}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Acerca de:</td>
-                <td>{{persona.acercaPersona}}</td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-        </div>
-        </div>
 
+      <div class="botones">
+        <!--boton para cerrar este componente modal-->
+        <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPie()" />
+      </div>
+
+    </div>
+
+    <div class="popup_body">
+      <div id="miTabla">
+        <table *ngFor="let persona of persona" boder="0">
+          <thead>
+            <tr>
+              <th width="60">Campos</th>
+              <th width="290">Valores</th>
+              <th width="100">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="campos">idPersona:</td>
+              <td>{{persona.idPersona}}</td>
+              <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                  <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(persona)" />
+              </td>
+              
+              <!--boton para guardar los cambios-->
+              <td *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                  <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+              <!--boton para cancelar cambios-->
+                  <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+            </tr>
+
+            <tr>
+              <td class="campos">Nombres:</td>
+              <td>{{persona.nombrePersona}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Apellidos:</td>
+              <td>{{persona.apellidoPersona}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Titulo:</td>
+              <td>{{persona.subTitulo}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Celular:</td>
+              <td *ngIf="!filaEditable">{{persona.celuPersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                  <input type="text" size="35" [(ngModel)]="persEditada.celuPersona"></td>
+            </tr>
+            <tr>
+              <td class="campos">eMail:</td>
+              <td *ngIf="!filaEditable">{{persona.emailPersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                  <input type="text" size="35" [(ngModel)]="persEditada.emailPersona"></td>
+            </tr>
+            <tr>
+              <td class="campos">Foto:</td>
+              <td>{{persona.url_imgPersona}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Acerca de:</td>
+              <td colspan="2" [innerHTML]="persona.acercaPersona"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br />
       </div>
     </div>
+
+  </div>
+</div>

@@ -49,6 +49,7 @@ export class EditarEduComponent implements OnInit, OnDestroy{
   cerrarMostrarEdu() {
     document.body.classList.remove('modal-open');
     this.mostrarEduService.cerrarMostrarEdu();
+    window.location.reload();
   }
 
   /* muestra el formulario de carga */

@@ -49,6 +49,7 @@ export class EditarDurasComponent implements OnInit, OnDestroy{
   cerrarMostrarDuras() {
     document.body.classList.remove('modal-open');
     this.mostrarDurasService.cerrarMostrarDuras();
+    window.location.reload();
   }
 
   /* muestra el formulario de carga */

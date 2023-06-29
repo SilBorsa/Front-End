@@ -1,14 +1,21 @@
  <!-- abro capa pie -->
  <div class="pie" *ngFor="let persona of persona">
-    <p><a href="mailto:{{persona.emailPersona}}"><img src="../assets/correo.png" alt="mi correo electronico" id="arroba"/>{{persona.emailPersona}}</a></p>
+    <p><ngx-emoji emoji="mailbox_with_mail" id="ico"></ngx-emoji>
+       <a href="mailto:{{persona.emailPersona}}" >{{persona.emailPersona}}</a>
+    </p>
+
     <p>Iconos provistos por <a href="{{iconURL}}" target="_blank" rel="noopener">FlatIcon</a>
       <br>
        Los emojis son de <a href="{{emojiURL}}" target="_blank" rel="noopener">emoji-Mart</a>
     </p>
-    <p><ngx-emoji emoji="phone" id="tel"></ngx-emoji><a href="tel:" target="_blank" rel="noopener">{{persona.celuPersona}}</a></p>
-  </div>
+    
+    <p><ngx-emoji emoji="phone" id="ico"></ngx-emoji>
+       <a href="tel:" target="_blank" rel="noopener">{{persona.celuPersona}}</a>
+    </p>
+</div>
   <!-- cierro pie -->
 
+  <!--boton para editar visible solo para el admin-->
   <div class="editar">
     <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPie()" *ngIf="isLogged" />
 

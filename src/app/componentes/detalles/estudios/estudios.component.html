@@ -1,3 +1,4 @@
+<!--abro capa estudios-->
 <div class="estudios">
 
 <!-- abro estudios formales -->
@@ -7,22 +8,23 @@
     <div class="editar">
       <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarEdu()" *ngIf="isLogged" />
     </div>
-
   </div>
-  <ng-component *ngFor="let edu of edu">
+
+  <!-- componente para editar educacion formal -->
+  <app-editar-edu id="verEstudios"></app-editar-edu>
+
+  <div *ngFor="let edu of edu">
     <p>
-        <a href="{{edu.urlInstituto}}" target="_blank" rel="noopener">
-            <img src="{{edu.url_imgInst}}" width="200px" alt="{{edu.nombreInstituto}}" />
-        </a>
+      <a href="{{edu.urlInstituto}}" target="_blank" rel="noopener">
+        <img src="{{edu.url_imgInst}}" width="200px" alt="{{edu.nombreInstituto}}" />
+      </a>
     </p>
-        <ul>
-          <li>({{edu.periodoEstudio}}) - {{edu.tituloEstudio}}</li>
-        </ul>
-    <br>
-  </ng-component>
+    <ul>
+      <li>({{edu.periodoEstudio}}) - {{edu.tituloEstudio}}</li>
+    </ul>
+    <br />
+  </div>
   
-     <!-- componente para editar educacion formal -->
-     <app-editar-edu id="verEstudios"></app-editar-edu>
 </div>
 <!-- cierro estudios formales -->
 
@@ -33,21 +35,24 @@
     <div class="editar">
       <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarTics()" *ngIf="isLogged" />
     </div>
-
-    <!-- componente para editar educacion tics -->
-    <app-editar-tics id="verTICS"></app-editar-tics>
   </div>
-  <ng-component *ngFor="let grupo of agrupados">
+
+  <!-- componente para editar educacion tics -->
+  <app-editar-tics id="verTICS"></app-editar-tics>
+
+  <div *ngFor="let instituto of cursosAgrupados">
    <p>
-      <a href="{{grupo.url}}" target="_blank" rel="noopener">
-        <img src="{{grupo.img}}" width="180px" alt="{{grupo.inst}}" />
+      <a href="{{instituto.urlInstTic}}" target="_blank" rel="noopener">
+        <img src="{{instituto.url_imgTic}}" width="180px" alt="{{instituto.nombreInstTic}}" />
       </a>
    </p>
       <ul>
-        <li *ngFor="let tic of grupo.tics">({{tic.periodoTic}}) - {{tic.cursoTic}}</li>
+        <li *ngFor="let curso of instituto.cursos">({{curso.periodoTic}}) - {{curso.cursoTic}}</li>
       </ul>
     <br>
-  </ng-component>
+    </div>
 </div>
 <!-- cierro estudios no formales -->        
+
 </div>
+<!-- cierro capa estudios -->

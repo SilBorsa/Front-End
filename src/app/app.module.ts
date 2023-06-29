@@ -38,6 +38,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { AlertaEdicionComponent } from './componentes/alerta-edicion/alerta-edicion.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

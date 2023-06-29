@@ -44,7 +44,7 @@ export class EditarRedesComponent implements OnInit, OnDestroy{
   cerrarMostrarRedes() {
     document.body.classList.remove('modal-open');
     this.mostrarRedesService.cerrarMostrarRedes();
-    this.redService.listarRedes().subscribe(redes => this.redes = redes);
+    window.location.reload();
   }
 
   /* muestra el formulario de carga */

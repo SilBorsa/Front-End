@@ -1,85 +1,87 @@
 <div class="modal-persona" *ngIf="abrirMostrarPersona">
-    <div class="popup">
+  <div class="popup">
   
-      <div class="popup_top">
-        <div class="titulo">
-          <span>MIS DATOS</span>
-        </div>
-        <div class="botones">
-          <!--boton para cerrar este componente modal-->
-          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPersona()" />
-        </div>
+    <div class="popup_top">
+      <div class="titulo">
+        <span>MIS DATOS</span>
       </div>
-      <div class="popup_body">
-        <div id="miTabla">
-          <table *ngFor="let persona of personas" boder="0">
-            <thead>
-              <tr>
-                <th width="60">Campos</th>
-                <th width="290">Valores</th>
-                <th width="100">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="campos">idPersona:</td>
-                <td>{{persona.idPersona}}</td>
-                <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
-                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(persona)" />
-                </td>
-                    <!--boton para guardar los cambios-->
-                <td *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
-                    <!--boton para cancelar cambios-->
-                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
-              </tr>
-              <tr>
-                <td class="campos">Nombres:</td>
-                <td *ngIf="!filaEditable">{{persona.nombrePersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="35" [(ngModel)]="persEditada.nombrePersona" /></td>
-              </tr>
-              <tr>
-                <td class="campos">Apellidos:</td>
-                <td *ngIf="!filaEditable">{{persona.apellidoPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="35" [(ngModel)]="persEditada.apellidoPersona" /></td>
-              </tr>
-              <tr>
-                <td class="campos">Titulo:</td>
-                <td *ngIf="!filaEditable">{{persona.subTitulo}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="35" [(ngModel)]="persEditada.subTitulo"></td>
-              </tr>
-              <tr>
-                <td class="campos">Celular:</td>
-                <td *ngIf="!filaEditable">{{persona.celuPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="35" [(ngModel)]="persEditada.celuPersona"></td>
-              </tr>
-              <tr>
-                <td class="campos">eMail:</td>
-                <td *ngIf="!filaEditable">{{persona.emailPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.emailPersona"></td>
-              </tr>
-              <tr>
-                <td class="campos">Foto:</td>
-                <td *ngIf="!filaEditable">{{persona.url_imgPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.url_imgPersona"></td>
-              </tr>
-              <tr>
-                <td class="campos">Acerca de:</td>
-                <td *ngIf="!filaEditable">{{persona.acercaPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
-                    <textarea cols="47" rows="10" wrap [(ngModel)]="persEditada.acercaPersona"></textarea></td>
-              </tr>
-            </tbody> 
-          </table>
-          <br>
-        </div>
-
+      <div class="botones">
+        <!--boton para cerrar este componente modal-->
+        <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarPersona()" />
       </div>
     </div>
+    
+    <div class="popup_body">
+      <div id="miTabla">
+        <table *ngFor="let persona of personas" boder="0">
+          <thead>
+            <tr>
+              <th width="60">Campos</th>
+              <th width="290">Valores</th>
+              <th width="100">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="campos">idPersona:</td>
+              <td>{{persona.idPersona}}</td>
+              <td *ngIf="!filaEditable"><!--boton para habilitar la edicion de un registro particular-->
+                <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(persona)" />
+              </td>
+              
+                <!--boton para guardar los cambios-->
+              <td *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                <!--boton para cancelar cambios-->
+                <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+            </tr>
+            <tr>
+              <td class="campos">Nombres:</td>
+              <td *ngIf="!filaEditable">{{persona.nombrePersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <input type="text" size="35" [(ngModel)]="persEditada.nombrePersona" /></td>
+            </tr>
+            <tr>
+              <td class="campos">Apellidos:</td>
+              <td *ngIf="!filaEditable">{{persona.apellidoPersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <input type="text" size="35" [(ngModel)]="persEditada.apellidoPersona" /></td>
+            </tr>
+            <tr>
+              <td class="campos">Titulo:</td>
+              <td *ngIf="!filaEditable">{{persona.subTitulo}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <input type="text" size="35" [(ngModel)]="persEditada.subTitulo"></td>
+            </tr>
+            <tr>
+              <td class="campos">Celular:</td>
+              <td *ngIf="!filaEditable">{{persona.celuPersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <input type="text" size="35" [(ngModel)]="persEditada.celuPersona"></td>
+            </tr>
+            <tr>
+              <td class="campos">eMail:</td>
+              <td *ngIf="!filaEditable">{{persona.emailPersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <input type="text" size="50" [(ngModel)]="persEditada.emailPersona"></td>
+            </tr>
+            <tr>
+              <td class="campos">Foto:</td>
+              <td *ngIf="!filaEditable">{{persona.url_imgPersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <input type="text" size="50" [(ngModel)]="persEditada.url_imgPersona"></td>
+            </tr>
+            <tr>
+              <td class="campos">Acerca de:</td>
+              <td colspan="2" *ngIf="!filaEditable" [innerHTML]="persona.acercaPersona"></td>
+              <td colspan="2" *ngIf="filaEditable && persona.idPersona === persEditada.idPersona">
+                <textarea cols="50" rows="10" wrap [(ngModel)]="persEditada.acercaPersona"></textarea></td>
+            </tr>
+          </tbody> 
+        </table>
+        <br />
+      </div>
+
+    </div>
+  </div>
 </div>

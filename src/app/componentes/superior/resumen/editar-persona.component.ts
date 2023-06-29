@@ -44,6 +44,7 @@ export class EditarPersonaComponent implements OnInit, OnDestroy {
   cerrarMostrarPersona() {
     document.body.classList.remove('modal-open');
     this.mostrarPersonaService.cerrarMostrarPersona();
+    window.location.reload();
   }
 
   /* guarda los cambios del registro modificado */

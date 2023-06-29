@@ -8,8 +8,16 @@
   <!-- cierro editar -->
 
   <!-- abro subcapa redes -->
-  <div class="redes" *ngFor="let red of redes">
-    <a href="{{red.urlRed}}" target="_blank" rel="noopener"><img src="{{red.url_imgRed}}" alt="{{red.nombreRed}}" /></a>
+  <div class="redes">
+    <table>
+      <tr>
+        <td *ngFor="let red of redes">
+          <a href="{{red.urlRed}}" target="_blank" rel="noopener">
+            <img src="{{red.url_imgRed}}" alt="{{red.nombreRed}}" />
+          </a>
+        </td>
+      </tr>
+    </table>
   </div>
   <!-- cierro redes -->
 

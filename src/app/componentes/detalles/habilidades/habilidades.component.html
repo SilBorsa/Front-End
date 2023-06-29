@@ -1,248 +1,59 @@
+<!-- abro capa para las habilidades-->
 <div class="habilidades">
 
-    <!-- abro duras -->
-    <div class="titulos" id="duras">
+  <!-- abro duras -->
+  <div class="titulos" id="hards">
       <h4>DURAS</h4>
       <div class="editar">
         <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarDuras()" *ngIf="isLogged" />
+      </div>
+      
+      <!-- componente para editar hard skills -->
+      <app-editar-duras id="verDuras"></app-editar-duras>
+      
+  </div>
 
-         <!-- componente para editar hard skills -->
-         <app-editar-duras id="verDuras"></app-editar-duras>
+  <div class="skills">
+    <!--circulos de progreso-->
+    <div class="progresos" *ngFor="let dura of dura">
+      <div class="cantidad" [style.--clr]="dura.colorDura" [style.--num]="dura.num">
+        <div class="bolita" [style.--giro]="dura.giro + 'deg'"></div>
+          <svg>
+            <circle cx="70" cy="70" r="70" fill="yellow"></circle>
+            <circle cx="70" cy="70" r="70" fill="yellow"></circle>
+          </svg>
+        <div class="titulo">
+          <h3>{{dura.porcentaje}}<span>%</span></h3>
+          <p>{{dura.nombreDura}}</p>
+        </div>
       </div>
     </div>
-    <div class="skills">
-      <!-- HTML -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:88;">
-            <div class="bolita" style="--giro:288deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-            <div class="titulo">
-              <h3>80<span>%</span></h3>
-              <p>HTML</p>
-            </div>
-        </div>
-      </div>
-  
-      <!-- CSS -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:88;">
-            <div class="bolita" style="--giro:288deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-            <div class="titulo">
-              <h3>80<span>%</span></h3>
-              <p>CSS</p>
-            </div>
-        </div>
-      </div>
-
-      <!-- JavaScript -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#fd2efd;--num:220;">
-          <div class="bolita" style="--giro:180deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>50<span>%</span></h3>
-                <p>JS</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- Angular -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#fd2efd;--num:220;">
-          <div class="bolita" style="--giro:180deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>50<span>%</span></h3>
-                <p>Angular</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- Base de Datos -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:110;">
-          <div class="bolita" style="--giro:270deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>75<span>%</span></h3>
-                <p>BD</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- Bootstrap -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#fded07;--num:308;">
-          <div class="bolita" style="--giro:108deg;"></div>
-            <svg>
-              <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-            </svg>
-            <div class="titulo">
-              <h3>30<span>%</span></h3>
-              <p>Bootstrap</p>
-            </div>
-        </div>
-      </div>
-
-      <!-- Visual Basic -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:88;">
-            <div class="bolita" style="--giro:288deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-            <div class="titulo">
-              <h3>80<span>%</span></h3>
-              <p>VB</p>
-            </div>
-        </div>
-      </div>
-
-      <!-- Java -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#fded07;--num:330;">
-            <div class="bolita" style="--giro:90deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>25<span>%</span></h3>
-                <p>Java</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- c++ -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#fd2efd;--num:198;">
-            <div class="bolita" style="--giro:198deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>55<span>%</span></h3>
-                <p>C&#43;&#43;</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- BI -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:66;">
-            <div class="bolita" style="--giro:306deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>85<span>%</span></h3>
-                <p>BI</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- mySQL -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:110;">
-            <div class="bolita" style="--giro:270deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>75<span>%</span></h3>
-                <p>mySQL</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- Analisis de Datos -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:8.8;">
-            <div class="bolita" style="--giro:352.8deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>98<span>%</span></h3>
-                <p>An.Datos</p>
-              </div>
-        </div>
-      </div>
-
-      <!-- Ingles -->
-      <div class="progresos">
-        <div class="cantidad" style="--clr:#8b07f7;--num:66;">
-            <div class="bolita" style="--giro:306deg;"></div>
-              <svg>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-                <circle cx="70" cy="70" r="70" fill="yellow"></circle>
-              </svg>
-              <div class="titulo">
-                <h3>85<span>%</span></h3>
-                <p>Ingl&eacute;s</p>
-              </div>
-        </div>
-      </div>
   </div>
   <!-- cierro duras -->
 
-    <p></p>
+  <p></p>
 
-    <!-- abro blandas -->
-    <div class="titulos" id="blandas">
-      <h4>BLANDAS</h4>
-      <div class="editar">
-        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarBlandas()" *ngIf="isLogged" />
-
-        <!-- componente para editar soft skills -->
-        <app-editar-blandas id="verBlandas"></app-editar-blandas>
-      </div>
+  <!-- abro blandas -->
+  <div class="titulos" id="softs">
+    <h4>BLANDAS</h4>
+    <div class="editar">
+      <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarBlandas()" *ngIf="isLogged" />
     </div>
-      <div class="blandas">
-        <div class="item" id="violeta"><img src="../assets/ico-sensibilidad.png" alt="Sensibilidad" />Sensibilidad</div>
-        <div class="item" id="naranja"><img src="../assets/ico-planifica.png" alt="Planificacion" />Planificaci&oacute;n</div>
-        <div class="item" id="verde"><img src="../assets/ico-empatia.png" alt="Empatia" />Empat&iacute;a</div>
-        <div class="item" id="rosa"><img src="../assets/ico-comunica.png" alt="Comunicacion" />Comunicaci&oacute;n Asertiva</div>
-        <div class="item" id="azul"><img src="../assets/ico-adaptable.png" alt="Adaptabilidad" />Adaptabilidad</div>
-        <div class="item" id="violeta"><img src="../assets/ico-paciencia.png" alt="Paciencia" />Paciencia</div>
-        <div class="item" id="naranja"><img src="../assets/ico-innovar.png" alt="Innovacion" />Innovaci&oacute;n</div>
-        <div class="item" id="verde"><img src="../assets/ico-humor.png" alt="Humor" />Buen humor</div>
-        <div class="item" id="rosa"><img src="../assets/ico-autonomia.png" alt="Autonomia" />Autonom&iacute;a</div>
-        <div class="item" id="azul"><img src="../assets/ico-inicia.png" alt="Iniciativa" />Iniciativa</div>
-        <div class="item" id="violeta"><img src="../assets/ico-social.png" alt="Sociabilidad" />Sociabilidad</div>
-        <div class="item" id="naranja"><img src="../assets/ico-desafios.png" alt="Perseverancia" />Perseverancia</div>
-        <div class="item" id="verde"><img src="../assets/ico-honestidad.png" alt="Honestidad" />Honestidad</div>        
-        <div class="item" id="rosa"><img src="../assets/ico-aprendizaje.png" alt="Aprendizaje" />Aprendizaje</div>
-        <div class="item" id="azul"><img src="../assets/ico-compa.png" alt="Compañerismo" />Compa&#241;erismo</div>
-        <div class="item" id="violeta"><img src="../assets/ico-soluciones.png" alt="Soluciones" />Soluci&oacute;n de Problemas</div>
-        <div class="item" id="naranja"><img src="../assets/ico-tiempo.png" alt="Tiempo" />Gesti&oacute;n del Tiempo</div>
-        <div class="item" id="verde"><img src="../assets/ico-lealtad.png" alt="Lealtad" />Lealtad</div>
-        <div class="item" id="rosa"><img src="../assets/ico-responsabilidad.png" alt="Resposabilidad" />Responsabilidad</div>
-        <div class="item" id="azul"><img src="../assets/ico-puntualidad.png" alt="Puntualidad" />Puntualidad</div>
-        <div class="item" id="violeta"><img src="../assets/ico-respeto.png" alt="Respeto" />Respeto</div>
-      </div>
-   <!-- cierro blandas -->
   </div>
+    
+    <!-- componente para editar soft skills -->
+    <app-editar-blandas id="verBlandas"></app-editar-blandas>
+    
+  <div class="skills">
+    <div class="blandas" *ngFor="let blanda of blanda">
+    <div class="item" [style.background-color]="blanda.colorBlanda">
+      <img src="{{blanda.url_imgBlanda}}" alt="{{blanda.nombreBlanda}}" />
+      <br />{{blanda.nombreBlanda}}
+    </div>
+  </div>
+    
+  </div>
+  <!-- cierro blandas -->
+
+</div>
 <!-- cierro habilidades -->

@@ -23,7 +23,7 @@ img:hover{
 /* login */
 .entrar{
   position: relative;
-  width: 100px;
+  width: 80px;
 }
    
 .entrar img:hover{
@@ -33,13 +33,28 @@ img:hover{
 /* redes */
 .redes{
   position: relative;
+  max-width: 500px;
   align-items: center;
   padding: 0 5px;
+}
+
+.redes img {
+  width: 50px;
 }
    
 /* capa solo visible si esta conectado el admin */
 .editar {
   position: relative;
   float:right;
-  width: 100px;
+  width: 80px;
 }
+
+.editar img:hover {
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  height: 100%;
+}
+  
+.editar img {
+  filter:opacity(100%);
+}
+

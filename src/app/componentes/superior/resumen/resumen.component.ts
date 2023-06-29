@@ -4,6 +4,7 @@ import { MostrarPersonaService } from 'src/app/service/mostrar-persona.service';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
 
+
 @Component({
   selector: 'app-resumen',
   templateUrl: './resumen.component.html',
@@ -52,4 +53,5 @@ export class ResumenComponent implements OnInit {
     this.mostrarPersonaService.abrirMostrarPersona();
     this.desplazarPersona();
   }
+
 }

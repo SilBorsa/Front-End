@@ -1,16 +1,15 @@
+<!-- abro capa proyectos -->
 <div class="proyectos">
-    <div class="editar">
-        <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPy()" *ngIf="isLogged" />
-    </div>
-    
-    <br />
-
-    <ng-container *ngFor="let proy of proy">
-        <p class="py_nombre">{{proy.nombrePy}} - ({{proy.periodoPy}})</p> 
-        <p class="py_txt">{{proy.descPy}}</p>
-    </ng-container>
+  <div class="editar">
+    <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarPy()" *ngIf="isLogged" />
+  </div>
+  <div *ngFor="let proy of proy">
+    <p class="py_nombre">{{proy.nombrePy}} - ({{proy.periodoPy}})</p> 
+    <p class="py_txt" [innerHTML]="proy.descPy"></p>
+  </div>
 </div>
+<!-- cierro capa proyectos -->
 
-        <!-- componente para editar proyectos -->
-        <app-editar-py id="verProy"></app-editar-py>
+<!-- componente para editar proyectos -->
+<app-editar-py id="verProy"></app-editar-py>
 

@@ -47,6 +47,7 @@ export class EditarFotoComponent implements OnInit, OnDestroy {
   cerrarMostrarFoto() {
     document.body.classList.remove('modal-open');
     this.mostrarFotoService.cerrarMostrarFoto();
+    window.location.reload();
   }
 
   /* guarda los cambios del registro modificado */

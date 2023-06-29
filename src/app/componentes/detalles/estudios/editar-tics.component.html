@@ -87,7 +87,7 @@
                     <input type="text" size="3" name="periodoTic" placeholder="año" [(ngModel)]="ticCreado.periodoTic" required />
                     <input type="text" size="25" name="nombreInstTic" placeholder="Instituto" [(ngModel)]="ticCreado.nombreInstTic" required />
                     <input type="text" size="37" name="urlInstTic" placeholder="urlInstituto" [(ngModel)]="ticCreado.urlInstTic" required />
-                    <input type="text" size="37" name="url_imgTic" placeholder="url_imgInst" [(ngModel)]="ticCreado.url_imgTic" required />
+                    <input type="url" size="37" name="url_imgTic" placeholder="url_imgInst" [(ngModel)]="ticCreado.url_imgTic" required />
                     <!--boton para guardar el nuevo registro-->
                     <img src="../../../../assets/save.png" alt="guardar" class="boton" (click)="guardarTic(ticCreado)" />
                     <!--boton para cancelar la creacion de un nuevo registro-->

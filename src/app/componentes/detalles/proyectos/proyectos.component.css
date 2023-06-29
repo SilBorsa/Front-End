@@ -16,34 +16,26 @@
   text-align: justify;
 }
   
-#verAlbum {
-  height: 40px;
-  float:right;
-  margin-right: 2%;
-  filter:grayscale(150%) brightness(2.5) opacity(85%);
-}
-  
-#verAlbum:hover {
-  cursor: pointer;
-  filter:opacity(100%);
-}
-
 /* capa solo visible si esta conectado el admin */
 .editar {
+  /*display: inline-flex;
   position: absolute;
-  top: 86%;
+  justify-content:inherit;
+  align-items: center;
+  top: -10px;*/
   right: 150px;
   z-index: 6;
 }
 
 .editar img {
-  float:right;
-  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  top: -10px;
+  float: right;
+  filter: opacity(100%);
   border-radius: 0;
   width: 50px;
 }
 
 .editar img:hover {
-  filter:opacity(100%);
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
   cursor: pointer;
 }

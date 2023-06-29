@@ -30,16 +30,7 @@ a:hover {
   text-shadow:2px 2px 4px white;
 }
     
-#arroba {
-  filter:grayscale(150%) brightness(2.5) opacity(85%);
-  height: 25px;
-}
-    
-#arroba:hover {
-  filter: opacity(100%) hue-rotate(90deg) drop-shadow(1px 1px 2px black);
-}
-
-#tel {
+#ico {
   vertical-align:sub;
   filter: drop-shadow(1px 1px 2px black);
 }
@@ -54,12 +45,12 @@ a:hover {
 
 .editar img {
   float:right;
-  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  filter:opacity(100%);
   border-radius: 0;
   width: 50px;
 }
 
 .editar img:hover {
-  filter:opacity(100%);
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
   cursor: pointer;
 }

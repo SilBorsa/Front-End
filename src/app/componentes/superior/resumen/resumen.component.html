@@ -7,7 +7,7 @@
     </div>
     <h4>{{persona.subTitulo}}</h4>
     <hr>
-    <p>Nac&iacute; en CABA un <b>23 de septiembre</b>, con el Sol <ngx-emoji emoji="sunny" id="dibu"></ngx-emoji> en <b>libra</b> 
+    <p [innerHTML]="persona.acercaPersona"> <!--Nac&iacute; en CABA un <b>23 de septiembre</b>, con el Sol <ngx-emoji emoji="sunny" id="dibu"></ngx-emoji> en <b>libra</b> 
        <ngx-emoji emoji="libra" id="dibu"></ngx-emoji>, por eso soy muy curiosa y me gusta aprender de todo, por ejemplo: astrolog&iacute;a. 
        Soy fan&aacute;tica de <b>Boca</b> <ngx-emoji emoji="blue_heart" id="dibu"></ngx-emoji><ngx-emoji emoji="yellow_heart" id="dibu"></ngx-emoji>
        <ngx-emoji emoji="blue_heart" id="dibu"></ngx-emoji>, de esas que van a la cancha. Me gusta mucho <b>leer</b>, aunque trato de esquivar los 
@@ -18,10 +18,10 @@
        Aprend&iacute; a programar <ngx-emoji emoji="computer" id="dibu"></ngx-emoji> metiendo los dedos, despu&eacute;s hice algunos cursos a 
        trav&eacute;s de la oficina. Actualmente, vivo <ngx-emoji emoji="house" id="dibu"></ngx-emoji> en <b>Moreno (GBA Oeste)</b> con mi hijo 
        <ngx-emoji emoji="prince" id="dibu"></ngx-emoji>, que se llama <b>Tobias</b>, y mi hija de cuatro patas <ngx-emoji emoji="dog" id="dibu"></ngx-emoji> 
-       que se llama <b>Kiwa.</b>
+       que se llama <b>Kiwa.</b> -->
+       <!--{{persona.acercaPersona}}-->
     </p>
-
- <!-- componente para editar acerca de -->
- <app-editar-persona id="verPersona"></app-editar-persona>
-
 </div>
+
+<!-- componente para editar acerca de -->
+<app-editar-persona id="verPersona"></app-editar-persona>

@@ -1,75 +1,75 @@
 <div class="modal-foto" *ngIf="abrirMostrarFoto">
-    <div class="popup">
+  <div class="popup">
   
-      <div class="popup_top">
-        <div class="titulo">
-          <span>MI FOTO</span>
-        </div>
-        <div class="botones">
-          <!--boton para cerrar este componente modal-->
-          <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarFoto()" />
-        </div>
+    <div class="popup_top">
+      <div class="titulo">
+        <span>MI FOTO</span>
       </div>
-      <div class="popup_body">
-        <div id="miTabla">
-          <table *ngFor="let pers of persona" boder="0">
-            <thead>
-              <tr>
-                <th width="60">Campos</th>
-                <th width="290">Valores</th>
-                <th width="100">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="campos">idPersona:</td>
-                <td>{{pers.idPersona}}</td>
-                <td *ngIf="!filaEditable">
-                    <!--boton para habilitar la edicion de un registro particular-->
-                    <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(pers)" />
-                </td>
-                    <!--boton para guardar los cambios-->
-                <td *ngIf="filaEditable && pers.idPersona === persEditada.idPersona">
-                    <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
-                    <!--boton para cancelar cambios-->
-                    <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
-              </tr>
-              <tr>
-                <td class="campos">Nombres:</td>
-                <td>{{pers.nombrePersona}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Apellidos:</td>
-                <td>{{pers.apellidoPersona}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Titulo:</td>
-                <td>{{pers.subTitulo}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Celular:</td>
-                <td>{{pers.celuPersona}}</td>
-              </tr>
-              <tr>
-                <td class="campos">eMail:</td>
-                <td>{{pers.emailPersona}}</td>
-              </tr>
-              <tr>
-                <td class="campos">Foto:</td>
-                <td *ngIf="!filaEditable">{{pers.url_imgPersona}}</td>
-                <td colspan="2" *ngIf="filaEditable && pers.idPersona === persEditada.idPersona">
-                    <input type="text" size="50" [(ngModel)]="persEditada.url_imgPersona" autofocus /></td>
-              </tr>
-              <tr>
-                <td class="campos">Acerca de:</td>
-                <td>{{pers.acercaPersona}}</td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-        </div>
-        </div>
-
+      <div class="botones">
+        <!--boton para cerrar este componente modal-->
+        <img src="../../../../assets/cerrar.png" alt="cerrar" class="boton" (click)="cerrarMostrarFoto()" />
       </div>
     </div>
+    <div class="popup_body">
+      <div id="miTabla">
+        <table *ngFor="let pers of persona" boder="0">
+          <thead>
+            <tr>
+              <th width="60">Campos</th>
+              <th width="290">Valores</th>
+              <th width="100">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="campos">idPersona:</td>
+              <td>{{pers.idPersona}}</td>
+              <td *ngIf="!filaEditable">
+                <!--boton para habilitar la edicion de un registro particular-->
+                <img src="../../../../assets/editar.png" alt="editar" class="boton" (click)="editarFila(pers)" />
+              </td>
+                <!--boton para guardar los cambios-->
+              <td *ngIf="filaEditable && pers.idPersona === persEditada.idPersona">
+                <img src="../../../../assets/save.png" alt="actualizar" class="boton" (click)="actualizarFila()">
+                <!--boton para cancelar cambios-->
+                <img src="../../../../assets/cerrar.png" alt="cancelar" class="boton" (click)="noEditar()"></td>
+            </tr>
+            <tr>
+              <td class="campos">Nombres:</td>
+              <td>{{pers.nombrePersona}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Apellidos:</td>
+              <td>{{pers.apellidoPersona}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Titulo:</td>
+              <td>{{pers.subTitulo}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Celular:</td>
+              <td>{{pers.celuPersona}}</td>
+            </tr>
+            <tr>
+              <td class="campos">eMail:</td>
+              <td>{{pers.emailPersona}}</td>
+            </tr>
+            <tr>
+              <td class="campos">Foto:</td>
+              <td *ngIf="!filaEditable">{{pers.url_imgPersona}}</td>
+              <td colspan="2" *ngIf="filaEditable && pers.idPersona === persEditada.idPersona">
+                <input type="text" size="50" [(ngModel)]="persEditada.url_imgPersona" autofocus /></td>
+            </tr>
+            <tr>
+              <td class="campos">Acerca de:</td>
+              <td colspan="2" [innerHTML]="pers.acercaPersona"></td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+      </div>
+    </div>
+
+  </div>
+</div>
 

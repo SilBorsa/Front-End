@@ -49,6 +49,7 @@ export class EditarLabComponent implements OnInit, OnDestroy {
   cerrarMostrarLab() {
     document.body.classList.remove('modal-open');
     this.mostrarLabService.cerrarMostrarLab();
+    window.location.reload();
   }
 
   /* muestra el formulario de carga */

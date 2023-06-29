@@ -46,6 +46,7 @@ export class EditarPyComponent implements OnInit, OnDestroy{
   cerrarMostrarPy() {
     document.body.classList.remove('modal-open');
     this.mostrarPyService.cerrarMostrarPy();
+    window.location.reload();
   }
 
   /* muestra el formulario de carga */

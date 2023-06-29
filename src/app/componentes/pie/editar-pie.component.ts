@@ -49,6 +49,7 @@ export class EditarPieComponent implements OnInit, OnDestroy{
   cerrarMostrarPie() {
     document.body.classList.remove('modal-open');
     this.mostrarPieService.cerrarMostrarPie();
+    window.location.reload();
   }
 
   /* guarda los cambios del registro modificado */

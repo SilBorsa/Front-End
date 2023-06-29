@@ -34,7 +34,8 @@ export class EstudiosComponent implements OnInit {
                    urlInstTic: '',
                    url_imgTic: ''}]
 
-  agrupados: any[] = [];
+  cursos: any[] = [];
+  cursosAgrupados: any[] = [];
 
   constructor (private mostrarEduService: MostrarEduService,
                private mostrarTicsService: MostrarTicsService,
@@ -45,8 +46,10 @@ export class EstudiosComponent implements OnInit {
   ngOnInit(): void {
   this.eduService.listarEdu()
       .subscribe(edu => this.edu = edu);
-  //this.ticService.listarTic()
-  //    .subscribe(tic => this.tics = tic);
+  this.ticService.listarTic()
+      .subscribe(tics => {this.tics = tics; 
+                         this.cursos = tics;
+                         this.agruparCursosPorInstituto()});
   if(this.tokenService.getToken()){
      this.isLogged=true;
    } else {
@@ -80,25 +83,23 @@ export class EstudiosComponent implements OnInit {
     this.desplazarTics();
   }
 
-  agruparTicsPorInstituto(tics: Tics[]): { inst: string, url: string, img: string, tics: Tics[] }[] {
-    const agrupados: { inst: string, url: string, img: string, tics: Tics[] }[] = [];
-  
-    tics.forEach(tic => {
-      const nombreInstTic = tic.nombreInstTic;
-      const existeGrupo = agrupados.find(grupo => grupo.inst === nombreInstTic);
-  
-      if (existeGrupo) {
-        existeGrupo.tics.push(tic);
+  agruparCursosPorInstituto(): void {
+    this.cursosAgrupados = this.cursos.reduce((resultado, curso) => {
+      const institutoExistente = resultado.find((c: any) => c.nombreInstTic === curso.nombreInstTic);
+
+      if (institutoExistente) {
+        institutoExistente.cursos.push(curso);
       } else {
-        agrupados.push({
-          inst: nombreInstTic,
-          url: tic.urlInstTic,
-          img: tic.url_imgTic,
-          tics: [tic]
+        resultado.push({
+          nombreInstTic: curso.nombreInstTic,
+          urlInstTic: curso.urlInstTic,
+          url_imgTic: curso.url_imgTic,
+          cursos: [curso],
         });
       }
-    });
-    return agrupados;
+
+      return resultado;
+    }, []);
   }
   
 }

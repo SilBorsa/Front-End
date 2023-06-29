@@ -1,13 +1,11 @@
 <div class="marco">
-<div class="foto" *ngFor="let persona of persona"> 
-  <img src="{{persona.url_imgPersona}}"  alt="esta soy yo!" />
+  <div class="foto" *ngFor="let persona of persona"> 
+    <img src="{{persona.url_imgPersona}}"  alt="esta soy yo!" />
+  </div>
+  <div class="editar">
+    <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarFoto()" *ngIf="isLogged" />
+  </div>
 </div>
 
-<div class="editar">
-  <img src="{{editSRC}}" alt="{{editALT}}" (click)="abrirMostrarFoto()" *ngIf="isLogged" />
-</div>
-  
-  <!-- componente para editar la foto -->
-  <app-editar-foto id="verPersona"></app-editar-foto>
-
-</div>
+<!-- componente para editar la foto -->
+<app-editar-foto id="verPersona"></app-editar-foto>

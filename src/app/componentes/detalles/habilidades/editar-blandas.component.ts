@@ -45,6 +45,7 @@ export class EditarBlandasComponent implements OnInit, OnDestroy{
   cerrarMostrarBlandas() {
     document.body.classList.remove('modal-open');
     this.mostrarBlandasService.cerrarMostrarBlandas();
+    window.location.reload();
   }
 
   /* muestra el formulario de carga */

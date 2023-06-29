@@ -22,7 +22,8 @@
                     - Proyecto: {{proy.nombrePy}}
                     - Periodo: {{proy.periodoPy}}
                   </p>
-                  <p>Descripcion:<br>{{proy.descPy}}</p>
+                  <p>Descripcion:</p>
+                  <p [innerHTML]="proy.descPy"></p>
                 </td>
                 <td width="550" *ngIf="filaEditable && proy.idPy === pyEditado.idPy">
                   <p>idPersona: {{proy.idPersona}}

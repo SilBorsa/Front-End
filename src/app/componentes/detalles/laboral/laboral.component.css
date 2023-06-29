@@ -32,12 +32,12 @@ img:hover{
 
 .editar img {
   float:right;
-  filter:grayscale(150%) brightness(2.5) opacity(85%);
+  filter:opacity(100%);
   border-radius: 0;
   width: 50px;
 }
 
 .editar img:hover {
-  filter:opacity(100%);
+  filter:grayscale(150%) brightness(2.5) opacity(85%);
   cursor: pointer;
 }

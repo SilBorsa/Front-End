@@ -21,9 +21,10 @@
                     - idLaboral: {{lab.idLaboral}} 
                     - Periodo: {{lab.periodoEmpresa}} 
                     - Empresa: {{lab.nombreEmpresa}}</p>
-                  <p>WEB: {{lab.urlEmpresa}} 
-                    - img: {{lab.url_imgLab}}</p>
-                  <p>Tareas:<br>{{lab.descEmpresa}}</p>
+                  <p>WEB: {{lab.urlEmpresa}} </p>
+                  <p>img: {{lab.url_imgLab}}</p>
+                  <p>Tareas:</p>
+                  <p [innerHTML]="lab.descEmpresa"></p>
                 </td>
                 <td *ngIf="filaEditable && lab.idLaboral === labEditado.idLaboral">
                   <p>idPersona: {{lab.idPersona}} 
@@ -31,9 +32,8 @@
                     - Periodo:<input type="text" size="10" [(ngModel)]="labEditado.periodoEmpresa" />
                     - Empresa: <input type="text" size="35" [(ngModel)]="labEditado.nombreEmpresa" />
                   </p>
-                  <p>WEB: <input type="text" size="40" [(ngModel)]="labEditado.urlEmpresa" /> 
-                    - img: <input type="text" size="40" [(ngModel)]="labEditado.url_imgLab" />
-                  </p>
+                  <p>WEB: <input type="text" size="40" [(ngModel)]="labEditado.urlEmpresa" /></p> 
+                  <p>img: <input type="text" size="40" [(ngModel)]="labEditado.url_imgLab" /></p>
                   <p>Tareas:<br><textarea cols="110" rows="3" [(ngModel)]="labEditado.descEmpresa"></textarea></p>
                 </td>
                 <td *ngIf="!filaEditable">
