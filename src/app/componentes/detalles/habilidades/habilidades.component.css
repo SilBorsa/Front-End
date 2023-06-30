@@ -1,7 +1,7 @@
 .habilidades {
   display:inline-flexbox;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 .skills {
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
 }
 
 h4 {
@@ -23,7 +23,7 @@ h4 {
     -webkit-text-stroke-color: white;
     text-shadow: 
                3px 3px #b665f8,
-               7px 7px 2px black;
+               7px 7px 2px black; 
 }
   
 /* circulos de progreso */
@@ -34,20 +34,20 @@ h4 {
   align-items: center;
   width: 200px;
   height: 200px;
-  background-color: transparent;
+  background-color: transparent; 
 }
   
 .progresos .cantidad {
   position: relative;
   width: 150px;
-  height: 150px;
+  height: 150px; 
 }
   
 .progresos .cantidad svg {
   position: relative;
   width: 150px;
   height: 150px;
-  transform: rotate(270deg);
+  transform: rotate(270deg); 
 }
   
 .progresos .cantidad svg circle {
@@ -57,21 +57,21 @@ h4 {
   stroke-width: 8;
   stroke:rgb(191, 238, 177);
   stroke-linecap: round;
-  transform: translate(5px, 5px);
+  transform: translate(5px, 5px); 
 }
   
 .progresos .cantidad svg circle:nth-child(2) {
   stroke: var(--clr);
   stroke-dasharray: 440;
   stroke-dashoffset: var(--num);
-  opacity: 1;
+  opacity: 1; 
 }
   
 .bolita {
   position: absolute;
   inset: 5px;
   z-index: 10;
-  transform: rotate(var(--giro));
+  transform: rotate(var(--giro)); 
 }
   
 .bolita::before {
@@ -84,7 +84,7 @@ h4 {
   top: -8px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr); 
 }
   
 .titulo {
@@ -96,21 +96,21 @@ h4 {
   flex-direction: column;
   color:black;
   font-family: Tahoma, sans-serif;
-  opacity: 1;
+  opacity: 1; 
 }
   
 .titulo p {
   font-size: large;
   font-weight: 600;
   line-height: 1px;
-  margin-left: -10px;
+  margin-left: -10px; 
 }
   
 .blandas {
   position: relative;
   gap: 5px;
   padding: 3px;
-  margin: 0 1px;
+  margin: 0 1px; 
 }
   
 .item {
@@ -123,38 +123,38 @@ h4 {
   align-items: center;
   border: 1px solid white;
   color: #fff;
-  font-size: 15px;
+  font-size: 15px; 
 }
 
 .item:hover {
   filter:drop-shadow(5px 5px 7px black) brightness(120%);
   border:1px solid black;
   text-shadow: 2px 2px 3px black;
-  cursor: url("../../../../assets/varita.png"), none;
+  cursor: url("../../../../assets/varita.png"), none; 
 }
   
 .item img {
-  height: 60px;
+  height: 60px; 
 }
 
 .titulos {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 /* capa solo visible si esta conectado el admin */
 .editar {
-  width: 50px;
+  width: 50px; 
 }
 
 .editar img {
   float: right;
   filter:opacity(100%);
-  width: 50px;
+  width: 50px; 
 }
 
 .editar img:hover {
   filter:grayscale(150%) brightness(2.5) opacity(85%);
-  cursor: pointer;
+  cursor: pointer; 
 }
