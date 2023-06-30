@@ -10,11 +10,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /*gap: 5px;*/
 }
 
 h4 {
-    /*text-align: center;*/
     color: rgb(255, 255, 255);
     padding: 15px;
     font-weight: 900;
@@ -66,34 +64,14 @@ h4 {
   stroke: var(--clr);
   stroke-dasharray: 440;
   stroke-dashoffset: var(--num);
-  opacity: 0;
-  animation: fadeIn 1s linear forwards;
-  animation-delay: 0.1s;
-}
-  
-@keyframes fadeIn {
-  0% {
-     opacity: 0;
-  }
-  100% {
-     opacity: 1;
-  }
+  opacity: 1;
 }
   
 .bolita {
   position: absolute;
   inset: 5px;
   z-index: 10;
-  animation: animarBolita 1s linear forwards;
-}
-  
-@keyframes animarBolita {
-  0% {
-     transform: rotate(0deg);
-  }
-  100% {
-     transform: rotate(var(--giro));
-  }
+  transform: rotate(var(--giro));
 }
   
 .bolita::before {
@@ -118,9 +96,7 @@ h4 {
   flex-direction: column;
   color:black;
   font-family: Tahoma, sans-serif;
-  opacity: 0;
-  animation: fadeIn 1s linear forwards;
-  animation-delay: 0.8s;
+  opacity: 1;
 }
   
 .titulo p {
@@ -134,7 +110,7 @@ h4 {
   position: relative;
   gap: 5px;
   padding: 3px;
-  margin: 0 1px; /*5px auto;*/
+  margin: 0 1px;
 }
   
 .item {
