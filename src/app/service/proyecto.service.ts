@@ -7,7 +7,7 @@ import { Proyecto } from '../modelo/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  pyURL = "http://localhost:8080/proy/"
+  pyURL = "https://silborsa-backend.onrender.com/proy/"
   
   constructor(private httpClient: HttpClient) { }
 

@@ -8,7 +8,7 @@ import { LoginUsuario } from '../modelo/login-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = "http://localhost:8080/auth/";
+  authURL = "https://silborsa-backend.onrender.com/auth/";
 
   constructor(private httpCliente: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Blanda } from '../modelo/blanda';
   providedIn: 'root'
 })
 export class BlandaService {
-  blandaURL = "http://localhost:8080/soft/"
+  blandaURL = "https://silborsa-backend.onrender.com/soft/"
   
   constructor(private httpClient: HttpClient) { }
 

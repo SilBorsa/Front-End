@@ -7,7 +7,7 @@ import { Tics } from '../modelo/tics';
   providedIn: 'root'
 })
 export class TicsService {
-  ticURL = "http://localhost:8080/tic/"
+  ticURL = "https://silborsa-backend.onrender.com/tic/"
   
   constructor(private httpClient: HttpClient) { }
 

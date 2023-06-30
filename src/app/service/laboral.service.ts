@@ -7,7 +7,7 @@ import { Laboral } from '../modelo/laboral';
   providedIn: 'root'
 })
 export class LaboralService {
-  labURL = "http://localhost:8080/lab/"
+  labURL = "https://silborsa-backend.onrender.com/lab/"
   
   constructor(private httpClient: HttpClient) { }
 

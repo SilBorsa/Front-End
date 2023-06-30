@@ -9,7 +9,7 @@ import { Redes } from '../modelo/redes';
 })
 
 export class RedService {
-  redesURL = "http://localhost:8080/redes/"
+  redesURL = "https://silborsa-backend.onrender.com/redes/"
   
   constructor(private httpClient: HttpClient) { }
 

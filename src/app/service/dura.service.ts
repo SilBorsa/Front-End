@@ -7,7 +7,7 @@ import { Dura } from '../modelo/dura';
   providedIn: `root`
 })
 export class DuraService {
-  duraURL = "http://localhost:8080/hard/"
+  duraURL = "https://silborsa-backend.onrender.com/hard/"
   
   constructor(private httpClient: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Estudio } from '../modelo/estudio';
   providedIn: 'root'
 })
 export class EstudioService {
-  eduURL = "http://localhost:8080/edu/"
+  eduURL = "https://silborsa-backend.onrender.com/edu/"
   
   constructor(private httpClient: HttpClient) { }
 
